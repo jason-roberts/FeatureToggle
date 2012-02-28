@@ -29,5 +29,23 @@ namespace ExampleWebFormsApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Feature2Button;
+        
+        /// <summary>
+        /// NewYears3000FeatureButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NewYears3000FeatureButton;
+        
+        /// <summary>
+        /// NewYears2000FeatureButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NewYears2000FeatureButton;
     }
 }

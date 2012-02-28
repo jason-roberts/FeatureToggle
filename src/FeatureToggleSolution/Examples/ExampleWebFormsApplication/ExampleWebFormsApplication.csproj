@@ -77,6 +77,8 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Feature2Toggle.cs" />
+    <Compile Include="NewYears2000Feature.cs" />
+    <Compile Include="NewYears3000Feature.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
