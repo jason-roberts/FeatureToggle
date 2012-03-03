@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace JasonRoberts.FeatureToggle.Wpf
+namespace JasonRoberts.FeatureToggle.WpfExtensions
 {
     [ValueConversion(typeof(IFeatureToggle), typeof(Visibility))]
     public class FeatureToggleToVisibilityConverter : IValueConverter

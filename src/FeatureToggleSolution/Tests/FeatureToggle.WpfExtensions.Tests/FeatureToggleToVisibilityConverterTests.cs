@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using JasonRoberts.FeatureToggle;
-using JasonRoberts.FeatureToggle.Wpf;
+using JasonRoberts.FeatureToggle.WpfExtensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 

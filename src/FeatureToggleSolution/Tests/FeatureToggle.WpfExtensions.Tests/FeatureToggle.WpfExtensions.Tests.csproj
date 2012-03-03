@@ -9,8 +9,8 @@
     <ProjectGuid>{D725767B-0BBB-42E7-A76C-77DDB91EF3CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FeatureToggle.Wpf.Tests</RootNamespace>
-    <AssemblyName>FeatureToggle.Wpf.Tests</AssemblyName>
+    <RootNamespace>FeatureToggle.WpfExtensions.Tests</RootNamespace>
+    <AssemblyName>FeatureToggle.WpfExtensions.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -62,9 +62,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FeatureToggle.Wpf\FeatureToggle.Wpf.csproj">
-      <Project>{841DE73A-BD8E-45F1-B248-43F086863880}</Project>
-      <Name>FeatureToggle.Wpf</Name>
+    <ProjectReference Include="..\..\FeatureToggle.WpfExtensions\FeatureToggle.WpfExtensions.csproj">
+      <Project>{B220599A-E786-446D-9C47-978C50CD48CF}</Project>
+      <Name>FeatureToggle.WpfExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj">
+      <Project>{C09F1554-F0DB-4A3E-9BD1-CCBC2AA1D6E1}</Project>
+      <Name>FeatureToggle</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -103,9 +103,13 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FeatureToggle.Wpf\FeatureToggle.Wpf.csproj">
-      <Project>{841DE73A-BD8E-45F1-B248-43F086863880}</Project>
-      <Name>FeatureToggle.Wpf</Name>
+    <ProjectReference Include="..\..\FeatureToggle.WpfExtensions\FeatureToggle.WpfExtensions.csproj">
+      <Project>{B220599A-E786-446D-9C47-978C50CD48CF}</Project>
+      <Name>FeatureToggle.WpfExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj">
+      <Project>{C09F1554-F0DB-4A3E-9BD1-CCBC2AA1D6E1}</Project>
+      <Name>FeatureToggle</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
