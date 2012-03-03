@@ -1,5 +1,6 @@
 <configuration>
 	<appSettings>
 		<add key="FeatureToggle.SampleFeatureToggle" value="false" />
+    <!-- For Windows Phone 7 apps delete the above line, and add Application.Current.Resources.Add("SampleFeatureToggle", false); in your app.xaml.cs constructor -->
 	</appSettings>
 </configuration>

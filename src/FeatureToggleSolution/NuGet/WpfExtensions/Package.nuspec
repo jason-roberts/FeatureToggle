@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>FeatureToggle</id>
+    <id>FeatureToggle.WPFExtensions</id>
     <version>1.0.6</version>
     <authors>Jason Roberts - dontcodetired.com</authors>
     <owners>Jason Roberts</owners>
@@ -9,8 +9,11 @@
     <projectUrl>https://github.com/jason-roberts/FeatureToggle/wiki</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>An antidote to source control branching sickness for .Net developers. A simple library using the Feature Toggle design/release/continuous integration pattern </description>
-    <releaseNotes>Added WP7 specific assembly</releaseNotes>
     <copyright>Copyright 2011-2012 Jason Roberts</copyright>
     <tags>feature toggle branch merge</tags>
+    <dependencies>
+      <dependency id="FeatureToggle" version="1.0.5" />
+    </dependencies>
   </metadata>
 </package>
+
