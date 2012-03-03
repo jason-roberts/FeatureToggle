@@ -2,13 +2,14 @@
 <package >
   <metadata>
     <id>FeatureToggle</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <authors>Jason Roberts - dontcodetired.com</authors>
     <owners>Jason Roberts</owners>
     <licenseUrl>https://github.com/jason-roberts/FeatureToggle/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/jason-roberts/FeatureToggle/wiki</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>An antidote to source control branching sickness for .Net developers. A simple library using the Feature Toggle design/release/continuous integration pattern </description>
+    <releaseNotes>Added WP7 specific assembly</releaseNotes>
     <copyright>Copyright 2011-2012 Jason Roberts</copyright>
     <tags>feature toggle branch merge</tags>
   </metadata>
