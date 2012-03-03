@@ -3,10 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B539178D-F175-4C7A-84BA-64559A289B06}"
 	ProjectSection(SolutionItems) = preProject
-		FeatureToggleSolution.vsmdi = FeatureToggleSolution.vsmdi
-		Local.testsettings = Local.testsettings
 		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle", "FeatureToggle\FeatureToggle.csproj", "{C09F1554-F0DB-4A3E-9BD1-CCBC2AA1D6E1}"
@@ -31,15 +28,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.Wp7", "Featur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleWindowsPhoneApplication", "Examples\ExampleWindowsPhoneApplication\ExampleWindowsPhoneApplication.csproj", "{CEA319A9-E344-4F7E-BD5E-99DCF1E5560D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{6BDEA647-D5F0-4ECA-91B5-7FAE1CC2F80F}"
-	ProjectSection(SolutionItems) = preProject
-		Lib\Moq.dll = Lib\Moq.dll
-	EndProjectSection
-EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = FeatureToggleSolution.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
