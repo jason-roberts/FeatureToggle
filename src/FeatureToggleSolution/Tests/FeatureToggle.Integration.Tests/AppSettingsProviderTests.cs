@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace JasonRoberts.FeatureToggle.Tests
@@ -20,6 +21,51 @@ namespace JasonRoberts.FeatureToggle.Tests
         }
 
 
+        [TestMethod]
+        public void ShouldReadTimePeriodFromConfig()
+        {
+            ITimePeriodProvider sut = new AppSettingsProvider();
+
+            var periodFromConfig = sut.EvaluateTimePeriod(new AppSettingsProviderTestsTimePeriod());
+
+            var expected = new Tuple<DateTime, DateTime>(new DateTime(2050, 1, 2, 4, 5, 8),
+                                                         new DateTime(2099, 8, 7, 6, 5, 4));
+
+            Assert.AreEqual(expected, periodFromConfig);
+        }
+
+
+        [TestMethod]
+        public void ShouldErrorWhenStartDateAfterEndDate()
+        {
+            Assert.Inconclusive();            
+        }
+
+        [TestMethod]
+        public void ShouldErrorWhenStartDateAndEndDateAreTheSame()
+        {
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public void ShouldErrorWhenFormatInConfigIsWrong()
+        {
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public void ShouldErrorWhenStartDateNotAValidDate()
+        {
+            Assert.Inconclusive();
+        }
+
+
+        [TestMethod]
+        public void ShouldErrorWhenEndDateNotAValidDate()
+        {
+            Assert.Inconclusive();
+        }
+
         [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
         public void ShouldErrorWhenKeyNotInConfig()
         {
@@ -38,5 +84,8 @@ namespace JasonRoberts.FeatureToggle.Tests
         private class SimpleFeatureFalse : SimpleFeatureToggle { }
         private class NotInConfig : SimpleFeatureToggle { }
         private class NotASimpleValue : SimpleFeatureToggle { }
+
+        private class AppSettingsProviderTestsTimePeriod : EnabledBetweenDatesFeatureToggle { }     
+        
     }
 }

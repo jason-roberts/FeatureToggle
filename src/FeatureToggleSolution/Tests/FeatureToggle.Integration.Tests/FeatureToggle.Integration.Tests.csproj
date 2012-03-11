@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="AppSettingsProviderTests.cs" />
     <Compile Include="BooleanSqlServerProviderTests.cs" />
+    <Compile Include="EnabledBetweenDatesFeatureToggleTests.cs" />
     <Compile Include="EnabledOnOrBeforeDateFeatureToggleTests.cs" />
     <Compile Include="EnabledOnOrAfterDateFeatureToggleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

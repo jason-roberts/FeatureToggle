@@ -56,12 +56,14 @@
     <Compile Include="AppSettingsKeys.cs" />
     <Compile Include="AppSettingsProvider.cs" />
     <Compile Include="AlwaysOffFeatureToggle.cs" />
+    <Compile Include="EnabledBetweenDatesFeatureToggle.cs" />
     <Compile Include="EnabledOnOrBeforeDateFeatureToggle.cs" />
     <Compile Include="EnabledOnOrAfterDateFeatureToggle.cs" />
     <Compile Include="IBooleanToggleValueProvider.cs" />
     <Compile Include="IDateTimeToggleValueProvider.cs" />
     <Compile Include="IFeatureToggle.cs" />
     <Compile Include="INowDateAndTime.cs" />
+    <Compile Include="ITimePeriodProvider.cs" />
     <Compile Include="NowDateAndTime.cs" />
     <Compile Include="SimpleFeatureToggle.cs" />
     <Compile Include="SqlFeatureToggle.cs" />

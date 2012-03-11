@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace JasonRoberts.FeatureToggle
 {
-    public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider
+    public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider, ITimePeriodProvider
     {
         #region IToggleValueProvider Members
 
@@ -66,6 +66,22 @@ namespace JasonRoberts.FeatureToggle
             var configValue = ConfigurationManager.AppSettings[toggleNameInConfig];
 
             return ParseDateTimeConfigString(configValue, toggleNameInConfig);
+        }
+
+        public Tuple<DateTime, DateTime> EvaluateTimePeriod(IFeatureToggle toggle)
+        {
+            var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
+
+            if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
+                throw new ConfigurationErrorsException(string.Format("The key '{0}' was not found in AppSettings",
+                                                                     toggleNameInConfig));
+
+            var configValues = ConfigurationManager.AppSettings[toggleNameInConfig].Split(new []{'|'});
+
+            var startDate = DateTime.Parse(configValues[0].Trim());
+            var endDate = DateTime.Parse(configValues[1].Trim());
+
+            return new Tuple<DateTime, DateTime>(startDate, endDate);
         }
     }
 }
