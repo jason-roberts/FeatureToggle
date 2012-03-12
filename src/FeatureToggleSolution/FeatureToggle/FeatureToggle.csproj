@@ -65,13 +65,12 @@
     <Compile Include="INowDateAndTime.cs" />
     <Compile Include="ITimePeriodProvider.cs" />
     <Compile Include="NowDateAndTime.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleFeatureToggle.cs" />
     <Compile Include="SqlFeatureToggle.cs" />
     <Compile Include="BooleanSqlServerProvider.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy $(TargetPath) $(SolutionDir)NuGet\Core\lib\net40</PostBuildEvent>
