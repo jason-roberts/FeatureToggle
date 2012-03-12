@@ -25,12 +25,17 @@ namespace JasonRoberts.FeatureToggle
 
         public INowDateAndTime NowProvider { get; set; }
 
-        public IDateTimeToggleValueProvider ToggleValueProvider { get; set; }
+        public ITimePeriodProvider ToggleValueProvider { get; set; }
 
 
         public bool FeatureEnabled
         {
-            get { return NowProvider.Now >= ToggleValueProvider.EvaluateDateTimeToggleValue(this); }
+            get
+            {
+                var dates = ToggleValueProvider.EvaluateTimePeriod((this));
+
+                return (NowProvider.Now >= dates.Item1 && NowProvider.Now <= dates.Item2);
+            }
         }   
     }
 }

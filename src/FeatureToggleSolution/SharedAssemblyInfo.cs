@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("FeatureToggle")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("FeatureToggle")]
 [assembly: AssemblyCopyright("Copyright © Jason Roberts 2011")]
 [assembly: AssemblyTrademark("")]

@@ -26,7 +26,7 @@ namespace FeatureToggle.Integration.Tests
         {
             var mockDate = new Mock<INowDateAndTime>();
 
-            mockDate.SetupGet(x => x.Now).Returns(new DateTime(2012, 12, 31, 23, 59, 59, 999));
+            mockDate.SetupGet(x => x.Now).Returns(new DateTime(2012, 12, 31, 23, 59, 59 ));
 
             var sut = new AllOf2012 { NowProvider = mockDate.Object };
 
