@@ -68,6 +68,7 @@ namespace JasonRoberts.FeatureToggle
             return ParseDateTimeConfigString(configValue, toggleNameInConfig);
         }
 
+
         public Tuple<DateTime, DateTime> EvaluateTimePeriod(IFeatureToggle toggle)
         {
             var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
@@ -76,10 +77,25 @@ namespace JasonRoberts.FeatureToggle
                 throw new ConfigurationErrorsException(string.Format("The key '{0}' was not found in AppSettings",
                                                                      toggleNameInConfig));
 
-            var configValues = ConfigurationManager.AppSettings[toggleNameInConfig].Split(new []{'|'});
 
-            var startDate = DateTime.Parse(configValues[0].Trim());
-            var endDate = DateTime.Parse(configValues[1].Trim());
+            DateTime startDate;
+            DateTime endDate;            
+
+            try
+            {
+                var configValues = ConfigurationManager.AppSettings[toggleNameInConfig].Split(new[] { '|' });
+
+                startDate = DateTime.Parse(configValues[0].Trim());
+                endDate = DateTime.Parse(configValues[1].Trim());
+
+            }
+            catch (Exception ex)
+            {
+                throw new ConfigurationErrorsException(string.Format("Configuration for {0} is invalid - date range should be specified like: '02/01/2050 04:05:08 | 07/08/2099 06:05:04'", toggleNameInConfig), ex); 
+            }
+
+            if (startDate >= endDate)
+                throw new ConfigurationErrorsException(string.Format("Configuration for {0} is invalid - the start date must be less then the end date",toggleNameInConfig));
 
             return new Tuple<DateTime, DateTime>(startDate, endDate);
         }

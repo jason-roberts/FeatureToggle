@@ -35,36 +35,26 @@ namespace JasonRoberts.FeatureToggle.Tests
         }
 
 
-        [TestMethod]
+        [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
         public void ShouldErrorWhenStartDateAfterEndDate()
         {
-            Assert.Inconclusive();            
+            new AppSettingsProvider().EvaluateTimePeriod(new AppSettingsProviderTestsShouldErrorWhenStartDateAfterEndDate());            
         }
 
-        [TestMethod]
+
+        [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
         public void ShouldErrorWhenStartDateAndEndDateAreTheSame()
         {
-            Assert.Inconclusive();
+            new AppSettingsProvider().EvaluateTimePeriod(new AppSettingsProviderTestsShouldErrorWhenStartDateAndEndDateAreTheSame());            
         }
 
-        [TestMethod]
+
+        [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
         public void ShouldErrorWhenFormatInConfigIsWrong()
         {
-            Assert.Inconclusive();
+            new AppSettingsProvider().EvaluateTimePeriod(new AppSettingsProviderTestsShouldErrorWhenFormatInConfigIsWrong());
         }
 
-        [TestMethod]
-        public void ShouldErrorWhenStartDateNotAValidDate()
-        {
-            Assert.Inconclusive();
-        }
-
-
-        [TestMethod]
-        public void ShouldErrorWhenEndDateNotAValidDate()
-        {
-            Assert.Inconclusive();
-        }
 
         [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
         public void ShouldErrorWhenKeyNotInConfig()
@@ -85,7 +75,10 @@ namespace JasonRoberts.FeatureToggle.Tests
         private class NotInConfig : SimpleFeatureToggle { }
         private class NotASimpleValue : SimpleFeatureToggle { }
 
-        private class AppSettingsProviderTestsTimePeriod : EnabledBetweenDatesFeatureToggle { }     
-        
+        private class AppSettingsProviderTestsTimePeriod : EnabledBetweenDatesFeatureToggle { }
+
+        private class AppSettingsProviderTestsShouldErrorWhenStartDateAfterEndDate : EnabledBetweenDatesFeatureToggle { }
+        private class AppSettingsProviderTestsShouldErrorWhenStartDateAndEndDateAreTheSame : EnabledBetweenDatesFeatureToggle { }
+        private class AppSettingsProviderTestsShouldErrorWhenFormatInConfigIsWrong : EnabledBetweenDatesFeatureToggle { }                            
     }
 }
