@@ -8,61 +8,68 @@ namespace FeatureToggle.Integration.Tests
     [TestClass]
     public class EnabledBetweenDatesFeatureToggleTests
     {
+        private readonly DateTime _startDate = new DateTime(2012, 1, 1, 0, 0, 0, 0);
+        private readonly DateTime _endDate = new DateTime(2012, 12, 31, 23, 59, 59);
+
+        private static readonly Mock<INowDateAndTime> MockDate = new Mock<INowDateAndTime>();
+
+        // sut = system under test, i.e. the thing we are testing
+        private readonly AllOf2012 _sut = new AllOf2012 {NowProvider = MockDate.Object};
+
+
         [TestMethod]
         public void ShouldBeEnabledOnStartDate()
-        {
-            var mockDate = new Mock<INowDateAndTime>();
+        {            
+            MockDate.SetupGet(x => x.Now).Returns(_startDate);
 
-            mockDate.SetupGet(x => x.Now).Returns(new DateTime(2012, 1, 1, 0, 0, 0, 0));
-
-            var sut = new AllOf2012 {NowProvider = mockDate.Object};
-
-            Assert.IsTrue(sut.FeatureEnabled);
+            Assert.IsTrue(_sut.FeatureEnabled);
         }
 
 
         [TestMethod]
         public void ShouldBeEnabledOnEndDate()
         {
-            var mockDate = new Mock<INowDateAndTime>();
+            MockDate.SetupGet(x => x.Now).Returns(_endDate);
 
-            mockDate.SetupGet(x => x.Now).Returns(new DateTime(2012, 12, 31, 23, 59, 59 ));
-
-            var sut = new AllOf2012 { NowProvider = mockDate.Object };
-
-            Assert.IsTrue(sut.FeatureEnabled);
+            Assert.IsTrue(_sut.FeatureEnabled);
         }
 
 
         [TestMethod]
         public void ShouldBeEnabledJustBeforeEndDate()
         {
-            Assert.Inconclusive();
+            MockDate.SetupGet(x => x.Now).Returns(_endDate.AddMilliseconds(-1));
+
+            Assert.IsTrue(_sut.FeatureEnabled);
         }
 
 
         [TestMethod]
         public void ShouldBeEnabledJustAfterStartDate()
         {
-            Assert.Inconclusive();
+            MockDate.SetupGet(x => x.Now).Returns(_startDate.AddMilliseconds(1));
+
+            Assert.IsTrue(_sut.FeatureEnabled);
         }
 
 
         [TestMethod]
         public void ShouldBeDisabledJustBeforeStartDate()
         {
-            Assert.Inconclusive();
+            MockDate.SetupGet(x => x.Now).Returns(_startDate.AddMilliseconds(-1));
+
+            Assert.IsFalse(_sut.FeatureEnabled);
         }
 
 
         [TestMethod]
         public void ShouldBeDisabledJustAfterEndDate()
         {
-            Assert.Inconclusive();
+            MockDate.SetupGet(x => x.Now).Returns(_endDate.AddMilliseconds(1));
+
+            Assert.IsFalse(_sut.FeatureEnabled);
         }
-
-       
-
+      
 
         private class AllOf2012 : EnabledBetweenDatesFeatureToggle { }
 
