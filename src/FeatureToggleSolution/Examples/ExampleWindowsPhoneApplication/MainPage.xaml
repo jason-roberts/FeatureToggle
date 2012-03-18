@@ -55,6 +55,9 @@
                 <TextBlock>
 					Note that the feature2 button is not visible at runtime because it is disabled in config.
 				</TextBlock>
+                <Button Content="Feature 4 - between dates"
+				        Visibility="{Binding Path=DateRangeToggle, Converter={StaticResource toggleVisibilityConverer}}">
+                </Button>
 			</StackPanel>
 		</Grid>
 	</Grid>

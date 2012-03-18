@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Globalization;
 using System.Linq;
 
 namespace JasonRoberts.FeatureToggle
@@ -85,9 +86,11 @@ namespace JasonRoberts.FeatureToggle
             {
                 var configValues = ConfigurationManager.AppSettings[toggleNameInConfig].Split(new[] { '|' });
 
-                startDate = DateTime.Parse(configValues[0].Trim());
-                endDate = DateTime.Parse(configValues[1].Trim());
 
+                const string expectedDateFormat = @"dd/MM/yyyy HH:mm:ss";
+
+                startDate = DateTime.ParseExact(configValues[0].Trim(), expectedDateFormat, CultureInfo.InvariantCulture);
+                endDate = DateTime.ParseExact(configValues[1].Trim(), expectedDateFormat, CultureInfo.InvariantCulture);
             }
             catch (Exception ex)
             {

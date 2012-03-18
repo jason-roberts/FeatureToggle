@@ -68,6 +68,7 @@
     <Compile Include="SimpleFeatureToggle.cs" />
     <Compile Include="SqlFeatureToggle.cs" />
     <Compile Include="BooleanSqlServerProvider.cs" />
+    <Compile Include="Tuple.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

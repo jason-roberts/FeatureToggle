@@ -64,6 +64,9 @@
     <Compile Include="..\FeatureToggle\AlwaysOnFeatureToggle.cs">
       <Link>AlwaysOnFeatureToggle.cs</Link>
     </Compile>
+    <Compile Include="..\FeatureToggle\EnabledBetweenDatesFeatureToggle.cs">
+      <Link>EnabledBetweenDatesFeatureToggle.cs</Link>
+    </Compile>
     <Compile Include="..\FeatureToggle\EnabledOnOrAfterDateFeatureToggle.cs">
       <Link>EnabledOnOrAfterDateFeatureToggle.cs</Link>
     </Compile>
@@ -79,11 +82,17 @@
     <Compile Include="..\FeatureToggle\INowDateAndTime.cs">
       <Link>INowDateAndTime.cs</Link>
     </Compile>
+    <Compile Include="..\FeatureToggle\ITimePeriodProvider.cs">
+      <Link>ITimePeriodProvider.cs</Link>
+    </Compile>
     <Compile Include="..\FeatureToggle\NowDateAndTime.cs">
       <Link>NowDateAndTime.cs</Link>
     </Compile>
     <Compile Include="..\FeatureToggle\SimpleFeatureToggle.cs">
       <Link>SimpleFeatureToggle.cs</Link>
+    </Compile>
+    <Compile Include="..\FeatureToggle\Tuple.cs">
+      <Link>Tuple.cs</Link>
     </Compile>
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>SharedAssemblyInfo.cs</Link>
