@@ -12,6 +12,7 @@ namespace JasonRoberts.FeatureToggle
 #if (WINDOWS_PHONE)
 
             BooleanToggleValueProvider = new WindowsPhone7ApplicationResourcesSettingsProvider();
+
 #else
 
             BooleanToggleValueProvider = new AppSettingsProvider();
