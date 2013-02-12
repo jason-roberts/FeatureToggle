@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>An antidote to source control branching sickness for .Net developers. A simple library using the Feature Toggle design/release/continuous integration pattern </description>
     <releaseNotes>New EnabledBetweenDatesFeatureToggle, datetime formats now have to be "dd/MM/yyyy HH:mm:ss</releaseNotes>
-    <copyright>Copyright 2011-2012 Jason Roberts</copyright>
+    <copyright>Copyright 2011-2013 Jason Roberts</copyright>
     <tags>feature toggle branch merge</tags>
   </metadata>
 </package>
