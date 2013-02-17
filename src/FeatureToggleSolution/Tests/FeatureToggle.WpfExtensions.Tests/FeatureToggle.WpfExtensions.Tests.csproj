@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\FeatureToggle.WpfExtensions\FeatureToggle.WpfExtensions.csproj">
-      <Project>{B220599A-E786-446D-9C47-978C50CD48CF}</Project>
+      <Project>{b220599a-e786-446d-9c47-978c50cd48cf}</Project>
       <Name>FeatureToggle.WpfExtensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj">
