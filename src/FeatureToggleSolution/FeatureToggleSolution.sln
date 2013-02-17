@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.WinRT", "Feat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.WpfExtensions", "FeatureToggle.WpfExtensions\FeatureToggle.WpfExtensions.csproj", "{B220599A-E786-446D-9C47-978C50CD48CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.WinRTExtensions", "FeatureToggle.WinRTExtensions\FeatureToggle.WinRTExtensions.csproj", "{8E5612AA-98D6-4ED8-8684-F60777163D5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,6 +197,26 @@ Global
 		{B220599A-E786-446D-9C47-978C50CD48CF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B220599A-E786-446D-9C47-978C50CD48CF}.Release|x64.ActiveCfg = Release|Any CPU
 		{B220599A-E786-446D-9C47-978C50CD48CF}.Release|x86.ActiveCfg = Release|Any CPU
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Debug|ARM.ActiveCfg = Debug|ARM
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Debug|ARM.Build.0 = Debug|ARM
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Debug|x64.ActiveCfg = Debug|x64
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Debug|x64.Build.0 = Debug|x64
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Debug|x86.ActiveCfg = Debug|x86
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Debug|x86.Build.0 = Debug|x86
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Release|ARM.ActiveCfg = Release|ARM
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Release|ARM.Build.0 = Release|ARM
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Release|Mixed Platforms.Build.0 = Release|x86
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Release|x64.ActiveCfg = Release|x64
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Release|x64.Build.0 = Release|x64
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Release|x86.ActiveCfg = Release|x86
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -210,5 +232,6 @@ Global
 		{33333E5F-AA98-4B08-8078-8394C5285FAA} = {CCA826B0-BBAB-4A04-AB87-B1C3028849BF}
 		{9E19D8C7-FA05-4CB9-A7A2-A633C2D310CF} = {CCA826B0-BBAB-4A04-AB87-B1C3028849BF}
 		{B220599A-E786-446D-9C47-978C50CD48CF} = {CCA826B0-BBAB-4A04-AB87-B1C3028849BF}
+		{8E5612AA-98D6-4ED8-8684-F60777163D5A} = {CCA826B0-BBAB-4A04-AB87-B1C3028849BF}
 	EndGlobalSection
 EndGlobal
