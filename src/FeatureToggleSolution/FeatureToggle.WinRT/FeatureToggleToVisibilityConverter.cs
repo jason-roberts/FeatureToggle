@@ -3,7 +3,7 @@ using JasonRoberts.FeatureToggle;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 
-namespace FeatureToggle.WinRTExtensions
+namespace FeatureToggle.WinRT
 {
     public class FeatureToggleToVisibilityConverter : IValueConverter
     {
