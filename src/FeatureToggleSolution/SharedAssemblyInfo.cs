@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("FeatureToggle")]
-[assembly: AssemblyCopyright("Copyright � Jason Roberts 2011")]
+[assembly: AssemblyCopyright("Copyright © Jason Roberts 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
