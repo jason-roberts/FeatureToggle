@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -9,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("FeatureToggle")]
-[assembly: AssemblyCopyright("Copyright © Jason Roberts 2011")]
+[assembly: AssemblyCopyright("Copyright Â© Jason Roberts 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,3 +34,8 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.*")]
 
+// The Common Language Specification (CLS) defines naming restrictions, data types, and 
+// rules to which assemblies must conform if they will be used across programming languages. 
+// Good design dictates that all assemblies explicitly indicate CLS compliance with 
+// CLSCompliantAttribute. If the attribute is not present on an assembly, the assembly is not compliant.
+[assembly: CLSCompliant(true)]
