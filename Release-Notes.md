@@ -8,7 +8,7 @@
 
 ## Improvements
 
-* Added CLSCompliant attribute #8
+* Added CLSCompliant attribute [#8]
 
 ##New Features
 
