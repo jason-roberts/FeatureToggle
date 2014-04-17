@@ -8,7 +8,7 @@
 
 ## Improvements
 
-* Added CLSCompliant attribute [#8]
+* Added CLSCompliant attribute [#8](https://github.com/jason-roberts/FeatureToggle/pull/8)
 
 ##New Features
 
