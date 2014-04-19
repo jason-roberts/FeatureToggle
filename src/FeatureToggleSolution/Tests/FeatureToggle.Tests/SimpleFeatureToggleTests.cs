@@ -1,12 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 using Moq;
 
 namespace JasonRoberts.FeatureToggle.Tests
 {
-    [TestClass]
+    
     public class SimpleFeatureToggleTests
     {
-        [TestMethod]
+        [Fact]
         public void ShouldSetOptionalProviderOnCreation()
         {
             var fakeProvider = new Mock<IBooleanToggleValueProvider>();
@@ -16,7 +16,7 @@ namespace JasonRoberts.FeatureToggle.Tests
             var sut = new MySimpleFeatureToggle();
             sut.BooleanToggleValueProvider = fakeProvider.Object;
 
-            Assert.AreEqual(true, sut.FeatureEnabled);
+            Assert.Equal(true, sut.FeatureEnabled);
         }
 
         private class MySimpleFeatureToggle : SimpleFeatureToggle { }

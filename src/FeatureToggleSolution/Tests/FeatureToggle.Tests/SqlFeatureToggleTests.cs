@@ -1,12 +1,13 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 using Moq;
+
 
 namespace JasonRoberts.FeatureToggle.Tests
 {
-    [TestClass]
+    
     public class SqlFeatureToggleTests
     {
-        [TestMethod]
+        [Fact]
         public void ShouldDisableFeatureWhenToggleValueIsFalse()
         {
             var fakeProvider = new Mock<IBooleanToggleValueProvider>();
@@ -16,10 +17,10 @@ namespace JasonRoberts.FeatureToggle.Tests
             var sut = new MySqlFeatureToggle();
             sut.ToggleValueProvider = fakeProvider.Object;
 
-            Assert.IsFalse(sut.FeatureEnabled);
+            Assert.False(sut.FeatureEnabled);
         }
 
-        [TestMethod]
+        [Fact]
         public void ShouldEnableFeatureWhenToggleValueIsTrue()
         {
             var fakeProvider = new Mock<IBooleanToggleValueProvider>();
@@ -29,7 +30,7 @@ namespace JasonRoberts.FeatureToggle.Tests
             var sut = new MySqlFeatureToggle();
             sut.ToggleValueProvider = fakeProvider.Object;
 
-            Assert.IsTrue(sut.FeatureEnabled);
+            Assert.True(sut.FeatureEnabled);
         }
 
         private class MySqlFeatureToggle : SqlFeatureToggle { }

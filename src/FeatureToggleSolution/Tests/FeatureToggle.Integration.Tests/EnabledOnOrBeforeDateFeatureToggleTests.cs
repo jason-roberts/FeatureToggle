@@ -1,14 +1,14 @@
 ﻿using System;
 using JasonRoberts.FeatureToggle;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using Moq;
 
 namespace FeatureToggle.Integration.Tests
 {
-    [TestClass]
+    
     public class EnabledOnOrBeforeDateFeatureToggleTests
     {
-        [TestMethod]
+        [Fact]
         public void ShouldBeEnabledBeforeDate()
         {
             var mockDate = new Mock<INowDateAndTime>();
@@ -17,11 +17,11 @@ namespace FeatureToggle.Integration.Tests
 
             var sut = new NewYearsDay2000 { NowProvider = mockDate.Object };
 
-            Assert.IsTrue(sut.FeatureEnabled);
+            Assert.True(sut.FeatureEnabled);
         }
 
 
-        [TestMethod]
+        [Fact]
         public void ShouldBeEnabledOnDate()
         {
             var mockDate = new Mock<INowDateAndTime>();
@@ -30,11 +30,11 @@ namespace FeatureToggle.Integration.Tests
 
             var sut = new NewYearsDay2000 { NowProvider = mockDate.Object };
 
-            Assert.IsTrue(sut.FeatureEnabled);
+            Assert.True(sut.FeatureEnabled);
         }
 
 
-        [TestMethod]
+        [Fact]
         public void ShouldBeDisabledAfterDate()
         {
             var mockDate = new Mock<INowDateAndTime>();
@@ -43,7 +43,7 @@ namespace FeatureToggle.Integration.Tests
 
             var sut = new NewYearsDay2000 { NowProvider = mockDate.Object };
 
-            Assert.IsFalse(sut.FeatureEnabled);
+            Assert.False(sut.FeatureEnabled);
         }
 
 

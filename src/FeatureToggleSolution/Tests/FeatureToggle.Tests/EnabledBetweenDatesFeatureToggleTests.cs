@@ -1,13 +1,13 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 using Moq;
 using System;
 
 namespace JasonRoberts.FeatureToggle.Tests
 {
-    [TestClass]
+    
     public class EnabledBetweenDatesFeatureToggleTests
     {
-        [TestMethod]
+        [Fact]
         public void ShouldDisableFeatureAfterToggleTimePeriod()
         {
             var expectedNow = DateTime.Now;
@@ -26,10 +26,10 @@ namespace JasonRoberts.FeatureToggle.Tests
             sut.NowProvider = fakeNowProvider.Object;
             sut.ToggleValueProvider = fakeToggleValueProvider.Object;
 
-            Assert.IsFalse(sut.FeatureEnabled);
+            Assert.False(sut.FeatureEnabled);
         }
 
-        [TestMethod]
+        [Fact]
         public void ShouldDisableFeatureBeforeToggleTimePeriod()
         {
             var expectedNow = DateTime.Now;
@@ -48,10 +48,10 @@ namespace JasonRoberts.FeatureToggle.Tests
             sut.NowProvider = fakeNowProvider.Object;
             sut.ToggleValueProvider = fakeToggleValueProvider.Object;
 
-            Assert.IsFalse(sut.FeatureEnabled);
+            Assert.False(sut.FeatureEnabled);
         }
 
-        [TestMethod]
+        [Fact]
         public void ShouldEnableFeatureDuringToggleTimePeriod()
         {
             var expectedNow = DateTime.Now;
@@ -70,10 +70,10 @@ namespace JasonRoberts.FeatureToggle.Tests
             sut.NowProvider = fakeNowProvider.Object;
             sut.ToggleValueProvider = fakeToggleValueProvider.Object;
 
-            Assert.IsTrue(sut.FeatureEnabled);
+            Assert.True(sut.FeatureEnabled);
         }
 
-        [TestMethod]
+        [Fact]
         public void ShouldEnableFeatureOnEndOfToggleTimePeriod()
         {
             var expectedNow = DateTime.Now;
@@ -92,10 +92,10 @@ namespace JasonRoberts.FeatureToggle.Tests
             sut.NowProvider = fakeNowProvider.Object;
             sut.ToggleValueProvider = fakeToggleValueProvider.Object;
 
-            Assert.IsTrue(sut.FeatureEnabled);
+            Assert.True(sut.FeatureEnabled);
         }
 
-        [TestMethod]
+        [Fact]
         public void ShouldEnableFeatureOnStartOfToggleTimePeriod()
         {
             var expectedNow = DateTime.Now;
@@ -114,7 +114,7 @@ namespace JasonRoberts.FeatureToggle.Tests
             sut.NowProvider = fakeNowProvider.Object;
             sut.ToggleValueProvider = fakeToggleValueProvider.Object;
 
-            Assert.IsTrue(sut.FeatureEnabled);
+            Assert.True(sut.FeatureEnabled);
         }
 
         private class MyEnabledBetweenDatesFeatureToggle : EnabledBetweenDatesFeatureToggle { }

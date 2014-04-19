@@ -1,49 +1,50 @@
 ﻿using System.Configuration;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
+
 
 namespace JasonRoberts.FeatureToggle.Tests
 {
-    [TestClass]
+    
     public class BooleanSqlServerProviderTests
     {
-        [TestMethod]
+        [Fact]
         public void ShouldReadBooleanTrueFromSqlServer()
         {            
             var sut = new BooleanSqlServerProvider();
 
             var toggle = new MySqlServerToggleTrue();
 
-            Assert.IsTrue(sut.EvaluateBooleanToggleValue(toggle));
+            Assert.True(sut.EvaluateBooleanToggleValue(toggle));
         }
 
 
-        [TestMethod]
+        [Fact]
         public void ShouldReadBooleanFalseFromSqlServer()
         {
             var sut = new BooleanSqlServerProvider();
 
             var toggle = new MySqlServerToggleFalse();
 
-            Assert.IsTrue(sut.EvaluateBooleanToggleValue(toggle));
+            Assert.True(sut.EvaluateBooleanToggleValue(toggle));
         }
 
 
 
-        [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
+        [Fact]
         public void ShouldErrorWhenConnectionsStringNotInConfig()
         {
             var sut = new MissingConnectionStringSqlServerToggle();
 
-            var x = sut.FeatureEnabled;
+            Assert.Throws<ConfigurationErrorsException>(() => sut.FeatureEnabled);            
         }
 
 
-        [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
+        [Fact]
         public void ShouldErrorWhenSqlStatementNotInConfig()
         {
             var sut = new MissingSqlStatementSqlServerToggle();
 
-            var x = sut.FeatureEnabled;
+            Assert.Throws<ConfigurationErrorsException>(() => sut.FeatureEnabled);            
         }
 
    

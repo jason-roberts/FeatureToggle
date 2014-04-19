@@ -1,15 +1,15 @@
 ﻿using JasonRoberts.FeatureToggle;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace FeatureToggle.Integration.Tests
 {
-    [TestClass]
+    
     public class FeatureToggleAppSettingsTests
     {
-        [TestMethod]
+        [Fact]
         public void ShouldUseConvetionToGetValueFromAppConfig()
         {
-            Assert.IsTrue(new ConventionOverConfigurationToggle().FeatureEnabled);
+            Assert.True(new ConventionOverConfigurationToggle().FeatureEnabled);
         }
 
         private class ConventionOverConfigurationToggle : SimpleFeatureToggle {}

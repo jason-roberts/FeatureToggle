@@ -1,15 +1,14 @@
 ﻿using System.Windows;
 using JasonRoberts.FeatureToggle;
 using JasonRoberts.FeatureToggle.WpfExtensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Xunit;
 
 namespace FeatureToggle.Wpf.Tests
 {
-    [TestClass]
     public class FeatureToggleToVisibilityConverterTests
     {
-        [TestMethod]
+        [Fact]
         public void ShouldCovertTrueToVisisble()
         {
             var mockValueProvider = new Mock<IBooleanToggleValueProvider>();
@@ -25,7 +24,7 @@ namespace FeatureToggle.Wpf.Tests
 
             var result = sut.Convert(toggle, typeof(Visibility), null, null);
 
-            Assert.AreEqual(Visibility.Visible, result);
+            Assert.Equal(Visibility.Visible, result);
         }
 
         private class MyBooleanFeatureToggle : SimpleFeatureToggle { }

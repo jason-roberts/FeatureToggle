@@ -1,26 +1,26 @@
 ﻿using System;
 using System.Configuration;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace JasonRoberts.FeatureToggle.Tests
 {
-    [TestClass]
+    
     public class AppSettingsProviderTests
     {
 
         #region "boolean toggle tests"
 
-        [TestMethod]
+        [Fact]
         public void ShouldReadBooleanTrueFromConfig()
         {
-            Assert.IsTrue(new AppSettingsProvider().EvaluateBooleanToggleValue( new SimpleFeatureTrue()));
+            Assert.True(new AppSettingsProvider().EvaluateBooleanToggleValue( new SimpleFeatureTrue()));
         }
 
 
-        [TestMethod]
+        [Fact]
         public void ShouldReadBooleanFalseFromConfig()
         {
-            Assert.IsFalse(new AppSettingsProvider().EvaluateBooleanToggleValue(new SimpleFeatureFalse()));
+            Assert.False(new AppSettingsProvider().EvaluateBooleanToggleValue(new SimpleFeatureFalse()));
         }
 
 
@@ -31,10 +31,11 @@ namespace JasonRoberts.FeatureToggle.Tests
 
         #region "single date tests"
 
-        [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
+        [Fact]
         public void ShouldErrorWhenBadDateFormat()
         {
-            new AppSettingsProvider().EvaluateDateTimeToggleValue(new InvalidDateFormat());
+            Assert.Throws<ConfigurationErrorsException>(
+                () => new AppSettingsProvider().EvaluateDateTimeToggleValue(new InvalidDateFormat()));
         }
 
 
@@ -45,7 +46,7 @@ namespace JasonRoberts.FeatureToggle.Tests
 
         #region "time range config test"
 
-        [TestMethod]
+        [Fact]
         public void ShouldReadTimePeriodFromConfig()
         {
             ITimePeriodProvider sut = new AppSettingsProvider();
@@ -55,42 +56,56 @@ namespace JasonRoberts.FeatureToggle.Tests
             var expected = new Tuple<DateTime, DateTime>(new DateTime(2050, 1, 2, 4, 5, 8),
                                                          new DateTime(2099, 8, 7, 6, 5, 4));
 
-            Assert.AreEqual(expected, periodFromConfig);
+            Assert.Equal(expected, periodFromConfig);
         }
 
 
-        [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
+        [Fact]
         public void ShouldErrorWhenStartDateAfterEndDate()
         {
-            new AppSettingsProvider().EvaluateTimePeriod(new AppSettingsProviderTestsShouldErrorWhenStartDateAfterEndDate());            
+            Assert.Throws<ConfigurationErrorsException>(
+                () =>
+                    new AppSettingsProvider().EvaluateTimePeriod(
+                        new AppSettingsProviderTestsShouldErrorWhenStartDateAfterEndDate()));
+
         }
 
 
-        [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
+        [Fact]
         public void ShouldErrorWhenStartDateAndEndDateAreTheSame()
         {
-            new AppSettingsProvider().EvaluateTimePeriod(new AppSettingsProviderTestsShouldErrorWhenStartDateAndEndDateAreTheSame());            
+            Assert.Throws<ConfigurationErrorsException>(
+                () =>
+                    new AppSettingsProvider().EvaluateTimePeriod(
+                        new AppSettingsProviderTestsShouldErrorWhenStartDateAndEndDateAreTheSame()));
         }
 
 
-        [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
+        [Fact]
         public void ShouldErrorWhenFormatInConfigIsWrong()
         {
-            new AppSettingsProvider().EvaluateTimePeriod(new AppSettingsProviderTestsShouldErrorWhenFormatInConfigIsWrong());
+            Assert.Throws<ConfigurationErrorsException>(
+                () =>
+                    new AppSettingsProvider().EvaluateTimePeriod(
+                        new AppSettingsProviderTestsShouldErrorWhenFormatInConfigIsWrong()));
         }
 
 
-        [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
+        [Fact]
         public void ShouldErrorWhenKeyNotInConfig()
         {
-            new AppSettingsProvider().EvaluateBooleanToggleValue(new NotInConfig());            
+            Assert.Throws<ConfigurationErrorsException>(
+                () =>
+                    new AppSettingsProvider().EvaluateBooleanToggleValue(new NotInConfig()));
         }
 
 
-        [TestMethod, ExpectedException(typeof(ConfigurationErrorsException))]
+        [Fact]
         public void ShouldErrorWhenCannotConvertConfig()
         {
-            new AppSettingsProvider().EvaluateBooleanToggleValue(new NotASimpleValue());
+            Assert.Throws<ConfigurationErrorsException>(
+                () =>
+                    new AppSettingsProvider().EvaluateBooleanToggleValue(new NotASimpleValue()));
         }
 
 

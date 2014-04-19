@@ -1,16 +1,16 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 
 namespace JasonRoberts.FeatureToggle.Tests
 {
-    [TestClass]
+    
     public class AlwaysOnFeatureToggleTests
     {
-        [TestMethod]
+        [Fact]
         public void ShouldReturnAlwaysOn()
         {
             var sut = new MyAlwaysOnFeatureToggle();
 
-            Assert.IsTrue(sut.FeatureEnabled);
+            Assert.True(sut.FeatureEnabled);
         }
 
         private class MyAlwaysOnFeatureToggle : AlwaysOnFeatureToggle {}

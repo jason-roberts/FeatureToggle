@@ -1,11 +1,11 @@
 ﻿using System;
 using JasonRoberts.FeatureToggle;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using Moq;
 
 namespace FeatureToggle.Integration.Tests
 {
-    [TestClass]
+    
     public class EnabledBetweenDatesFeatureToggleTests
     {
         private readonly DateTime _startDate = new DateTime(2012, 1, 1, 0, 0, 0, 0);
@@ -17,57 +17,57 @@ namespace FeatureToggle.Integration.Tests
         private readonly AllOf2012 _sut = new AllOf2012 {NowProvider = MockDate.Object};
 
 
-        [TestMethod]
+        [Fact]
         public void ShouldBeEnabledOnStartDate()
         {            
             MockDate.SetupGet(x => x.Now).Returns(_startDate);
 
-            Assert.IsTrue(_sut.FeatureEnabled);
+            Assert.True(_sut.FeatureEnabled);
         }
 
 
-        [TestMethod]
+        [Fact]
         public void ShouldBeEnabledOnEndDate()
         {
             MockDate.SetupGet(x => x.Now).Returns(_endDate);
 
-            Assert.IsTrue(_sut.FeatureEnabled);
+            Assert.True(_sut.FeatureEnabled);
         }
 
 
-        [TestMethod]
+        [Fact]
         public void ShouldBeEnabledJustBeforeEndDate()
         {
             MockDate.SetupGet(x => x.Now).Returns(_endDate.AddMilliseconds(-1));
 
-            Assert.IsTrue(_sut.FeatureEnabled);
+            Assert.True(_sut.FeatureEnabled);
         }
 
 
-        [TestMethod]
+        [Fact]
         public void ShouldBeEnabledJustAfterStartDate()
         {
             MockDate.SetupGet(x => x.Now).Returns(_startDate.AddMilliseconds(1));
 
-            Assert.IsTrue(_sut.FeatureEnabled);
+            Assert.True(_sut.FeatureEnabled);
         }
 
 
-        [TestMethod]
+        [Fact]
         public void ShouldBeDisabledJustBeforeStartDate()
         {
             MockDate.SetupGet(x => x.Now).Returns(_startDate.AddMilliseconds(-1));
 
-            Assert.IsFalse(_sut.FeatureEnabled);
+            Assert.False(_sut.FeatureEnabled);
         }
 
 
-        [TestMethod]
+        [Fact]
         public void ShouldBeDisabledJustAfterEndDate()
         {
             MockDate.SetupGet(x => x.Now).Returns(_endDate.AddMilliseconds(1));
 
-            Assert.IsFalse(_sut.FeatureEnabled);
+            Assert.False(_sut.FeatureEnabled);
         }
       
 
