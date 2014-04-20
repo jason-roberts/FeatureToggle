@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using FeatureToggle.Core;
 
-namespace JasonRoberts.FeatureToggle
+namespace FeatureToggle.Providers
 {
     public class BooleanSqlServerProvider : IBooleanToggleValueProvider
     {

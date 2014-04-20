@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using FeatureToggle.Core;
 
-namespace JasonRoberts.FeatureToggle
+namespace FeatureToggle.Providers
 {
     public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider, ITimePeriodProvider
     {

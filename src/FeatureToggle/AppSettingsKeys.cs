@@ -1,4 +1,4 @@
-﻿namespace JasonRoberts.FeatureToggle
+﻿namespace FeatureToggle
 {
     public static class AppSettingsKeys
     {

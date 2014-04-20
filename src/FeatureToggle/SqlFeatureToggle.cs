@@ -1,6 +1,7 @@
 ﻿using FeatureToggle.Core;
+using FeatureToggle.Providers;
 
-namespace JasonRoberts.FeatureToggle
+namespace FeatureToggle
 {
     public abstract class SqlFeatureToggle : IFeatureToggle
     {

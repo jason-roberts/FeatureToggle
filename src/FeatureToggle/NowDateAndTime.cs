@@ -1,7 +1,7 @@
 ﻿using System;
 using FeatureToggle.Core;
 
-namespace JasonRoberts.FeatureToggle
+namespace FeatureToggle
 {
     public class NowDateAndTime : INowDateAndTime
     {

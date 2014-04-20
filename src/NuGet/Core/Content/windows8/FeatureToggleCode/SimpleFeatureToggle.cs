@@ -5,10 +5,11 @@
 //#if (WINDOWS_PHONE)
 //    using JasonRoberts.FeatureToggle.Wp7;
 //#endif
+
 using FeatureToggle.Core;
+using FeatureToggle.Providers;
 
-
-namespace JasonRoberts.FeatureToggle
+namespace FeatureToggle
 {
     public abstract class SimpleFeatureToggle : IFeatureToggle
     {
