@@ -1,8 +1,8 @@
 ﻿using System;
-
 #if (WINDOWS_PHONE)
 using JasonRoberts.FeatureToggle.Wp7;
 #endif
+using FeatureToggle.Core;
 
 namespace JasonRoberts.FeatureToggle
 {

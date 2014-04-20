@@ -1,10 +1,11 @@
-﻿#if (NETFX_CORE)
-    using FeatureToggle.WinRT;
-#endif
+﻿//#if (NETFX_CORE)
+//    using FeatureToggle.WinRT;
+//#endif
 
-#if (WINDOWS_PHONE)
-    using JasonRoberts.FeatureToggle.Wp7;
-#endif
+//#if (WINDOWS_PHONE)
+//    using JasonRoberts.FeatureToggle.Wp7;
+//#endif
+using FeatureToggle.Core;
 
 
 namespace JasonRoberts.FeatureToggle
@@ -13,18 +14,18 @@ namespace JasonRoberts.FeatureToggle
     {
         protected SimpleFeatureToggle()
         {
-#if (WINDOWS_PHONE)
+//#if (WINDOWS_PHONE)
 
-            BooleanToggleValueProvider = new WindowsPhone7ApplicationResourcesSettingsProvider();
+//            BooleanToggleValueProvider = new WindowsPhone7ApplicationResourcesSettingsProvider();
 
-#elif (NETFX_CORE)
+//#elif (NETFX_CORE)
 
-            BooleanToggleValueProvider = new WindowsStoreLocalSettingsProvider();
+//            BooleanToggleValueProvider = new WindowsStoreLocalSettingsProvider();
 
-#else
+//#else
 
             BooleanToggleValueProvider = new AppSettingsProvider();
-#endif
+//#endif
         }
 
 

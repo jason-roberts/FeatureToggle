@@ -146,12 +146,6 @@
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FeatureToggle.Wp7\FeatureToggle.Wp7.csproj">
-      <Project>{33333E5F-AA98-4B08-8078-8394C5285FAA}</Project>
-      <Name>FeatureToggle.Wp7</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
