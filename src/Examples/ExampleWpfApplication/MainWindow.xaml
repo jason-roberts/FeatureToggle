@@ -1,15 +1,15 @@
 ﻿<Window x:Class="ExampleWpfApplication.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"        
-        xmlns:WpfExtensions="clr-namespace:JasonRoberts.FeatureToggle.WpfExtensions;assembly=JasonRoberts.FeatureToggle.WpfExtensions"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                
+        xmlns:wpfExtensions="clr-namespace:FeatureToggle.WpfExtensions;assembly=FeatureToggle.WpfExtensions"
         Title="Example of coarse grained (i.e. at the UI level) feature toggle." Height="350" Width="525">
     <Window.Resources>
-        <WpfExtensions:FeatureToggleToVisibilityConverter x:Key="toggleVisibilityConverer"/>
+        <wpfExtensions:FeatureToggleToVisibilityConverter x:Key="Converter"></wpfExtensions:FeatureToggleToVisibilityConverter>
     </Window.Resources>
     <Grid>
         <StackPanel>            
             <Button>Feature 1 - exisiting in production</Button>
-            <Button Visibility="{Binding Path=Feature2Toggle, Converter={StaticResource toggleVisibilityConverer}}">Feature 2 - still in development</Button>
+            <Button Visibility="{Binding Path=Feature2Toggle, Converter={StaticResource Converter}}">Feature 2 - still in development</Button>
             <TextBlock>Note that the feature2 button is not visible at runtime because it is disabled in the app config.</TextBlock>
         </StackPanel>
     </Grid>

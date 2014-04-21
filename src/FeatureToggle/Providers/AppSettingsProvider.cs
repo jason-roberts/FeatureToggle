@@ -8,7 +8,7 @@ namespace FeatureToggle.Providers
 {
     public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider, ITimePeriodProvider
     {
-        private const string ExpectedDateFormat = @"dd/MM/yyyy HH:mm:ss";
+        private const string ExpectedDateFormat = @"dd-MMM-yyyy HH:mm:ss";
 
         #region IToggleValueProvider Members
 

@@ -8,8 +8,8 @@
     <ProjectGuid>{B220599A-E786-446D-9C47-978C50CD48CF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JasonRoberts.FeatureToggle.WpfExtensions</RootNamespace>
-    <AssemblyName>JasonRoberts.FeatureToggle.WpfExtensions</AssemblyName>
+    <RootNamespace>FeatureToggle.WpfExtensions</RootNamespace>
+    <AssemblyName>FeatureToggle.WpfExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -49,9 +49,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FeatureToggle\FeatureToggle.csproj">
-      <Project>{C09F1554-F0DB-4A3E-9BD1-CCBC2AA1D6E1}</Project>
-      <Name>FeatureToggle</Name>
+    <ProjectReference Include="..\FeatureToggle.Core\FeatureToggle.Core.csproj">
+      <Project>{474aafb7-5560-412a-8c98-d5558d24a59e}</Project>
+      <Name>FeatureToggle.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
