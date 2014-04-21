@@ -49,10 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SharedAssemblyInfo.cs">
-      <Link>SharedAssemblyInfo.cs</Link>
-    </Compile>
     <Compile Include="AppSettingsKeys.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\AppSettingsProvider.cs" />
     <Compile Include="EnabledBetweenDatesFeatureToggle.cs" />
     <Compile Include="EnabledOnOrBeforeDateFeatureToggle.cs" />
@@ -62,9 +60,7 @@
     <Compile Include="SqlFeatureToggle.cs" />
     <Compile Include="Providers\BooleanSqlServerProvider.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\FeatureToggle.Core\FeatureToggle.Core.csproj">
       <Project>{474aafb7-5560-412a-8c98-d5558d24a59e}</Project>

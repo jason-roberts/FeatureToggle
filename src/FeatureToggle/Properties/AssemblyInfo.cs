@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Reflection;
 using System.Resources;
 
-[assembly: AssemblyTitle("FeatureToggle.Core")]
+[assembly: AssemblyTitle("FeatureToggle")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FeatureToggle.Core")]
+[assembly: AssemblyProduct("FeatureToggle")]
 [assembly: AssemblyCopyright("Copyright © 2014 Jason Roberts")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
