@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F2F32A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.Core", "FeatureToggle.Core\FeatureToggle.Core.csproj", "{474AAFB7-5560-412A-8C98-D5558D24A59E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleConsoleApplication", "Examples\ExampleConsoleApplication\ExampleConsoleApplication.csproj", "{72619394-8AEE-42F0-9621-623A1090EE34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,11 +66,26 @@ Global
 		{474AAFB7-5560-412A-8C98-D5558D24A59E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{474AAFB7-5560-412A-8C98-D5558D24A59E}.Release|x64.ActiveCfg = Release|Any CPU
 		{474AAFB7-5560-412A-8C98-D5558D24A59E}.Release|x86.ActiveCfg = Release|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Release|ARM.ActiveCfg = Release|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Release|x64.ActiveCfg = Release|Any CPU
+		{72619394-8AEE-42F0-9621-623A1090EE34}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{72619394-8AEE-42F0-9621-623A1090EE34} = {C0FE398E-F0F0-4346-A0E9-C2EFA1C4EBC9}
 		{C09F1554-F0DB-4A3E-9BD1-CCBC2AA1D6E1} = {CCA826B0-BBAB-4A04-AB87-B1C3028849BF}
 		{474AAFB7-5560-412A-8C98-D5558D24A59E} = {CCA826B0-BBAB-4A04-AB87-B1C3028849BF}
 	EndGlobalSection
