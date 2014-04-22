@@ -6,11 +6,10 @@ using FeatureToggle.Core;
 
 namespace FeatureToggle.Providers
 {
-    public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider, ITimePeriodProvider
+    public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider,
+        ITimePeriodProvider
     {
         private const string ExpectedDateFormat = @"dd-MMM-yyyy HH:mm:ss";
-
-        #region IToggleValueProvider Members
 
         public bool EvaluateBooleanToggleValue(IFeatureToggle toggle)
         {
@@ -18,47 +17,13 @@ namespace FeatureToggle.Providers
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
                 throw new ConfigurationErrorsException(string.Format("The key '{0}' was not found in AppSettings",
-                                                                     toggleNameInConfig));
+                    toggleNameInConfig));
 
             var configValue = ConfigurationManager.AppSettings[toggleNameInConfig];
 
             return ParseConfigString(configValue, toggleNameInConfig);
         }
 
-        #endregion
-
-        private bool ParseConfigString(string valueToParse, string configKey)
-        {
-            try
-            {
-                return Boolean.Parse(valueToParse);
-            }
-            catch (Exception ex)
-            {
-                throw new ConfigurationErrorsException(
-                    string.Format("The value '{0}' cannot be converted to a boolean as defined in config key '{1}'",
-                                  valueToParse, configKey),
-                    ex);
-            }
-        }
-
-
-
-        private DateTime ParseDateTimeConfigString(string valueToParse, string configKey)
-        {
-            try
-            {
-
-                return DateTime.ParseExact(valueToParse, ExpectedDateFormat,CultureInfo.InvariantCulture);
-            }
-            catch (Exception ex)
-            {
-                throw new ConfigurationErrorsException(
-                    string.Format("The value '{0}' cannot be converted to a DateTime as defined in config key '{1}'. The expected format is: {2}",
-                                  valueToParse, configKey, ExpectedDateFormat),
-                    ex);
-            }
-        }
 
         public DateTime EvaluateDateTimeToggleValue(IFeatureToggle toggle)
         {
@@ -66,7 +31,7 @@ namespace FeatureToggle.Providers
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
                 throw new ConfigurationErrorsException(string.Format("The key '{0}' was not found in AppSettings",
-                                                                     toggleNameInConfig));
+                    toggleNameInConfig));
 
             var configValue = ConfigurationManager.AppSettings[toggleNameInConfig];
 
@@ -80,15 +45,15 @@ namespace FeatureToggle.Providers
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
                 throw new ConfigurationErrorsException(string.Format("The key '{0}' was not found in AppSettings",
-                                                                     toggleNameInConfig));
+                    toggleNameInConfig));
 
 
             DateTime startDate;
-            DateTime endDate;            
+            DateTime endDate;
 
             try
             {
-                var configValues = ConfigurationManager.AppSettings[toggleNameInConfig].Split(new[] { '|' });
+                var configValues = ConfigurationManager.AppSettings[toggleNameInConfig].Split(new[] {'|'});
 
 
                 startDate = DateTime.ParseExact(configValues[0].Trim(), ExpectedDateFormat, CultureInfo.InvariantCulture);
@@ -96,13 +61,50 @@ namespace FeatureToggle.Providers
             }
             catch (Exception ex)
             {
-                throw new ConfigurationErrorsException(string.Format("Configuration for {0} is invalid - date range should be specified like: '02/01/2050 04:05:08 | 07/08/2099 06:05:04'", toggleNameInConfig), ex); 
+                throw new ConfigurationErrorsException(
+                    string.Format(
+                        "Configuration for {0} is invalid - date range should be specified like: '02-Jan-2050 04:05:08 | 07-Aug-2099 06:05:04'",
+                        toggleNameInConfig), ex);
             }
 
             if (startDate >= endDate)
-                throw new ConfigurationErrorsException(string.Format("Configuration for {0} is invalid - the start date must be less then the end date",toggleNameInConfig));
+                throw new ConfigurationErrorsException(
+                    string.Format("Configuration for {0} is invalid - the start date must be less then the end date",
+                        toggleNameInConfig));
 
             return new Tuple<DateTime, DateTime>(startDate, endDate);
+        }
+
+        private bool ParseConfigString(string valueToParse, string configKey)
+        {
+            try
+            {
+                return Boolean.Parse(valueToParse);
+            }
+            catch (Exception ex)
+            {
+                throw new ConfigurationErrorsException(
+                    string.Format("The value '{0}' cannot be converted to a boolean as defined in config key '{1}'",
+                        valueToParse, configKey),
+                    ex);
+            }
+        }
+
+
+        private DateTime ParseDateTimeConfigString(string valueToParse, string configKey)
+        {
+            try
+            {
+                return DateTime.ParseExact(valueToParse, ExpectedDateFormat, CultureInfo.InvariantCulture);
+            }
+            catch (Exception ex)
+            {
+                throw new ConfigurationErrorsException(
+                    string.Format(
+                        "The value '{0}' cannot be converted to a DateTime as defined in config key '{1}'. The expected format is: {2}",
+                        valueToParse, configKey, ExpectedDateFormat),
+                    ex);
+            }
         }
     }
 }
