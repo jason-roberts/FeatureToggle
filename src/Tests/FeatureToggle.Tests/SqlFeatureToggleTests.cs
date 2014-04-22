@@ -1,12 +1,22 @@
-﻿using Xunit;
+﻿using FeatureToggle.Core;
+using FeatureToggle.Providers;
+using FeatureToggle.Toggles;
 using Moq;
+using Xunit;
 
-
-namespace JasonRoberts.FeatureToggle.Tests
-{
-    
+namespace FeatureToggle.Tests
+{    
     public class SqlFeatureToggleTests
     {
+        [Fact]
+        public void ShouldHaveDefaultProvider()
+        {
+            var sut = new MySqlFeatureToggle();
+
+            Assert.Equal(typeof(BooleanSqlServerProvider), sut.ToggleValueProvider.GetType());
+        }
+
+
         [Fact]
         public void ShouldDisableFeatureWhenToggleValueIsFalse()
         {

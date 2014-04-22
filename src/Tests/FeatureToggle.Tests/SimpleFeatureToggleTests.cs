@@ -1,11 +1,21 @@
-﻿using Xunit;
+﻿using FeatureToggle.Core;
+using FeatureToggle.Providers;
+using FeatureToggle.Toggles;
 using Moq;
+using Xunit;
 
-namespace JasonRoberts.FeatureToggle.Tests
-{
-    
+namespace FeatureToggle.Tests
+{    
     public class SimpleFeatureToggleTests
     {
+        [Fact]
+        public void ShouldHaveDefaultProvider()
+        {
+            var sut = new MySimpleFeatureToggle();
+
+            Assert.Equal(typeof(AppSettingsProvider), sut.ToggleValueProvider.GetType());
+        }
+
         [Fact]
         public void ShouldSetOptionalProviderOnCreation()
         {
@@ -14,7 +24,7 @@ namespace JasonRoberts.FeatureToggle.Tests
             fakeProvider.Setup(x => x.EvaluateBooleanToggleValue(It.IsAny<SimpleFeatureToggle>())).Returns(true);
 
             var sut = new MySimpleFeatureToggle();
-            sut.BooleanToggleValueProvider = fakeProvider.Object;
+            sut.ToggleValueProvider = fakeProvider.Object;
 
             Assert.Equal(true, sut.FeatureEnabled);
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using FeatureToggle;
+using FeatureToggle.Toggles;
 
 namespace ExampleConsoleApplication
 {

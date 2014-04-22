@@ -1,10 +1,11 @@
 ﻿//#if (WINDOWS_PHONE)
 //using JasonRoberts.FeatureToggle.Wp7;
 //#endif
+
 using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
-namespace FeatureToggle
+namespace FeatureToggle.Toggles
 {
     public abstract class EnabledOnOrAfterDateFeatureToggle : IFeatureToggle
     {        

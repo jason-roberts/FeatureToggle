@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Configuration;
+using FeatureToggle.Core;
+using FeatureToggle.Providers;
+using FeatureToggle.Toggles;
 using Xunit;
 
-namespace JasonRoberts.FeatureToggle.Tests
+namespace FeatureToggle.Integration.Tests
 {
-    
     public class AppSettingsProviderTests
     {
-
         #region "boolean toggle tests"
 
         [Fact]
         public void ShouldReadBooleanTrueFromConfig()
         {
-            Assert.True(new AppSettingsProvider().EvaluateBooleanToggleValue( new SimpleFeatureTrue()));
+            Assert.True(new AppSettingsProvider().EvaluateBooleanToggleValue(new SimpleFeatureTrue()));
         }
 
 
@@ -23,11 +24,7 @@ namespace JasonRoberts.FeatureToggle.Tests
             Assert.False(new AppSettingsProvider().EvaluateBooleanToggleValue(new SimpleFeatureFalse()));
         }
 
-
         #endregion
-
-
-
 
         #region "single date tests"
 
@@ -38,11 +35,7 @@ namespace JasonRoberts.FeatureToggle.Tests
                 () => new AppSettingsProvider().EvaluateDateTimeToggleValue(new InvalidDateFormat()));
         }
 
-
         #endregion
-
-
-
 
         #region "time range config test"
 
@@ -51,10 +44,10 @@ namespace JasonRoberts.FeatureToggle.Tests
         {
             ITimePeriodProvider sut = new AppSettingsProvider();
 
-            var periodFromConfig = sut.EvaluateTimePeriod(new AppSettingsProviderTestsTimePeriod());
+            var periodFromConfig = sut.EvaluateTimePeriod(new TimePeriod());
 
             var expected = new Tuple<DateTime, DateTime>(new DateTime(2050, 1, 2, 4, 5, 8),
-                                                         new DateTime(2099, 8, 7, 6, 5, 4));
+                new DateTime(2099, 8, 7, 6, 5, 4));
 
             Assert.Equal(expected, periodFromConfig);
         }
@@ -66,8 +59,7 @@ namespace JasonRoberts.FeatureToggle.Tests
             Assert.Throws<ConfigurationErrorsException>(
                 () =>
                     new AppSettingsProvider().EvaluateTimePeriod(
-                        new AppSettingsProviderTestsShouldErrorWhenStartDateAfterEndDate()));
-
+                        new StartDateAfterEndDate()));
         }
 
 
@@ -77,7 +69,7 @@ namespace JasonRoberts.FeatureToggle.Tests
             Assert.Throws<ConfigurationErrorsException>(
                 () =>
                     new AppSettingsProvider().EvaluateTimePeriod(
-                        new AppSettingsProviderTestsShouldErrorWhenStartDateAndEndDateAreTheSame()));
+                        new StartDateAndEndDateAreTheSame()));
         }
 
 
@@ -87,7 +79,7 @@ namespace JasonRoberts.FeatureToggle.Tests
             Assert.Throws<ConfigurationErrorsException>(
                 () =>
                     new AppSettingsProvider().EvaluateTimePeriod(
-                        new AppSettingsProviderTestsShouldErrorWhenFormatInConfigIsWrong()));
+                        new FormatInConfigIsWrong()));
         }
 
 
@@ -103,24 +95,50 @@ namespace JasonRoberts.FeatureToggle.Tests
         [Fact]
         public void ShouldErrorWhenCannotConvertConfig()
         {
-            Assert.Throws<ConfigurationErrorsException>(
+            var ex = Assert.Throws<ConfigurationErrorsException>(
                 () =>
-                    new AppSettingsProvider().EvaluateBooleanToggleValue(new NotASimpleValue()));
-        }
+                    new AppSettingsProvider().EvaluateBooleanToggleValue(new NotABooleanValue()));
 
+            Assert.Equal(typeof(FormatException), ex.InnerException.GetType());
+        }
 
         #endregion
 
-        private class SimpleFeatureTrue : SimpleFeatureToggle{}
-        private class SimpleFeatureFalse : SimpleFeatureToggle { }
-        private class NotInConfig : SimpleFeatureToggle { }
-        private class NotASimpleValue : SimpleFeatureToggle { }
+        private class FormatInConfigIsWrong : EnabledBetweenDatesFeatureToggle
+        {
+        }
 
-        private class InvalidDateFormat : EnabledOnOrAfterDateFeatureToggle{};
+        private class StartDateAfterEndDate : EnabledBetweenDatesFeatureToggle
+        {
+        }
 
-        private class AppSettingsProviderTestsTimePeriod : EnabledBetweenDatesFeatureToggle { }
-        private class AppSettingsProviderTestsShouldErrorWhenStartDateAfterEndDate : EnabledBetweenDatesFeatureToggle { }
-        private class AppSettingsProviderTestsShouldErrorWhenStartDateAndEndDateAreTheSame : EnabledBetweenDatesFeatureToggle { }
-        private class AppSettingsProviderTestsShouldErrorWhenFormatInConfigIsWrong : EnabledBetweenDatesFeatureToggle { }                            
+        private class StartDateAndEndDateAreTheSame :
+            EnabledBetweenDatesFeatureToggle
+        {
+        }
+
+        private class TimePeriod : EnabledBetweenDatesFeatureToggle
+        {
+        }
+
+        private class InvalidDateFormat : EnabledOnOrAfterDateFeatureToggle
+        {
+        };
+
+        private class NotABooleanValue : SimpleFeatureToggle
+        {
+        }
+
+        private class NotInConfig : SimpleFeatureToggle
+        {
+        }
+
+        private class SimpleFeatureFalse : SimpleFeatureToggle
+        {
+        }
+
+        private class SimpleFeatureTrue : SimpleFeatureToggle
+        {
+        }
     }
 }

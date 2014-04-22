@@ -1,10 +1,10 @@
 ﻿using System.Configuration;
+using FeatureToggle.Providers;
+using FeatureToggle.Toggles;
 using Xunit;
 
-
-namespace JasonRoberts.FeatureToggle.Tests
-{
-    
+namespace FeatureToggle.Integration.Tests
+{    
     public class BooleanSqlServerProviderTests
     {
         [Fact]

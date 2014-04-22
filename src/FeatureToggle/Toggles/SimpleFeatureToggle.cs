@@ -9,7 +9,7 @@
 using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
-namespace FeatureToggle
+namespace FeatureToggle.Toggles
 {
     public abstract class SimpleFeatureToggle : IFeatureToggle
     {
@@ -17,25 +17,25 @@ namespace FeatureToggle
         {
 //#if (WINDOWS_PHONE)
 
-//            BooleanToggleValueProvider = new WindowsPhone7ApplicationResourcesSettingsProvider();
+//            ToggleValueProvider = new WindowsPhone7ApplicationResourcesSettingsProvider();
 
 //#elif (NETFX_CORE)
 
-//            BooleanToggleValueProvider = new WindowsStoreLocalSettingsProvider();
+//            ToggleValueProvider = new WindowsStoreLocalSettingsProvider();
 
 //#else
 
-            BooleanToggleValueProvider = new AppSettingsProvider();
+            ToggleValueProvider = new AppSettingsProvider();
 //#endif
         }
 
 
-        public IBooleanToggleValueProvider BooleanToggleValueProvider { get; set; }
+        public IBooleanToggleValueProvider ToggleValueProvider { get; set; }
 
 
         public bool FeatureEnabled
         {
-            get { return BooleanToggleValueProvider.EvaluateBooleanToggleValue(this); }
+            get { return ToggleValueProvider.EvaluateBooleanToggleValue(this); }
         }
 
         public override string ToString()

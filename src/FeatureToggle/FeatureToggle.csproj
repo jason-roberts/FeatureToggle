@@ -52,12 +52,12 @@
     <Compile Include="AppSettingsKeys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\AppSettingsProvider.cs" />
-    <Compile Include="EnabledBetweenDatesFeatureToggle.cs" />
-    <Compile Include="EnabledOnOrBeforeDateFeatureToggle.cs" />
-    <Compile Include="EnabledOnOrAfterDateFeatureToggle.cs" />
+    <Compile Include="Toggles\EnabledBetweenDatesFeatureToggle.cs" />
+    <Compile Include="Toggles\EnabledOnOrBeforeDateFeatureToggle.cs" />
+    <Compile Include="Toggles\EnabledOnOrAfterDateFeatureToggle.cs" />
     <Compile Include="NowDateAndTime.cs" />
-    <Compile Include="SimpleFeatureToggle.cs" />
-    <Compile Include="SqlFeatureToggle.cs" />
+    <Compile Include="Toggles\SimpleFeatureToggle.cs" />
+    <Compile Include="Toggles\SqlFeatureToggle.cs" />
     <Compile Include="Providers\BooleanSqlServerProvider.cs" />
   </ItemGroup>
   <ItemGroup />
@@ -71,11 +71,11 @@
   <PropertyGroup>
     <PostBuildEvent>copy $(TargetPath) $(SolutionDir)NuGet\Core\lib\net40
 
-copy $(ProjectDir)AlwaysOffFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
-copy $(ProjectDir)AlwaysOnFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
-copy $(ProjectDir)IBooleanToggleValueProvider.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
-copy $(ProjectDir)IFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
-copy $(ProjectDir)SimpleFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode</PostBuildEvent>
+rem copy $(ProjectDir)AlwaysOffFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
+rem copy $(ProjectDir)AlwaysOnFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
+rem copy $(ProjectDir)IBooleanToggleValueProvider.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
+rem copy $(ProjectDir)IFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
+rem copy $(ProjectDir)SimpleFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

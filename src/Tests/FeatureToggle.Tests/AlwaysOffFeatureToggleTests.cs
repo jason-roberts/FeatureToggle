@@ -1,8 +1,8 @@
-﻿using Xunit;
+﻿using FeatureToggle.Core;
+using Xunit;
 
-namespace JasonRoberts.FeatureToggle.Tests
-{
-    
+namespace FeatureToggle.Tests
+{    
     public class AlwaysOffFeatureToggleTests
     {
         [Fact]

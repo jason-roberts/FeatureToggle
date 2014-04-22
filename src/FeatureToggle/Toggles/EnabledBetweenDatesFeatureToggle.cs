@@ -6,7 +6,7 @@
 using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
-namespace FeatureToggle
+namespace FeatureToggle.Toggles
 {
     public abstract class EnabledBetweenDatesFeatureToggle : IFeatureToggle
     {

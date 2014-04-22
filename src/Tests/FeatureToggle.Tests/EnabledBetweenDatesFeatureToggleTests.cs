@@ -1,12 +1,22 @@
-﻿using Xunit;
+﻿using System;
+using FeatureToggle.Core;
+using FeatureToggle.Providers;
+using FeatureToggle.Toggles;
 using Moq;
-using System;
+using Xunit;
 
-namespace JasonRoberts.FeatureToggle.Tests
-{
-    
+namespace FeatureToggle.Tests
+{    
     public class EnabledBetweenDatesFeatureToggleTests
     {
+        [Fact]
+        public void ShouldHaveDefaultProvider()
+        {
+            var sut = new MyEnabledBetweenDatesFeatureToggle();
+
+            Assert.Equal(typeof(AppSettingsProvider), sut.ToggleValueProvider.GetType());
+        }
+
         [Fact]
         public void ShouldDisableFeatureAfterToggleTimePeriod()
         {
