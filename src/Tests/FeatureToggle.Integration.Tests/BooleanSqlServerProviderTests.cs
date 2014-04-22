@@ -25,7 +25,7 @@ namespace FeatureToggle.Integration.Tests
 
             var toggle = new MySqlServerToggleFalse();
 
-            Assert.True(sut.EvaluateBooleanToggleValue(toggle));
+            Assert.False(sut.EvaluateBooleanToggleValue(toggle));
         }
 
 
