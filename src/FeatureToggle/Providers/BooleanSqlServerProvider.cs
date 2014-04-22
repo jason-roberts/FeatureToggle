@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using FeatureToggle.Core;
@@ -19,7 +20,7 @@ namespace FeatureToggle.Providers
 
                 using (var cmd = new SqlCommand(cmdText, cn))
                 {
-                    return bool.Parse((string)cmd.ExecuteScalar());
+                    return (bool) cmd.ExecuteScalar();                    
                 }
             }
         }
