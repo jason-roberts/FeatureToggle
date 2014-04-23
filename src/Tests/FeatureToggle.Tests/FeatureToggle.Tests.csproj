@@ -90,7 +90,7 @@
     <Compile Include="EnabledOnOrAfterDateFeatureToggleShould.cs" />
     <Compile Include="EnabledOnOrBeforeDateFeatureToggleShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleFeatureToggleTests.cs" />
+    <Compile Include="SimpleFeatureToggleShould.cs" />
     <Compile Include="SqlFeatureToggleShould.cs" />
     <Compile Include="ConventionTests\ToggleConventionTests.cs" />
   </ItemGroup>
