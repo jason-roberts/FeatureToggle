@@ -3,6 +3,7 @@
 //using JasonRoberts.FeatureToggle.Wp7;
 //#endif
 
+using System;
 using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
@@ -13,7 +14,7 @@ namespace FeatureToggle.Toggles
 
         protected EnabledOnOrBeforeDateFeatureToggle()
         {
-            NowProvider = new NowDateAndTime();
+            NowProvider = () => DateTime.Now;
 #if (WINDOWS_PHONE)
 
             ToggleValueProvider = new WindowsPhone7ApplicationResourcesSettingsProvider();
@@ -25,14 +26,14 @@ namespace FeatureToggle.Toggles
 
 
 
-        public INowDateAndTime NowProvider { get; set; }
+        public Func<DateTime> NowProvider { get; set; }
 
         public IDateTimeToggleValueProvider ToggleValueProvider { get; set; }
 
 
         public bool FeatureEnabled
         {
-            get { return NowProvider.Now <= ToggleValueProvider.EvaluateDateTimeToggleValue(this); }
+            get { return NowProvider.Invoke() <= ToggleValueProvider.EvaluateDateTimeToggleValue(this); }
         }   
     }
 }

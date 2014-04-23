@@ -55,7 +55,6 @@
     <Compile Include="Toggles\EnabledBetweenDatesFeatureToggle.cs" />
     <Compile Include="Toggles\EnabledOnOrBeforeDateFeatureToggle.cs" />
     <Compile Include="Toggles\EnabledOnOrAfterDateFeatureToggle.cs" />
-    <Compile Include="NowDateAndTime.cs" />
     <Compile Include="Toggles\SimpleFeatureToggle.cs" />
     <Compile Include="Toggles\SqlFeatureToggle.cs" />
     <Compile Include="Providers\BooleanSqlServerProvider.cs" />

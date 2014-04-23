@@ -3,6 +3,7 @@
 //using JasonRoberts.FeatureToggle.Wp7;
 //#endif
 
+using System;
 using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
@@ -13,7 +14,7 @@ namespace FeatureToggle.Toggles
 
         protected EnabledBetweenDatesFeatureToggle()
         {
-            NowProvider = new NowDateAndTime();
+            NowProvider = () => DateTime.Now;
 #if (WINDOWS_PHONE)
 
             ToggleValueProvider = new WindowsPhone7ApplicationResourcesSettingsProvider();
@@ -25,7 +26,7 @@ namespace FeatureToggle.Toggles
 
 
 
-        public INowDateAndTime NowProvider { get; set; }
+        public Func<DateTime> NowProvider { get; set; }
 
         public ITimePeriodProvider ToggleValueProvider { get; set; }
 
@@ -36,7 +37,9 @@ namespace FeatureToggle.Toggles
             {
                 var dates = ToggleValueProvider.EvaluateTimePeriod((this));
 
-                return (NowProvider.Now >= dates.Item1 && NowProvider.Now <= dates.Item2);
+                var now = NowProvider.Invoke();
+
+                return (now >= dates.Item1 && now <= dates.Item2);
             }
         }   
     }

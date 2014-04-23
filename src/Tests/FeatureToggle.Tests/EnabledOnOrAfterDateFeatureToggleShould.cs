@@ -23,17 +23,14 @@ namespace FeatureToggle.Tests
         {
             var expectedNow = DateTime.Now;
 
-            var fakeNowProvider = new Mock<INowDateAndTime>();
-
-            fakeNowProvider.SetupGet(x => x.Now).Returns(expectedNow);
-
             var fakeToggleValueProvider = new Mock<IDateTimeToggleValueProvider>();
-
             fakeToggleValueProvider.Setup(x => x.EvaluateDateTimeToggleValue(It.IsAny<EnabledOnOrAfterDateFeatureToggle>())).Returns(expectedNow.AddMilliseconds(1));
 
-            var sut = new MyEnabledOnOrAfterDateFeatureToggle();
-            sut.NowProvider = fakeNowProvider.Object;
-            sut.ToggleValueProvider = fakeToggleValueProvider.Object;
+            var sut = new MyEnabledOnOrAfterDateFeatureToggle
+                      {
+                          ToggleValueProvider = fakeToggleValueProvider.Object,
+                          NowProvider = () => expectedNow
+                      };
 
             Assert.False(sut.FeatureEnabled);
         }
@@ -43,17 +40,14 @@ namespace FeatureToggle.Tests
         {
             var expectedNow = DateTime.Now;
 
-            var fakeNowProvider = new Mock<INowDateAndTime>();
-
-            fakeNowProvider.SetupGet(x => x.Now).Returns(expectedNow);
-
             var fakeToggleValueProvider = new Mock<IDateTimeToggleValueProvider>();
-
             fakeToggleValueProvider.Setup(x => x.EvaluateDateTimeToggleValue(It.IsAny<EnabledOnOrAfterDateFeatureToggle>())).Returns(expectedNow.AddMilliseconds(-1));
 
-            var sut = new MyEnabledOnOrAfterDateFeatureToggle();
-            sut.NowProvider = fakeNowProvider.Object;
-            sut.ToggleValueProvider = fakeToggleValueProvider.Object;
+            var sut = new MyEnabledOnOrAfterDateFeatureToggle
+            {
+                ToggleValueProvider = fakeToggleValueProvider.Object,
+                NowProvider = () => expectedNow
+            };
 
             Assert.True(sut.FeatureEnabled);
         }
@@ -63,17 +57,14 @@ namespace FeatureToggle.Tests
         {
             var expectedNow = DateTime.Now;
 
-            var fakeNowProvider = new Mock<INowDateAndTime>();
-
-            fakeNowProvider.SetupGet(x => x.Now).Returns(expectedNow);
-
             var fakeToggleValueProvider = new Mock<IDateTimeToggleValueProvider>();
-
             fakeToggleValueProvider.Setup(x => x.EvaluateDateTimeToggleValue(It.IsAny<EnabledOnOrAfterDateFeatureToggle>())).Returns(expectedNow);
 
-            var sut = new MyEnabledOnOrAfterDateFeatureToggle();
-            sut.NowProvider = fakeNowProvider.Object;
-            sut.ToggleValueProvider = fakeToggleValueProvider.Object;
+            var sut = new MyEnabledOnOrAfterDateFeatureToggle
+            {
+                ToggleValueProvider = fakeToggleValueProvider.Object,
+                NowProvider = () => expectedNow
+            };
 
             Assert.True(sut.FeatureEnabled);
         }
