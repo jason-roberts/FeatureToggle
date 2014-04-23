@@ -5,10 +5,10 @@ using Xunit;
 
 namespace FeatureToggle.Integration.Tests
 {    
-    public class BooleanSqlServerProviderTests
+    public class BooleanSqlServerProviderShould
     {
         [Fact]
-        public void ShouldReadBooleanTrueFromSqlServer()
+        public void ReadBooleanTrueFromSqlServer()
         {            
             var sut = new BooleanSqlServerProvider();
 
@@ -19,7 +19,7 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
-        public void ShouldReadBooleanFalseFromSqlServer()
+        public void ReadBooleanFalseFromSqlServer()
         {
             var sut = new BooleanSqlServerProvider();
 
@@ -31,7 +31,7 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
-        public void ShouldErrorWhenConnectionsStringNotInConfig()
+        public void ErrorWhenConnectionsStringNotInConfig()
         {
             var sut = new MissingConnectionStringSqlServerToggle();
 
@@ -40,7 +40,7 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
-        public void ShouldErrorWhenSqlStatementNotInConfig()
+        public void ErrorWhenSqlStatementNotInConfig()
         {
             var sut = new MissingSqlStatementSqlServerToggle();
 

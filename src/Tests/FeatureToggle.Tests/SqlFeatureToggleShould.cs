@@ -6,10 +6,10 @@ using Xunit;
 
 namespace FeatureToggle.Tests
 {    
-    public class SqlFeatureToggleTests
+    public class SqlFeatureToggleShould
     {
         [Fact]
-        public void ShouldHaveDefaultProvider()
+        public void HaveDefaultProvider()
         {
             var sut = new MySqlFeatureToggle();
 
@@ -18,7 +18,7 @@ namespace FeatureToggle.Tests
 
 
         [Fact]
-        public void ShouldDisableFeatureWhenToggleValueIsFalse()
+        public void DisableFeatureWhenToggleValueIsFalse()
         {
             var fakeProvider = new Mock<IBooleanToggleValueProvider>();
 
@@ -31,7 +31,7 @@ namespace FeatureToggle.Tests
         }
 
         [Fact]
-        public void ShouldEnableFeatureWhenToggleValueIsTrue()
+        public void EnableFeatureWhenToggleValueIsTrue()
         {
             var fakeProvider = new Mock<IBooleanToggleValueProvider>();
 

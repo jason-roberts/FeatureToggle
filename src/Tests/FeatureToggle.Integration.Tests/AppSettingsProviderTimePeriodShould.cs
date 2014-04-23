@@ -7,10 +7,10 @@ using Xunit;
 
 namespace FeatureToggle.Integration.Tests
 {
-    public class AppSettingsProviderTimePeriodTests
+    public class AppSettingsProviderTimePeriodShould
     {
         [Fact]
-        public void ShouldReadTimePeriod()
+        public void ReadTimePeriod()
         {
             ITimePeriodProvider sut = new AppSettingsProvider();
 
@@ -24,7 +24,7 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
-        public void ShouldErrorWhenStartDateAfterEndDate()
+        public void ErrorWhenStartDateAfterEndDate()
         {
             var ex = Assert.Throws<ConfigurationErrorsException>(
                 () => new AppSettingsProvider().EvaluateTimePeriod(new StartDateAfterEndDate()));
@@ -36,7 +36,7 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
-        public void ShouldErrorWhenStartDateAndEndDateAreTheSame()
+        public void ErrorWhenStartDateAndEndDateAreTheSame()
         {
             var ex = Assert.Throws<ConfigurationErrorsException>(
                 () =>
@@ -50,7 +50,7 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
-        public void ShouldErrorWhenEndDateFormatIsWrong()
+        public void ErrorWhenEndDateFormatIsWrong()
         {
             var ex = Assert.Throws<ConfigurationErrorsException>(
                 () =>
@@ -64,7 +64,7 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
-        public void ShouldErrorWhenKeyNotInConfig()
+        public void ErrorWhenKeyNotInConfig()
         {
             Assert.Throws<ConfigurationErrorsException>(
                 () =>

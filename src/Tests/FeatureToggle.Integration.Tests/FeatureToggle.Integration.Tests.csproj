@@ -86,10 +86,10 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppSettingsProviderBooleanTests.cs" />
-    <Compile Include="AppSettingsProviderDateTimeTests.cs" />
-    <Compile Include="AppSettingsProviderTimePeriodTests.cs" />
-    <Compile Include="BooleanSqlServerProviderTests.cs" />
+    <Compile Include="AppSettingsProviderBooleanShould.cs" />
+    <Compile Include="AppSettingsProviderDateTimeShould.cs" />
+    <Compile Include="AppSettingsProviderTimePeriodShould.cs" />
+    <Compile Include="BooleanSqlServerProviderShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

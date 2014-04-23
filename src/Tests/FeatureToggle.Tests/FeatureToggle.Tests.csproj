@@ -83,15 +83,15 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlwaysOnFeatureToggleTests.cs" />
-    <Compile Include="AlwaysOffFeatureToggleTests.cs" />
+    <Compile Include="AlwaysOnFeatureToggleShould.cs" />
+    <Compile Include="AlwaysOffFeatureToggleShould.cs" />
     <Compile Include="ConventionTests\TypeIsAbstractConvention.cs" />
-    <Compile Include="EnabledBetweenDatesFeatureToggleTests.cs" />
-    <Compile Include="EnabledOnOrAfterDateFeatureToggleTests.cs" />
-    <Compile Include="EnabledOnOrBeforeDateFeatureToggleTests.cs" />
+    <Compile Include="EnabledBetweenDatesFeatureToggleShould.cs" />
+    <Compile Include="EnabledOnOrAfterDateFeatureToggleShould.cs" />
+    <Compile Include="EnabledOnOrBeforeDateFeatureToggleShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleFeatureToggleTests.cs" />
-    <Compile Include="SqlFeatureToggleTests.cs" />
+    <Compile Include="SqlFeatureToggleShould.cs" />
     <Compile Include="ConventionTests\ToggleConventionTests.cs" />
   </ItemGroup>
   <ItemGroup>

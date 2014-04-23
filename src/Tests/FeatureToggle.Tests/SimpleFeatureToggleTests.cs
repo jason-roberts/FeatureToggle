@@ -6,10 +6,10 @@ using Xunit;
 
 namespace FeatureToggle.Tests
 {    
-    public class SimpleFeatureToggleTests
+    public class SimpleFeatureToggleShould
     {
         [Fact]
-        public void ShouldHaveDefaultProvider()
+        public void HaveDefaultProvider()
         {
             var sut = new MySimpleFeatureToggle();
 
@@ -17,7 +17,7 @@ namespace FeatureToggle.Tests
         }
 
         [Fact]
-        public void ShouldSetOptionalProviderOnCreation()
+        public void SetOptionalProviderOnCreation()
         {
             var fakeProvider = new Mock<IBooleanToggleValueProvider>();
 

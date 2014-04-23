@@ -7,10 +7,10 @@ using Xunit;
 
 namespace FeatureToggle.Tests
 {    
-    public class EnabledOnOrBeforeDateFeatureToggleTests
+    public class EnabledOnOrBeforeDateFeatureToggleShould
     {
         [Fact]
-        public void ShouldHaveDefaultProvider()
+        public void HaveDefaultProvider()
         {
             var sut = new MyEnabledOnOrBeforeDateFeatureToggle();
 
@@ -18,7 +18,7 @@ namespace FeatureToggle.Tests
         }
 
         [Fact]
-        public void ShouldDisableFeatureAfterToggleDateTime()
+        public void DisableFeatureAfterToggleDateTime()
         {
             var expectedNow = DateTime.Now;
 
@@ -38,7 +38,7 @@ namespace FeatureToggle.Tests
         }
 
         [Fact]
-        public void ShouldEnableFeatureBeforeToggleDateTime()
+        public void EnableFeatureBeforeToggleDateTime()
         {
             var expectedNow = DateTime.Now;
 
@@ -58,7 +58,7 @@ namespace FeatureToggle.Tests
         }
 
         [Fact]
-        public void ShouldEnableFeatureOnToggleDateTime()
+        public void EnableFeatureOnToggleDateTime()
         {
             var expectedNow = DateTime.Now;
 

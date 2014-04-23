@@ -6,24 +6,24 @@ using Xunit;
 
 namespace FeatureToggle.Integration.Tests
 {
-    public class AppSettingsProviderBooleanTests
+    public class AppSettingsProviderBooleanShould
     {
         [Fact]
-        public void ShouldReadBooleanTrueFromConfig()
+        public void ReadBooleanTrueFromConfig()
         {
             Assert.True(new AppSettingsProvider().EvaluateBooleanToggleValue(new SimpleFeatureTrue()));
         }
 
 
         [Fact]
-        public void ShouldReadBooleanFalseFromConfig()
+        public void ReadBooleanFalseFromConfig()
         {
             Assert.False(new AppSettingsProvider().EvaluateBooleanToggleValue(new SimpleFeatureFalse()));
         }
 
 
         [Fact]
-        public void ShouldErrorWhenCannotConvertConfig()
+        public void ErrorWhenCannotConvertConfig()
         {
             var ex = Assert.Throws<ConfigurationErrorsException>(
                 () =>
@@ -34,7 +34,7 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
-        public void ShouldErrorWhenKeyNotInConfig()
+        public void ErrorWhenKeyNotInConfig()
         {
             Assert.Throws<ConfigurationErrorsException>(
                 () =>

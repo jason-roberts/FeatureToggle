@@ -7,10 +7,10 @@ using Xunit;
 
 namespace FeatureToggle.Tests
 {    
-    public class EnabledBetweenDatesFeatureToggleTests
+    public class EnabledBetweenDatesFeatureToggleShould
     {
         [Fact]
-        public void ShouldHaveDefaultProvider()
+        public void HaveDefaultProvider()
         {
             var sut = new MyEnabledBetweenDatesFeatureToggle();
 
@@ -18,7 +18,7 @@ namespace FeatureToggle.Tests
         }
 
         [Fact]
-        public void ShouldDisableFeatureAfterToggleTimePeriod()
+        public void DisableFeatureAfterToggleTimePeriod()
         {
             var expectedNow = DateTime.Now;
             var expectedTimePeriod = new Tuple<DateTime, DateTime>(expectedNow.AddMilliseconds(-2),
@@ -40,7 +40,7 @@ namespace FeatureToggle.Tests
         }
 
         [Fact]
-        public void ShouldDisableFeatureBeforeToggleTimePeriod()
+        public void DisableFeatureBeforeToggleTimePeriod()
         {
             var expectedNow = DateTime.Now;
             var expectedTimePeriod = new Tuple<DateTime, DateTime>(expectedNow.AddMilliseconds(1),
@@ -62,7 +62,7 @@ namespace FeatureToggle.Tests
         }
 
         [Fact]
-        public void ShouldEnableFeatureDuringToggleTimePeriod()
+        public void EnableFeatureDuringToggleTimePeriod()
         {
             var expectedNow = DateTime.Now;
             var expectedTimePeriod = new Tuple<DateTime, DateTime>(expectedNow.AddMilliseconds(-1),
@@ -84,7 +84,7 @@ namespace FeatureToggle.Tests
         }
 
         [Fact]
-        public void ShouldEnableFeatureOnEndOfToggleTimePeriod()
+        public void EnableFeatureOnEndOfToggleTimePeriod()
         {
             var expectedNow = DateTime.Now;
             var expectedTimePeriod = new Tuple<DateTime, DateTime>(expectedNow.AddMilliseconds(-1),
@@ -106,7 +106,7 @@ namespace FeatureToggle.Tests
         }
 
         [Fact]
-        public void ShouldEnableFeatureOnStartOfToggleTimePeriod()
+        public void EnableFeatureOnStartOfToggleTimePeriod()
         {
             var expectedNow = DateTime.Now;
             var expectedTimePeriod = new Tuple<DateTime, DateTime>(expectedNow,

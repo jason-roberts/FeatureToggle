@@ -6,10 +6,10 @@ using Xunit;
 
 namespace FeatureToggle.Integration.Tests
 {
-    public class AppSettingsProviderDateTimeTests
+    public class AppSettingsProviderDateTimeShould
     {
         [Fact]
-        public void ShouldReadDate()
+        public void ReadDate()
         {
             var sut = new AppSettingsProvider();
 
@@ -21,7 +21,7 @@ namespace FeatureToggle.Integration.Tests
         }
 
         [Fact]
-        public void ShouldErrorWhenBadDateFormat()
+        public void ErrorWhenBadDateFormat()
         {
             var ex = Assert.Throws<ConfigurationErrorsException>(
                 () => new AppSettingsProvider().EvaluateDateTimeToggleValue(new InvalidDateFormat()));

@@ -3,10 +3,10 @@ using Xunit;
 
 namespace FeatureToggle.Tests
 {    
-    public class AlwaysOffFeatureToggleTests
+    public class AlwaysOffFeatureToggleShould
     {
         [Fact]
-        public void ShouldReturnAlwaysOff()
+        public void ReturnAlwaysOff()
         {
             var sut = new MyAlwaysOffFeatureToggle();
 
