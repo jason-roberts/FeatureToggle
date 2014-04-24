@@ -1,5 +1,4 @@
 ﻿using System;
-using FeatureToggle.Core;
 using FeatureToggle.Providers;
 using FeatureToggle.Toggles;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
@@ -36,23 +35,25 @@ namespace FeatureToggle.WindowsPhone.Tests
 
 
 
-        //[TestMethod]
-        //public void ErrorWhenKeyNotInConfig()
-        //{
-        //    try
-        //    {
-        //        RunOn.Dispatcher(() => new ApplicationResourcesSettingsProvider().EvaluateBooleanToggleValue(new NotInConfig()));
-        //        Assert.Fail("Exception expected");
-        //    }
-        //    catch (ToggleConfigurationError expected)
-        //    {
-        //        // Pass
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Assert.Fail("Exception expected");
-        //    }                            
-        //}        
+        [TestMethod]
+        public void ErrorWhenKeyNotInConfig()
+        {
+            Exception expectedEx =  null;
+
+            RunOn.Dispatcher(() =>
+                             {
+                                 try
+                                 {
+                                     new ApplicationResourcesSettingsProvider().EvaluateBooleanToggleValue(new NotInConfig());
+                                 }
+                                 catch (Exception ex)
+                                 {
+                                     expectedEx = ex;
+                                 }                                 
+                             });
+
+            Assert.IsNotNull(expectedEx, "Exception expected");           
+        }        
 
 
         private class BooleanTrue : SimpleFeatureToggle
