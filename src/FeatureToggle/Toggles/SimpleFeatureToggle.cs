@@ -15,18 +15,18 @@ namespace FeatureToggle.Toggles
     {
         protected SimpleFeatureToggle()
         {
-//#if (WINDOWS_PHONE)
+#if (WINDOWS_PHONE)
 
-//            ToggleValueProvider = new WindowsPhone7ApplicationResourcesSettingsProvider();
+            ToggleValueProvider = new ApplicationResourcesSettingsProvider();
 
 //#elif (NETFX_CORE)
 
 //            ToggleValueProvider = new WindowsStoreLocalSettingsProvider();
 
-//#else
+#else
 
             ToggleValueProvider = new AppSettingsProvider();
-//#endif
+#endif
         }
 
 

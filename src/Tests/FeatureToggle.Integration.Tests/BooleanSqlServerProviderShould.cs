@@ -1,4 +1,5 @@
 ﻿using System.Configuration;
+using FeatureToggle.Core;
 using FeatureToggle.Providers;
 using FeatureToggle.Toggles;
 using Xunit;
@@ -35,7 +36,7 @@ namespace FeatureToggle.Integration.Tests
         {
             var sut = new MissingConnectionStringSqlServerToggle();
 
-            Assert.Throws<ConfigurationErrorsException>(() => sut.FeatureEnabled);            
+            Assert.Throws<ToggleConfigurationError>(() => sut.FeatureEnabled);            
         }
 
 
@@ -44,7 +45,7 @@ namespace FeatureToggle.Integration.Tests
         {
             var sut = new MissingSqlStatementSqlServerToggle();
 
-            Assert.Throws<ConfigurationErrorsException>(() => sut.FeatureEnabled);            
+            Assert.Throws<ToggleConfigurationError>(() => sut.FeatureEnabled);            
         }
 
    

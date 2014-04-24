@@ -16,7 +16,7 @@ namespace FeatureToggle.Providers
             var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
-                throw new ConfigurationErrorsException(string.Format("The key '{0}' was not found in AppSettings",
+                throw new ToggleConfigurationError(string.Format("The key '{0}' was not found in AppSettings",
                     toggleNameInConfig));
 
             var configValue = ConfigurationManager.AppSettings[toggleNameInConfig];
@@ -30,7 +30,7 @@ namespace FeatureToggle.Providers
             var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
-                throw new ConfigurationErrorsException(string.Format("The key '{0}' was not found in AppSettings",
+                throw new ToggleConfigurationError(string.Format("The key '{0}' was not found in AppSettings",
                     toggleNameInConfig));
 
             var configValue = ConfigurationManager.AppSettings[toggleNameInConfig];
@@ -44,7 +44,7 @@ namespace FeatureToggle.Providers
             var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
-                throw new ConfigurationErrorsException(string.Format("The key '{0}' was not found in AppSettings",
+                throw new ToggleConfigurationError(string.Format("The key '{0}' was not found in AppSettings",
                     toggleNameInConfig));
 
 
@@ -61,14 +61,14 @@ namespace FeatureToggle.Providers
             }
             catch (Exception ex)
             {
-                throw new ConfigurationErrorsException(
+                throw new ToggleConfigurationError(
                     string.Format(
                         "Configuration for {0} is invalid - date range should be specified like: '02-Jan-2050 04:05:08 | 07-Aug-2099 06:05:04'",
                         toggleNameInConfig), ex);
             }
 
             if (startDate >= endDate)
-                throw new ConfigurationErrorsException(
+                throw new ToggleConfigurationError(
                     string.Format("Configuration for {0} is invalid - the start date must be less then the end date",
                         toggleNameInConfig));
 
@@ -83,7 +83,7 @@ namespace FeatureToggle.Providers
             }
             catch (Exception ex)
             {
-                throw new ConfigurationErrorsException(
+                throw new ToggleConfigurationError(
                     string.Format("The value '{0}' cannot be converted to a boolean as defined in config key '{1}'",
                         valueToParse, configKey),
                     ex);
@@ -99,7 +99,7 @@ namespace FeatureToggle.Providers
             }
             catch (Exception ex)
             {
-                throw new ConfigurationErrorsException(
+                throw new ToggleConfigurationError(
                     string.Format(
                         "The value '{0}' cannot be converted to a DateTime as defined in config key '{1}'. The expected format is: {2}",
                         valueToParse, configKey, ExpectedDateFormat),

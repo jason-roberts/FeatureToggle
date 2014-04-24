@@ -4,7 +4,7 @@
         xmlns:wpfExtensions="clr-namespace:FeatureToggle.WpfExtensions;assembly=FeatureToggle.WpfExtensions"
         Title="Example of coarse grained (i.e. at the UI level) feature toggle." Height="350" Width="525">
     <Window.Resources>
-        <wpfExtensions:FeatureToggleToVisibilityConverter x:Key="Converter"></wpfExtensions:FeatureToggleToVisibilityConverter>
+        <!--<wpfExtensions:FeatureToggleToVisibilityConverter x:Key="Converter"></wpfExtensions:FeatureToggleToVisibilityConverter>-->
     </Window.Resources>
     <Grid>
         <StackPanel>            

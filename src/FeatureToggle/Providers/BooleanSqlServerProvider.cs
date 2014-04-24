@@ -30,7 +30,7 @@ namespace FeatureToggle.Providers
             var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name + ".ConnectionString";
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
-                throw new ConfigurationErrorsException(string.Format("The key '{0}' was not found in AppSettings",
+                throw new ToggleConfigurationError(string.Format("The key '{0}' was not found in AppSettings",
                                                                      toggleNameInConfig));
 
             return ConfigurationManager.AppSettings[toggleNameInConfig];
@@ -41,7 +41,7 @@ namespace FeatureToggle.Providers
             var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name + ".SqlStatement";
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
-                throw new ConfigurationErrorsException(string.Format("The key '{0}' was not found in AppSettings",
+                throw new ToggleConfigurationError(string.Format("The key '{0}' was not found in AppSettings",
                                                                      toggleNameInConfig));
 
             return ConfigurationManager.AppSettings[toggleNameInConfig];

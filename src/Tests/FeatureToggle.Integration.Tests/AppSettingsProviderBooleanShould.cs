@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using FeatureToggle.Core;
 using FeatureToggle.Providers;
 using FeatureToggle.Toggles;
 using Xunit;
@@ -25,7 +26,7 @@ namespace FeatureToggle.Integration.Tests
         [Fact]
         public void ErrorWhenCannotConvertConfig()
         {
-            var ex = Assert.Throws<ConfigurationErrorsException>(
+            var ex = Assert.Throws<ToggleConfigurationError>(
                 () =>
                     new AppSettingsProvider().EvaluateBooleanToggleValue(new NotABooleanValue()));
 
@@ -36,7 +37,7 @@ namespace FeatureToggle.Integration.Tests
         [Fact]
         public void ErrorWhenKeyNotInConfig()
         {
-            Assert.Throws<ConfigurationErrorsException>(
+            Assert.Throws<ToggleConfigurationError>(
                 () =>
                     new AppSettingsProvider().EvaluateBooleanToggleValue(new NotInConfig()));
         }        

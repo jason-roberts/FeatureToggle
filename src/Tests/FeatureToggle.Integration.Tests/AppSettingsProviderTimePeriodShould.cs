@@ -26,7 +26,7 @@ namespace FeatureToggle.Integration.Tests
         [Fact]
         public void ErrorWhenStartDateAfterEndDate()
         {
-            var ex = Assert.Throws<ConfigurationErrorsException>(
+            var ex = Assert.Throws<ToggleConfigurationError>(
                 () => new AppSettingsProvider().EvaluateTimePeriod(new StartDateAfterEndDate()));
 
             Assert.Equal(
@@ -38,7 +38,7 @@ namespace FeatureToggle.Integration.Tests
         [Fact]
         public void ErrorWhenStartDateAndEndDateAreTheSame()
         {
-            var ex = Assert.Throws<ConfigurationErrorsException>(
+            var ex = Assert.Throws<ToggleConfigurationError>(
                 () =>
                     new AppSettingsProvider().EvaluateTimePeriod(
                         new StartDateAndEndDateAreTheSame()));
@@ -52,7 +52,7 @@ namespace FeatureToggle.Integration.Tests
         [Fact]
         public void ErrorWhenEndDateFormatIsWrong()
         {
-            var ex = Assert.Throws<ConfigurationErrorsException>(
+            var ex = Assert.Throws<ToggleConfigurationError>(
                 () =>
                     new AppSettingsProvider().EvaluateTimePeriod(
                         new FormatInConfigIsWrong()));
@@ -66,7 +66,7 @@ namespace FeatureToggle.Integration.Tests
         [Fact]
         public void ErrorWhenKeyNotInConfig()
         {
-            Assert.Throws<ConfigurationErrorsException>(
+            Assert.Throws<ToggleConfigurationError>(
                 () =>
                     new AppSettingsProvider().EvaluateBooleanToggleValue(new NotInConfig()));
         }
