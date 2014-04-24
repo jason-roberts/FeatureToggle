@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
+﻿using System.Windows;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using ExamplePhone8App.Resources;
 
 namespace ExamplePhone8App
 {
@@ -20,10 +12,12 @@ namespace ExamplePhone8App
 
           //  var x = Application.Current.Resources["FeatureTogle.X"];
 
-            var t = new FeatureA();
+            var fa = new FeatureA();
+            FeatureA.Visibility = fa.FeatureEnabled ? Visibility.Visible : Visibility.Collapsed;
 
-            var x = t.FeatureEnabled;
 
+            var fb = new FeatureB();
+            FeatureB.Visibility = fb.FeatureEnabled ? Visibility.Visible : Visibility.Collapsed;
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }

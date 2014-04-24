@@ -47,7 +47,10 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="FeatureA" Content="Feature A"/>
+                <Button x:Name="FeatureB" Content="Feature B" />
+            </StackPanel>
         </Grid>
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
