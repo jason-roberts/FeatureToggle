@@ -58,7 +58,7 @@ namespace FeatureToggle.Integration.Tests
                         new FormatInConfigIsWrong()));
 
             Assert.Equal(
-                "Configuration for FeatureToggle.FormatInConfigIsWrong is invalid - date range should be specified like: '02-Jan-2050 04:05:08 | 07-Aug-2099 06:05:04'",
+                "The value '02/01/2050 04:05:44' cannot be converted to a DateTime as defined in config key 'FeatureToggle.FormatInConfigIsWrong'. The expected format is: dd-MMM-yyyy HH:mm:ss",
                 ex.Message);            
         }
 

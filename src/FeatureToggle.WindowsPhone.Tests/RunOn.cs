@@ -12,8 +12,18 @@ namespace FeatureToggle.WindowsPhone.Tests
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                a.Invoke();
-                waitHandle.Set();
+                try
+                {
+                    a.Invoke();
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+                finally
+                {
+                    waitHandle.Set();
+                }                              
             });
 
             waitHandle.WaitOne(timeOut);

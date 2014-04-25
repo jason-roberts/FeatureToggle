@@ -7,12 +7,14 @@ namespace FeatureToggle.Providers
 {
     public class ApplicationResourcesSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider, ITimePeriodProvider
     {
+        private const string KeyNotFoundInApplicationResourcesMessage = "The key '{0}' was not found in Application.Current.Resources";
+
         public bool EvaluateBooleanToggleValue(IFeatureToggle toggle)
         {
             var toggleNameInConfig = "FeatureToggle." + toggle.GetType().Name;
 
             if (!Application.Current.Resources.Contains(toggleNameInConfig))
-                throw new Exception(string.Format("The key '{0}' was not found in Application.Current.Resources", toggleNameInConfig));
+                throw new Exception(string.Format(KeyNotFoundInApplicationResourcesMessage, toggleNameInConfig));
 
             bool toggleValue = bool.Parse(Application.Current.Resources[toggleNameInConfig].ToString());
 
@@ -22,14 +24,15 @@ namespace FeatureToggle.Providers
 
         public DateTime EvaluateDateTimeToggleValue(IFeatureToggle toggle)
         {
-            var toggleNameInConfig = toggle.GetType().Name;
+            var toggleNameInConfig = "FeatureToggle." + toggle.GetType().Name;
 
             if (!Application.Current.Resources.Contains(toggleNameInConfig))
-                throw new Exception(string.Format("The key '{0}' was not found in Application.Current.Resources", toggleNameInConfig));
+                throw new Exception(string.Format(KeyNotFoundInApplicationResourcesMessage, toggleNameInConfig));
 
-            DateTime toggleValue = (DateTime)Application.Current.Resources[toggleNameInConfig];
+            var parser = new ConfigurationDateParser();
 
-            return toggleValue;
+            return parser.ParseDateTimeConfigString((string) Application.Current.Resources[toggleNameInConfig],
+                toggleNameInConfig);
         }
 
         public Tuple<DateTime, DateTime> EvaluateTimePeriod(IFeatureToggle toggle)
@@ -37,7 +40,7 @@ namespace FeatureToggle.Providers
             var toggleNameInConfig = toggle.GetType().Name;
 
             if (!Application.Current.Resources.Contains(toggleNameInConfig))
-                throw new Exception(string.Format("The key '{0}' was not found in Application.Current.Resources", toggleNameInConfig));
+                throw new Exception(string.Format(KeyNotFoundInApplicationResourcesMessage, toggleNameInConfig));
 
 
             DateTime startDate;

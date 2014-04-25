@@ -53,7 +53,21 @@ namespace FeatureToggle.WindowsPhone.Tests
                              });
 
             Assert.IsNotNull(expectedEx, "Exception expected");           
-        }        
+        }
+
+
+        [TestMethod]
+        public void ReadDate()
+        {
+            var result = DateTime.MaxValue;
+
+            var sut = new ApplicationResourcesSettingsProvider();
+
+            RunOn.Dispatcher(() => { result = sut.EvaluateDateTimeToggleValue(new SimpleToggle()); });
+
+            Assert.AreEqual(new DateTime(2000, 1, 1, 23, 22, 21), result);
+        }
+
 
 
         private class BooleanTrue : SimpleFeatureToggle
@@ -67,6 +81,12 @@ namespace FeatureToggle.WindowsPhone.Tests
         private class NotInConfig : SimpleFeatureToggle
         {
         }
+        
+        private class SimpleToggle : SimpleFeatureToggle
+        {
+        }
+
+        
     }
 
 

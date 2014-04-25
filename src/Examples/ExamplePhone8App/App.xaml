@@ -10,7 +10,7 @@
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:ExamplePhone8App" x:Key="LocalizedStrings"/>
         <system:String x:Key="FeatureToggle.FeatureA">true</system:String>
-        <system:String x:Key="FeatureToggle.FeatureB">false</system:String>
+        <system:String x:Key="FeatureToggle.FeatureB">false</system:String>        
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

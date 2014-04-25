@@ -9,14 +9,15 @@ namespace FeatureToggle.Providers
     public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider,
         ITimePeriodProvider
     {
-        private const string ExpectedDateFormat = @"dd-MMM-yyyy HH:mm:ss";
+        private const string KeyNotFoundInAppsettingsMessage = "The key '{0}' was not found in AppSettings";
+
 
         public bool EvaluateBooleanToggleValue(IFeatureToggle toggle)
         {
             var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
-                throw new ToggleConfigurationError(string.Format("The key '{0}' was not found in AppSettings",
+                throw new ToggleConfigurationError(string.Format(KeyNotFoundInAppsettingsMessage,
                     toggleNameInConfig));
 
             var configValue = ConfigurationManager.AppSettings[toggleNameInConfig];
@@ -30,12 +31,14 @@ namespace FeatureToggle.Providers
             var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
-                throw new ToggleConfigurationError(string.Format("The key '{0}' was not found in AppSettings",
+                throw new ToggleConfigurationError(string.Format(KeyNotFoundInAppsettingsMessage,
                     toggleNameInConfig));
 
             var configValue = ConfigurationManager.AppSettings[toggleNameInConfig];
 
-            return ParseDateTimeConfigString(configValue, toggleNameInConfig);
+            var parser = new ConfigurationDateParser();
+
+            return parser.ParseDateTimeConfigString(configValue, toggleNameInConfig);            
         }
 
 
@@ -44,28 +47,17 @@ namespace FeatureToggle.Providers
             var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
-                throw new ToggleConfigurationError(string.Format("The key '{0}' was not found in AppSettings",
+                throw new ToggleConfigurationError(string.Format(KeyNotFoundInAppsettingsMessage,
                     toggleNameInConfig));
 
 
-            DateTime startDate;
-            DateTime endDate;
+            var configValues = ConfigurationManager.AppSettings[toggleNameInConfig].Split(new[] {'|'});
 
-            try
-            {
-                var configValues = ConfigurationManager.AppSettings[toggleNameInConfig].Split(new[] {'|'});
+            var parser = new ConfigurationDateParser();
 
+            var startDate = parser.ParseDateTimeConfigString(configValues[0].Trim(), toggleNameInConfig);
+            var endDate = parser.ParseDateTimeConfigString(configValues[1].Trim(), toggleNameInConfig);
 
-                startDate = DateTime.ParseExact(configValues[0].Trim(), ExpectedDateFormat, CultureInfo.InvariantCulture);
-                endDate = DateTime.ParseExact(configValues[1].Trim(), ExpectedDateFormat, CultureInfo.InvariantCulture);
-            }
-            catch (Exception ex)
-            {
-                throw new ToggleConfigurationError(
-                    string.Format(
-                        "Configuration for {0} is invalid - date range should be specified like: '02-Jan-2050 04:05:08 | 07-Aug-2099 06:05:04'",
-                        toggleNameInConfig), ex);
-            }
 
             if (startDate >= endDate)
                 throw new ToggleConfigurationError(
@@ -91,20 +83,6 @@ namespace FeatureToggle.Providers
         }
 
 
-        private DateTime ParseDateTimeConfigString(string valueToParse, string configKey)
-        {
-            try
-            {
-                return DateTime.ParseExact(valueToParse, ExpectedDateFormat, CultureInfo.InvariantCulture);
-            }
-            catch (Exception ex)
-            {
-                throw new ToggleConfigurationError(
-                    string.Format(
-                        "The value '{0}' cannot be converted to a DateTime as defined in config key '{1}'. The expected format is: {2}",
-                        valueToParse, configKey, ExpectedDateFormat),
-                    ex);
-            }
-        }
+
     }
 }
