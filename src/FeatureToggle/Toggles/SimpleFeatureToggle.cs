@@ -1,12 +1,4 @@
-﻿//#if (NETFX_CORE)
-//    using FeatureToggle.WinRT;
-//#endif
-
-//#if (WINDOWS_PHONE)
-//    using JasonRoberts.FeatureToggle.Wp7;
-//#endif
-
-using FeatureToggle.Core;
+﻿using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
 namespace FeatureToggle.Toggles
@@ -18,10 +10,6 @@ namespace FeatureToggle.Toggles
 #if (WINDOWS_PHONE)
 
             ToggleValueProvider = new ApplicationResourcesSettingsProvider();
-
-//#elif (NETFX_CORE)
-
-//            ToggleValueProvider = new WindowsStoreLocalSettingsProvider();
 
 #else
 

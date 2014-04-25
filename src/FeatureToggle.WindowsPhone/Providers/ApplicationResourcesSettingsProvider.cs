@@ -1,5 +1,4 @@
 ﻿using System;
-
 using FeatureToggle.Core;
 
 
@@ -8,9 +7,6 @@ using FeatureToggle.Core;
 #else
     using System.Windows;
 #endif
-
-
-
 
 
 namespace FeatureToggle.Providers

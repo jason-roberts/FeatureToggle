@@ -1,5 +1,4 @@
 ﻿namespace FeatureToggle.Core
-
 {
     public class AlwaysOffFeatureToggle : IFeatureToggle
     {

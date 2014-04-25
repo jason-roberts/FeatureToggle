@@ -1,8 +1,4 @@
-﻿//#if (WINDOWS_PHONE)
-//using JasonRoberts.FeatureToggle.Wp7;
-//#endif
-
-using System;
+﻿using System;
 using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
