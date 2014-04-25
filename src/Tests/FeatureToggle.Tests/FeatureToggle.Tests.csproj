@@ -92,6 +92,7 @@
     <Compile Include="SimpleFeatureToggleShould.cs" />
     <Compile Include="SqlFeatureToggleShould.cs" />
     <Compile Include="ConventionTests\ToggleConventionTests.cs" />
+    <Compile Include="ConfigurationValidatorShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\FeatureToggle.Core\FeatureToggle.Core.csproj">

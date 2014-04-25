@@ -23,32 +23,6 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
-        public void ErrorWhenStartDateAfterEndDate()
-        {
-            var ex = Assert.Throws<ToggleConfigurationError>(
-                () => new AppSettingsProvider().EvaluateTimePeriod(new StartDateAfterEndDate()));
-
-            Assert.Equal(
-                "Configuration for FeatureToggle.StartDateAfterEndDate is invalid - the start date must be less then the end date",
-                ex.Message);
-        }
-
-
-        [Fact]
-        public void ErrorWhenStartDateAndEndDateAreTheSame()
-        {
-            var ex = Assert.Throws<ToggleConfigurationError>(
-                () =>
-                    new AppSettingsProvider().EvaluateTimePeriod(
-                        new StartDateAndEndDateAreTheSame()));
-
-            Assert.Equal(
-                "Configuration for FeatureToggle.StartDateAndEndDateAreTheSame is invalid - the start date must be less then the end date",
-                ex.Message);
-        }
-
-
-        [Fact]
         public void ErrorWhenEndDateFormatIsWrong()
         {
             var ex = Assert.Throws<ToggleConfigurationError>(
@@ -58,7 +32,7 @@ namespace FeatureToggle.Integration.Tests
 
             Assert.Equal(
                 "The value '02/01/2050 04:05:44' cannot be converted to a DateTime as defined in config key 'FeatureToggle.FormatInConfigIsWrong'. The expected format is: dd-MMM-yyyy HH:mm:ss",
-                ex.Message);            
+                ex.Message);
         }
 
 
@@ -71,26 +45,15 @@ namespace FeatureToggle.Integration.Tests
         }
 
 
-
-
         private class FormatInConfigIsWrong : EnabledBetweenDatesFeatureToggle
         {
         }
 
-        private class StartDateAfterEndDate : EnabledBetweenDatesFeatureToggle
-        {
-        }
-
-        private class StartDateAndEndDateAreTheSame :
-            EnabledBetweenDatesFeatureToggle
+        private class NotInConfig : SimpleFeatureToggle
         {
         }
 
         private class TimePeriod : EnabledBetweenDatesFeatureToggle
-        {
-        }
-
-        private class NotInConfig : SimpleFeatureToggle
         {
         }
     }
