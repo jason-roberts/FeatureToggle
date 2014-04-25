@@ -9,15 +9,15 @@ namespace ExamplePhone8App
         public MainPage()
         {
             InitializeComponent();
-
-          //  var x = Application.Current.Resources["FeatureTogle.X"];
-
+ 
             var fa = new FeatureA();
             FeatureA.Visibility = fa.FeatureEnabled ? Visibility.Visible : Visibility.Collapsed;
 
 
             var fb = new FeatureB();
             FeatureB.Visibility = fb.FeatureEnabled ? Visibility.Visible : Visibility.Collapsed;
+
+
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }

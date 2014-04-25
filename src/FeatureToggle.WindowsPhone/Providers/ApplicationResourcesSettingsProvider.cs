@@ -1,6 +1,17 @@
 ﻿using System;
-using System.Windows;
+
 using FeatureToggle.Core;
+
+
+#if NETFX_CORE
+    using Windows.UI.Xaml;
+#else
+    using System.Windows;
+#endif
+
+
+
+
 
 namespace FeatureToggle.Providers
 {
@@ -13,7 +24,7 @@ namespace FeatureToggle.Providers
         {
             var toggleNameInConfig = ConfigPrefix + toggle.GetType().Name;
 
-            if (!Application.Current.Resources.Contains(toggleNameInConfig))
+            if (!ConfigurationContains(toggleNameInConfig))
                 throw new Exception(string.Format(KeyNotFoundInApplicationResourcesMessage, toggleNameInConfig));
 
             bool toggleValue = bool.Parse(Application.Current.Resources[toggleNameInConfig].ToString());
@@ -21,12 +32,11 @@ namespace FeatureToggle.Providers
             return toggleValue;
         }
 
-
         public DateTime EvaluateDateTimeToggleValue(IFeatureToggle toggle)
         {
             var toggleNameInConfig = ConfigPrefix + toggle.GetType().Name;
 
-            if (!Application.Current.Resources.Contains(toggleNameInConfig))
+            if (!ConfigurationContains(toggleNameInConfig))
                 throw new Exception(string.Format(KeyNotFoundInApplicationResourcesMessage, toggleNameInConfig));
 
             var parser = new ConfigurationDateParser();
@@ -39,7 +49,7 @@ namespace FeatureToggle.Providers
         {
             var toggleNameInConfig = ConfigPrefix + toggle.GetType().Name;
 
-            if (!Application.Current.Resources.Contains(toggleNameInConfig))
+            if (!ConfigurationContains(toggleNameInConfig))
                 throw new Exception(string.Format(KeyNotFoundInApplicationResourcesMessage, toggleNameInConfig));
 
 
@@ -58,6 +68,17 @@ namespace FeatureToggle.Providers
             v.ValidateStartAndEndDates(startDate,endDate, toggleNameInConfig);
 
             return new Tuple<DateTime, DateTime>(startDate, endDate);
+        }
+
+        private static bool ConfigurationContains(string toggleNameInConfig)
+        {
+#if NETFX_CORE
+            return Application.Current.Resources.ContainsKey(toggleNameInConfig);
+#else
+    return Application.Current.Resources.Contains(toggleNameInConfig);
+#endif
+
+            
         }
     }
 }
