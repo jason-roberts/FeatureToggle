@@ -2,7 +2,7 @@
 
 namespace ExamplePhone8App
 {
-    class FeatureB : SimpleFeatureToggle
+    public class FeatureB : SimpleFeatureToggle
     {
     }
 }
