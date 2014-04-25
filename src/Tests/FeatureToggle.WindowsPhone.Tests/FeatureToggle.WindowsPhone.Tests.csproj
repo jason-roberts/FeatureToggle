@@ -130,11 +130,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FeatureToggle.Core\FeatureToggle.Core.csproj">
+    <ProjectReference Include="..\..\FeatureToggle.Core\FeatureToggle.Core.csproj">
       <Project>{474AAFB7-5560-412A-8C98-D5558D24A59E}</Project>
       <Name>FeatureToggle.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FeatureToggle.WindowsPhone\FeatureToggle.WindowsPhone.csproj">
+    <ProjectReference Include="..\..\FeatureToggle.WindowsPhone\FeatureToggle.WindowsPhone.csproj">
       <Project>{D5CDC85A-0D42-4833-B5E5-B4E9C62A52A5}</Project>
       <Name>FeatureToggle.WindowsPhone</Name>
     </ProjectReference>
