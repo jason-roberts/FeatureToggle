@@ -107,10 +107,6 @@
       <Project>{474aafb7-5560-412a-8c98-d5558d24a59e}</Project>
       <Name>FeatureToggle.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\FeatureToggle.WpfExtensions\FeatureToggle.WpfExtensions.csproj">
-      <Project>{b220599a-e786-446d-9c47-978c50cd48cf}</Project>
-      <Name>FeatureToggle.WpfExtensions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj">
       <Project>{c09f1554-f0db-4a3e-9bd1-ccbc2aa1d6e1}</Project>
       <Name>FeatureToggle</Name>

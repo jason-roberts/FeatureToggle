@@ -6,6 +6,6 @@
     xmlns:system="using:System">
 <Application.Resources>
         <x:String x:Key="FeatureToggle.FeatureA">true</x:String>
-        <x:String x:Key="FeatureToggle.FeatureB">false</x:String>    
+        <x:String x:Key="FeatureToggle.FeatureB">true</x:String>    
     </Application.Resources>
 </Application>

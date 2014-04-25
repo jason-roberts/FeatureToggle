@@ -5,12 +5,17 @@
     xmlns:local="using:ExampleWindows8StoreApp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:toggles="using:FeatureToggle.Toggles"
+    mc:Ignorable="d" Margin="0,1,0,-1">
+    
+    <Page.Resources>
+        <toggles:FeatureToggleToVisibilityConverter x:Key="Con"></toggles:FeatureToggleToVisibilityConverter>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Orientation="Vertical">
             <Button x:Name="FeatureA" Content="Feature A"/>
-            <Button x:Name="FeatureB" Content="Feature B" />
+            <Button x:Name="FeatureB" Content="Feature B" Visibility="{Binding Fb, Converter={StaticResource Con}}"  />
         </StackPanel>
     </Grid>
 </Page>

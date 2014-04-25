@@ -114,6 +114,7 @@
       <Link>Providers\ApplicationResourcesSettingsProvider.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toggles\FeatureToggleToVisibilityConverter.cs" />
     <Compile Include="Toggles\SimpleFeatureToggle.cs" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
