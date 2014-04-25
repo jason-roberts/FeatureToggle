@@ -58,11 +58,9 @@ namespace FeatureToggle.Providers
             var startDate = parser.ParseDateTimeConfigString(configValues[0].Trim(), toggleNameInConfig);
             var endDate = parser.ParseDateTimeConfigString(configValues[1].Trim(), toggleNameInConfig);
 
+            var v = new ConfigurationValidator();
 
-            if (startDate >= endDate)
-                throw new ToggleConfigurationError(
-                    string.Format("Configuration for {0} is invalid - the start date must be less then the end date",
-                        toggleNameInConfig));
+            v.ValidateStartAndEndDates(startDate, endDate, toggleNameInConfig);
 
             return new Tuple<DateTime, DateTime>(startDate, endDate);
         }

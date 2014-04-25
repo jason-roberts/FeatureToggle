@@ -39,6 +39,7 @@
     <Compile Include="AlwaysOffFeatureToggle.cs" />
     <Compile Include="AlwaysOnFeatureToggle.cs" />
     <Compile Include="ConfigurationDateParser.cs" />
+    <Compile Include="ConfigurationValidator.cs" />
     <Compile Include="IBooleanToggleValueProvider.cs" />
     <Compile Include="IDateTimeToggleValueProvider.cs" />
     <Compile Include="IFeatureToggle.cs" />

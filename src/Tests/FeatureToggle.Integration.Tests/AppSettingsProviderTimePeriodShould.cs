@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using FeatureToggle.Core;
 using FeatureToggle.Providers;
 using FeatureToggle.Toggles;
