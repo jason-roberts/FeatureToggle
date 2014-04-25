@@ -1,9 +1,10 @@
 ﻿<Window x:Class="ExampleWpfApplication.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                        
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:toggles="clr-namespace:FeatureToggle.Toggles;assembly=FeatureToggle.WpfExtensions"
         Title="Example of coarse grained (i.e. at the UI level) feature toggle." Height="350" Width="525">
     <Window.Resources>
-        <!--<wpfExtensions:FeatureToggleToVisibilityConverter x:Key="Converter"></wpfExtensions:FeatureToggleToVisibilityConverter>-->
+        <toggles:FeatureToggleToVisibilityConverter x:Key="Converter"></toggles:FeatureToggleToVisibilityConverter>
     </Window.Resources>
     <Grid>
         <StackPanel>            
