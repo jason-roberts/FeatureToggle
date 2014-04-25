@@ -11,7 +11,7 @@ namespace FeatureToggle.WindowsPhone.Tests
         [TestMethod]        
         public void ReadBooleanTrue()
         {
-            bool result = false;
+            var result = false;
 
             var sut = new ApplicationResourcesSettingsProvider();
 
@@ -24,7 +24,7 @@ namespace FeatureToggle.WindowsPhone.Tests
         [TestMethod]
         public void ReadBooleanFalse()
         {
-            bool result = true;
+            var result = true;
 
             var sut = new ApplicationResourcesSettingsProvider();
 
@@ -69,6 +69,20 @@ namespace FeatureToggle.WindowsPhone.Tests
         }
 
 
+        [TestMethod]
+        public void ReadDatePeriod()
+        {
+            var result = Tuple.Create(DateTime.MinValue, DateTime.MaxValue);
+
+            var sut = new ApplicationResourcesSettingsProvider();
+
+            RunOn.Dispatcher(() => { result = sut.EvaluateTimePeriod(new PeriodToggle()); });
+
+            Assert.AreEqual(new DateTime(2000, 1, 1, 23, 22, 21), result.Item1);
+            Assert.AreEqual(new DateTime(2001, 1, 1, 23, 22, 21), result.Item2);
+        }
+
+
 
         private class BooleanTrue : SimpleFeatureToggle
         {
@@ -86,6 +100,10 @@ namespace FeatureToggle.WindowsPhone.Tests
         {
         }
 
+
+        private class PeriodToggle : SimpleFeatureToggle
+        {
+        }
         
     }
 
