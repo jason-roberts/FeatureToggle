@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows;
 
@@ -18,7 +19,7 @@ namespace FeatureToggle.WindowsPhone.Tests
                 }
                 catch (Exception ex)
                 {
-                    
+                    Debugger.Break();
                 }
                 finally
                 {
