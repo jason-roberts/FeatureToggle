@@ -10,9 +10,9 @@ namespace FeatureToggle.Toggles
         protected EnabledBetweenDatesFeatureToggle()
         {
             NowProvider = () => DateTime.Now;
-#if (WINDOWS_PHONE)
+#if (WINDOWS_PHONE || NETFX_CORE)
 
-            ToggleValueProvider = new WindowsPhone7ApplicationResourcesSettingsProvider();
+            ToggleValueProvider = new ApplicationResourcesSettingsProvider();
 #else
 
             ToggleValueProvider = new AppSettingsProvider();

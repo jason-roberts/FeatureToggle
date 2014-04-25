@@ -83,6 +83,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\FeatureToggle\Toggles\EnabledBetweenDatesFeatureToggle.cs">
+      <Link>Toggles\EnabledBetweenDatesFeatureToggle.cs</Link>
+    </Compile>
+    <Compile Include="..\FeatureToggle\Toggles\EnabledOnOrAfterDateFeatureToggle.cs">
+      <Link>Toggles\EnabledOnOrAfterDateFeatureToggle.cs</Link>
+    </Compile>
+    <Compile Include="..\FeatureToggle\Toggles\EnabledOnOrBeforeDateFeatureToggle.cs">
+      <Link>Toggles\EnabledOnOrBeforeDateFeatureToggle.cs</Link>
+    </Compile>
     <Compile Include="..\FeatureToggle\Toggles\SimpleFeatureToggle.cs">
       <Link>Toggles\SimpleFeatureToggle.cs</Link>
     </Compile>
