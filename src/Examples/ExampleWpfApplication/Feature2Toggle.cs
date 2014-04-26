@@ -1,5 +1,4 @@
-﻿using FeatureToggle;
-using FeatureToggle.Toggles;
+﻿using FeatureToggle.Toggles;
 
 namespace ExampleWpfApplication
 {
