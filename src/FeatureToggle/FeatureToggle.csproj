@@ -64,13 +64,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)NuGet\Core\lib\net40
-
-rem copy $(ProjectDir)AlwaysOffFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
-rem copy $(ProjectDir)AlwaysOnFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
-rem copy $(ProjectDir)IBooleanToggleValueProvider.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
-rem copy $(ProjectDir)IFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode
-rem copy $(ProjectDir)SimpleFeatureToggle.cs $(SolutionDir)NuGet\Core\Content\windows8\FeatureToggleCode</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)NuGet\FeatureToggle\lib\net40</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
