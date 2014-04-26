@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <metadata>
+  <metadata minClientVersion="2.8.1">
     <id>FeatureToggle</id>
     <version>2.0.0</version>
     <authors>Jason Roberts - dontcodetired.com</authors>
