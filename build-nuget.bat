@@ -1,12 +1,13 @@
 echo building solution
 
 
-
 echo Building core PCL package
-nuget pack FeatureToggle.Core\FeatureToggle.Core.nuspec
+nuget pack NuGet\FeatureToggle.Core\FeatureToggle.Core.nuspec
+
+
 
 echo Building other package
-nuget pack FeatureToggle\FeatureToggle.nuspec
+nuget pack NuGet\FeatureToggle\FeatureToggle.nuspec
 
 
 pause
