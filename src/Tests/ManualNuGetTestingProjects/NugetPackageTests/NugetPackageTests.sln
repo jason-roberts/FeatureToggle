@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableClassLibrary", "Por
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsStoreApp", "WindowsStoreApp\WindowsStoreApp.csproj", "{C7242A32-7C84-45EF-A9FE-85D23D690C23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneApp1", "PhoneApp1\PhoneApp1.csproj", "{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,26 @@ Global
 		{C7242A32-7C84-45EF-A9FE-85D23D690C23}.Release|x86.ActiveCfg = Release|x86
 		{C7242A32-7C84-45EF-A9FE-85D23D690C23}.Release|x86.Build.0 = Release|x86
 		{C7242A32-7C84-45EF-A9FE-85D23D690C23}.Release|x86.Deploy.0 = Release|x86
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Debug|ARM.ActiveCfg = Debug|ARM
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Debug|ARM.Build.0 = Debug|ARM
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Debug|ARM.Deploy.0 = Debug|ARM
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Debug|x86.ActiveCfg = Debug|x86
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Debug|x86.Build.0 = Debug|x86
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Debug|x86.Deploy.0 = Debug|x86
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Release|ARM.ActiveCfg = Release|ARM
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Release|ARM.Build.0 = Release|ARM
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Release|ARM.Deploy.0 = Release|ARM
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Release|x64.ActiveCfg = Release|Any CPU
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Release|x86.ActiveCfg = Release|x86
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Release|x86.Build.0 = Release|x86
+		{AF888D8D-FDF6-4DF1-B725-4BCAB278048A}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

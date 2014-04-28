@@ -63,6 +63,7 @@ _ReSharper*/
 [Rr]elease/
 x64/
 build/
+!NuGet/FeatureToggle/build
 bld/
 [Bb]in/
 [Oo]bj/
