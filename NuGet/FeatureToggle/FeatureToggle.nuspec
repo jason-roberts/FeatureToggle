@@ -14,7 +14,7 @@
     <copyright>Copyright 2011-2014 Jason Roberts</copyright>
     <tags>feature toggle branch merge featuretoggle</tags>
 	<dependencies>
-      <dependency id="FeatureToggle.core" version="2.0" />
+      <dependency id="FeatureToggle.core" version="2.0.0" />
     </dependencies>
   </metadata>
 </package>

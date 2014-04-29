@@ -6,8 +6,11 @@ nuget pack NuGet\FeatureToggle.Core\FeatureToggle.Core.nuspec
 
 
 
-echo Building other package
+echo Building main package
 nuget pack NuGet\FeatureToggle\FeatureToggle.nuspec
+
+echo Building WpfExtensions
+nuget pack NuGet\FeatureToggle.WpfExtensions\FeatureToggle.WpfExtensions.nuspec
 
 
 pause

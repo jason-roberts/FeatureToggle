@@ -28,6 +28,8 @@ copy src\FeatureToggle.WindowsStore\bin\ARM\Release\FeatureToggle.WindowsStore.d
 copy src\FeatureToggle.WindowsPhone\bin\x86\Release\FeatureToggle.WindowsPhone.dll NuGet\FeatureToggle\lib\windowsphone8
 copy src\FeatureToggle.WindowsPhone\bin\x86\Release\FeatureToggle.WindowsPhone.dll NuGet\FeatureToggle\build\windowsphone8\x86
 copy src\FeatureToggle.WindowsPhone\bin\ARM\Release\FeatureToggle.WindowsPhone.dll NuGet\FeatureToggle\build\windowsphone8\ARM
+
+copy src\FeatureToggle.WpfExtensions\bin\Release\FeatureToggle.WpfExtensions.dll NuGet\FeatureToggle.WpfExtensions\lib\net40
      
 build-nuget.bat
 

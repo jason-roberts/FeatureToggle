@@ -2,19 +2,18 @@
 <package >
   <metadata>
     <id>FeatureToggle.WPFExtensions</id>
-    <version>1.1.1</version>
+    <version>2.0.0</version>
     <authors>Jason Roberts - dontcodetired.com</authors>
     <owners>Jason Roberts</owners>
     <licenseUrl>https://github.com/jason-roberts/FeatureToggle/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/jason-roberts/FeatureToggle/wiki</projectUrl>
     <iconUrl>https://github.com/jason-roberts/FeatureToggle/raw/master/etc/logo.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>An antidote to source control branching sickness for .Net developers. A simple library using the Feature Toggle design/release/continuous integration pattern </description>
-    <releaseNotes>New EnabledBetweenDatesFeatureToggle, datetime formats now have to be "dd/MM/yyyy HH:mm:ss</releaseNotes>
-    <copyright>Copyright 2011-2013 Jason Roberts</copyright>
+    <description>Visibility converter for FeatureToggle</description>    
+    <copyright>Copyright 2011-2014 Jason Roberts</copyright>
     <tags>feature toggle branch merge</tags>
-    <dependencies>
-      <dependency id="FeatureToggle" version="1.1.1" />
+    <dependencies>      
+	  <dependency id="FeatureToggle.Core" version="2.0.0" />
     </dependencies>
   </metadata>
 </package>
