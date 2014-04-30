@@ -9,12 +9,12 @@
     <projectUrl>https://github.com/jason-roberts/FeatureToggle/wiki</projectUrl>
     <iconUrl>https://github.com/jason-roberts/FeatureToggle/raw/master/etc/logo.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>An antidote to source control branching sickness for .Net developers. A simple library using the Feature Toggle design/release/continuous integration pattern </description>
-    <releaseNotes>For breaking changes see https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md</releaseNotes>
+    <description>Simple, reliable feature toggles in .NET</description>
+    <releaseNotes>WARNING: Version 2.0.0 introduces breaking changes. For breaking changes see https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md</releaseNotes>
     <copyright>Copyright 2011-2014 Jason Roberts</copyright>
-    <tags>feature toggle branch merge featuretoggle</tags>
+    <tags>feature toggle branch merge featuretoggle cd continuous delivery</tags>
 	<dependencies>
-      <dependency id="FeatureToggle.core" version="2.0.0" />
+      <dependency id="FeatureToggle.Core" version="2.0.0" />
     </dependencies>
   </metadata>
 </package>
