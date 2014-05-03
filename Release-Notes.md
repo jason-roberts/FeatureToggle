@@ -1,6 +1,6 @@
 #Release Notes 
 
-# Version 2 coming soon
+# Version 2
 
 ## Breaking Changes
 
