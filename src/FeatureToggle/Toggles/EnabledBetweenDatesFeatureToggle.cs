@@ -23,7 +23,7 @@ namespace FeatureToggle.Toggles
 
         public Func<DateTime> NowProvider { get; set; }
 
-        public ITimePeriodProvider ToggleValueProvider { get; set; }
+        public virtual ITimePeriodProvider ToggleValueProvider { get; set; }
 
 
         public bool FeatureEnabled
