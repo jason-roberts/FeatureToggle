@@ -9,7 +9,7 @@
 * Date-based toggle values in app.config now expect dd-MMM-yyyy HH:mm:ss format to disambiguate values, e.g. 01-Jan-2000 00:00:00
 * SQLServer values column now must be a bit field
 * INowDateAndTime removed, replaced with simpler Func<DateTime>
-* Windows store installation is now a binary reference, rather than a NuGet code-only install. After updating to V2 you may want to delete the old code older folder in Visual Studio.
+* Windows store installation is now a binary reference, rather than a NuGet code-only install. After updating to V2 you may want to delete the old code folder in Visual Studio.
 
 ## Improvements
 
