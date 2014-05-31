@@ -113,21 +113,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\FeatureToggle\Toggles\EnabledBetweenDatesFeatureToggle.cs">
-      <Link>Toggles\EnabledBetweenDatesFeatureToggle.cs</Link>
-    </Compile>
-    <Compile Include="..\FeatureToggle\Toggles\EnabledOnOrAfterDateFeatureToggle.cs">
-      <Link>Toggles\EnabledOnOrAfterDateFeatureToggle.cs</Link>
-    </Compile>
-    <Compile Include="..\FeatureToggle\Toggles\EnabledOnOrBeforeDateFeatureToggle.cs">
-      <Link>Toggles\EnabledOnOrBeforeDateFeatureToggle.cs</Link>
-    </Compile>
-    <Compile Include="..\FeatureToggle\Toggles\SimpleFeatureToggle.cs">
-      <Link>Toggles\SimpleFeatureToggle.cs</Link>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationResourcesSettingsProvider.cs" />
-    <Compile Include="Toggles\FeatureToggleToVisibilityConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FeatureToggle.Core\FeatureToggle.Core.csproj">
@@ -135,6 +122,10 @@
       <Name>FeatureToggle.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Toggles\" />
+  </ItemGroup>
+  <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" Condition="Exists('..\FeatureToggle.Shared\FeatureToggle.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <ProjectExtensions />

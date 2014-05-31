@@ -57,10 +57,6 @@
     <Compile Include="AppSettingsKeys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\AppSettingsProvider.cs" />
-    <Compile Include="Toggles\EnabledBetweenDatesFeatureToggle.cs" />
-    <Compile Include="Toggles\EnabledOnOrBeforeDateFeatureToggle.cs" />
-    <Compile Include="Toggles\EnabledOnOrAfterDateFeatureToggle.cs" />
-    <Compile Include="Toggles\SimpleFeatureToggle.cs" />
     <Compile Include="Toggles\SqlFeatureToggle.cs" />
     <Compile Include="Providers\BooleanSqlServerProvider.cs" />
   </ItemGroup>
@@ -71,6 +67,7 @@
       <Name>FeatureToggle.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" Condition="Exists('..\FeatureToggle.Shared\FeatureToggle.Shared.projitems')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
