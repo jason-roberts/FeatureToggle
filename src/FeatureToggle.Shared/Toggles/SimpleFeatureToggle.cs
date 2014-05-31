@@ -1,7 +1,6 @@
 ﻿using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
-
 namespace FeatureToggle.Toggles
 {
     public abstract class SimpleFeatureToggle : IFeatureToggle
@@ -19,7 +18,7 @@ namespace FeatureToggle.Toggles
         }
 
 
-        public IBooleanToggleValueProvider ToggleValueProvider { get; set; }
+        public virtual IBooleanToggleValueProvider ToggleValueProvider { get; set; }
 
 
         public bool FeatureEnabled

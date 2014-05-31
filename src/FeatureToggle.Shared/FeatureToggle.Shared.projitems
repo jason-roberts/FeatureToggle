@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>5e161f8f-80b3-48ab-ab8c-b75a1ccd5c31</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>FeatureToggle.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledBetweenDatesFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnOrAfterDateFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnOrBeforeDateFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Toggles\SimpleFeatureToggle.cs" />
+  </ItemGroup>
+</Project>
