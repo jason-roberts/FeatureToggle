@@ -115,13 +115,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationResourcesSettingsProvider.cs" />
-    <Compile Include="Toggles\FeatureToggleToVisibilityConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FeatureToggle.Core\FeatureToggle.Core.csproj">
       <Project>{474AAFB7-5560-412A-8C98-D5558D24A59E}</Project>
       <Name>FeatureToggle.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Toggles\" />
   </ItemGroup>
   <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" Condition="Exists('..\FeatureToggle.Shared\FeatureToggle.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
