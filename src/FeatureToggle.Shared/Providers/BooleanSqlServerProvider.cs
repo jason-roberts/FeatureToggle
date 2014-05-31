@@ -1,4 +1,6 @@
-﻿using System.Configuration;
+﻿#if (FEATURETOGGLE_FULL)
+
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using FeatureToggle.Core;
@@ -47,3 +49,6 @@ namespace FeatureToggle.Providers
         }
     }
 }
+
+
+#endif

@@ -9,10 +9,14 @@
     <Import_RootNamespace>FeatureToggle.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AppSettingsKeys.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Providers\AppSettingsProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Providers\BooleanSqlServerProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledBetweenDatesFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnOrAfterDateFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnOrBeforeDateFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\FeatureToggleToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\SimpleFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Toggles\SqlFeatureToggle.cs" />
   </ItemGroup>
 </Project>

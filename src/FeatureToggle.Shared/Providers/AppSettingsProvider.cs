@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if (FEATURETOGGLE_FULL)
+
+using System;
 using System.Configuration;
 using System.Linq;
 using FeatureToggle.Core;
@@ -83,3 +85,5 @@ namespace FeatureToggle.Providers
 
     }
 }
+
+#endif

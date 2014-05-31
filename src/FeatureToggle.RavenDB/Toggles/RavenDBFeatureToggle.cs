@@ -1,13 +1,17 @@
 ﻿using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
+// ReSharper disable CheckNamespace
 namespace FeatureToggle.Toggles
+// ReSharper restore CheckNamespace
 {
-    public abstract class SqlFeatureToggle : IFeatureToggle
+// ReSharper disable InconsistentNaming
+    public abstract class RavenDBFeatureToggle : IFeatureToggle
+// ReSharper restore InconsistentNaming
     {
-        protected SqlFeatureToggle()
+        protected RavenDBFeatureToggle()
         {
-            ToggleValueProvider = new BooleanSqlServerProvider();
+            ToggleValueProvider = new BooleanRavenDBProvider();
         }
 
 
@@ -21,3 +25,4 @@ namespace FeatureToggle.Toggles
 
     }
 }
+
