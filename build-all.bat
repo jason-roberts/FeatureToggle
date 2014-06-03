@@ -30,6 +30,8 @@ copy src\FeatureToggle.WindowsPhone\bin\x86\Release\FeatureToggle.WindowsPhone.d
 copy src\FeatureToggle.WindowsPhone\bin\ARM\Release\FeatureToggle.WindowsPhone.dll NuGet\FeatureToggle\build\windowsphone8\ARM
 
 copy src\FeatureToggle.WpfExtensions\bin\Release\FeatureToggle.WpfExtensions.dll NuGet\FeatureToggle.WpfExtensions\lib\net40
+
+copy src\FeatureToggle.RavenDB\bin\Release\FeatureToggle.RavenDB.dll NuGet\FeatureToggle.RavenDB\lib\net40
      
 build-nuget.bat
 

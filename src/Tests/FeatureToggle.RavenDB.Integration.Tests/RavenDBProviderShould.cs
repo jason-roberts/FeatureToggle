@@ -62,10 +62,10 @@ namespace FeatureToggle.RavenDB.Integration.Tests
 
 
 
-        private class MyRavenDBToggleTrue : RavenDBFeatureToggle { }
-        private class MyRavenDBToggleFalse : RavenDBFeatureToggle { }
-        private class MissingConnectionStringToggle : RavenDBFeatureToggle { }
-        private class NotInDatabaseToggle : RavenDBFeatureToggle { }        
+        private class MyRavenDBToggleTrue : BooleanRavenDBFeatureToggle { }
+        private class MyRavenDBToggleFalse : BooleanRavenDBFeatureToggle { }
+        private class MissingConnectionStringToggle : BooleanRavenDBFeatureToggle { }
+        private class NotInDatabaseToggle : BooleanRavenDBFeatureToggle { }        
 
 
         private static void SetupTestData()

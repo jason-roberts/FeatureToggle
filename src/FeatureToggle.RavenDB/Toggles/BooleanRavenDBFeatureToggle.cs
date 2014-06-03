@@ -6,10 +6,10 @@ namespace FeatureToggle.Toggles
 // ReSharper restore CheckNamespace
 {
 // ReSharper disable InconsistentNaming
-    public abstract class RavenDBFeatureToggle : IFeatureToggle
+    public abstract class BooleanRavenDBFeatureToggle : IFeatureToggle
 // ReSharper restore InconsistentNaming
     {
-        protected RavenDBFeatureToggle()
+        protected BooleanRavenDBFeatureToggle()
         {
             ToggleValueProvider = new BooleanRavenDBProvider();
         }
