@@ -1,23 +1,35 @@
-﻿using System.Configuration;
-using FeatureToggle.Core;
+﻿using System;
+using System.Threading;
 using FeatureToggle.Providers;
+using FeatureToggle.RavenDB.Providers;
 using FeatureToggle.Toggles;
+using Raven.Abstractions.Data;
+using Raven.Client;
+using Raven.Client.Document;
 using Xunit;
 
-namespace FeatureToggle.Integration.Tests
+namespace FeatureToggle.RavenDB.Integration.Tests
 {    
 // ReSharper disable InconsistentNaming
     public class RavenDBProviderShould
 // ReSharper restore InconsistentNaming
     {
+
+        public RavenDBProviderShould()
+        {
+            SetupTestData();
+        }
+
+
+
         [Fact]
         public void ReadBooleanTrue()
         {
             var sut = new BooleanRavenDBProvider();
 
-    //        var toggle = new MyRavenDBToggleTrue();
+            var toggle = new MyRavenDBToggleTrue();
 
-    //        Assert.True(sut.EvaluateBooleanToggleValue(toggle));
+            Assert.True(sut.EvaluateBooleanToggleValue(toggle));
         }
 
 
@@ -54,9 +66,38 @@ namespace FeatureToggle.Integration.Tests
 
 
 
-      //  private class MyRavenDBToggleTrue : RavenDBFeatureToggle { }
+        private class MyRavenDBToggleTrue : RavenDBFeatureToggle { }
      //   private class MyRavenDBToggleFalse : RavenDBFeatureToggle { }
         //private class MissingConnectionStringSqlServerToggle : SqlFeatureToggle { }
         //private class MissingSqlStatementSqlServerToggle : SqlFeatureToggle { }        
+
+
+        private static void SetupTestData()
+        {
+            var documentStore = new DocumentStore
+            {
+                ConnectionStringName = "FeatureToggle.MyRavenDBToggleTrue"
+            };
+
+            documentStore.Initialize();
+
+
+            using (var session = documentStore.OpenSession())
+            {
+                var existing = session.Query<BooleanToggleSetting>();
+
+                foreach (var booleanToggleSetting in existing)
+                {
+                    session.Delete(booleanToggleSetting);
+                }
+
+                session.SaveChanges();
+
+
+                session.Store(new BooleanToggleSetting { Id = "MyRavenDBToggleTrue", Enabled = true });
+
+                session.SaveChanges();
+            }
+        }    
     }
 }
