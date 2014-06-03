@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Threading;
+using FeatureToggle.Core;
 using FeatureToggle.Providers;
 using FeatureToggle.RavenDB.Providers;
 using FeatureToggle.Toggles;
-using Raven.Abstractions.Data;
-using Raven.Client;
 using Raven.Client.Document;
 using Xunit;
 
@@ -19,7 +17,6 @@ namespace FeatureToggle.RavenDB.Integration.Tests
         {
             SetupTestData();
         }
-
 
 
         [Fact]
@@ -38,38 +35,37 @@ namespace FeatureToggle.RavenDB.Integration.Tests
         {
             var sut = new BooleanRavenDBProvider();
 
-       //     var toggle = new MyRavenDBToggleFalse();
+            var toggle = new MyRavenDBToggleFalse();
 
-      //      Assert.False(sut.EvaluateBooleanToggleValue(toggle));
+            Assert.False(sut.EvaluateBooleanToggleValue(toggle));
         }
-
 
 
         [Fact]
         public void ErrorWhenConnectionsStringNotInConfig()
         {
-            Assert.True(false);
-            //var sut = new MissingConnectionStringSqlServerToggle();
+            var sut = new MissingConnectionStringToggle();
 
-            //Assert.Throws<ToggleConfigurationError>(() => sut.FeatureEnabled);            
+            var ex = Assert.Throws<ArgumentException>(() => sut.FeatureEnabled);
+
+            Assert.Equal("Could not find connection string name: 'FeatureToggle.MissingConnectionStringToggle'", ex.Message);
         }
 
 
         [Fact]
-        public void ErrorWhenSqlStatementNotInConfig()
+        public void ErrorWhenToggleNotInDatabase()
         {
-            Assert.True(false);
-            //var sut = new MissingSqlStatementSqlServerToggle();
+            var sut = new NotInDatabaseToggle();
 
-            //Assert.Throws<ToggleConfigurationError>(() => sut.FeatureEnabled);            
+            Assert.Throws<ToggleConfigurationError>(() => sut.FeatureEnabled);            
         }
 
 
 
         private class MyRavenDBToggleTrue : RavenDBFeatureToggle { }
-     //   private class MyRavenDBToggleFalse : RavenDBFeatureToggle { }
-        //private class MissingConnectionStringSqlServerToggle : SqlFeatureToggle { }
-        //private class MissingSqlStatementSqlServerToggle : SqlFeatureToggle { }        
+        private class MyRavenDBToggleFalse : RavenDBFeatureToggle { }
+        private class MissingConnectionStringToggle : RavenDBFeatureToggle { }
+        private class NotInDatabaseToggle : RavenDBFeatureToggle { }        
 
 
         private static void SetupTestData()
@@ -95,6 +91,7 @@ namespace FeatureToggle.RavenDB.Integration.Tests
 
 
                 session.Store(new BooleanToggleSetting { Id = "MyRavenDBToggleTrue", Enabled = true });
+                session.Store(new BooleanToggleSetting { Id = "MyRavenDBToggleFalse", Enabled = false });
 
                 session.SaveChanges();
             }

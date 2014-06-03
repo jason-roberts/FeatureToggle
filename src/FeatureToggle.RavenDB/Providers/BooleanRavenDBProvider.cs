@@ -1,9 +1,6 @@
-﻿using System;
-using System.Linq;
-using FeatureToggle.Core;
+﻿using FeatureToggle.Core;
 using FeatureToggle.RavenDB.Providers;
 using Raven.Client.Document;
-using Raven.Client.Linq;
 
 // ReSharper disable CheckNamespace
 namespace FeatureToggle.Providers
@@ -12,13 +9,14 @@ namespace FeatureToggle.Providers
 // ReSharper disable InconsistentNaming
     public class BooleanRavenDBProvider : IBooleanToggleValueProvider
 // ReSharper restore InconsistentNaming
-    {
+    {        
         public bool EvaluateBooleanToggleValue(IFeatureToggle toggle)
-        {            
+        {                        
+            var toggleName = toggle.GetType().Name;
+
+            var connectionNameInConfig = AppSettingsKeys.Prefix + "." + toggleName;
+
             // TODO: need to consider not creating a new document store each time for performance reasons
-
-            var connectionNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
-
             var documentStore = new DocumentStore
             {
                 ConnectionStringName = connectionNameInConfig
@@ -28,10 +26,15 @@ namespace FeatureToggle.Providers
 
             using (var session = documentStore.OpenSession())
             {
-                var t = session.Load<BooleanToggleSetting>(toggle.GetType().Name);
+                var t = session.Load<BooleanToggleSetting>(toggleName);
+
+                if (t == null)
+                {
+                    throw new ToggleConfigurationError("No document was found for toggle " + toggleName);
+                }
+
                 return t.Enabled;
             }
-
         }
     }
 }
