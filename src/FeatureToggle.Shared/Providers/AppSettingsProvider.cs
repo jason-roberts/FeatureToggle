@@ -5,7 +5,9 @@ using System.Configuration;
 using System.Linq;
 using FeatureToggle.Core;
 
+// ReSharper disable CheckNamespace
 namespace FeatureToggle.Providers
+// ReSharper restore CheckNamespace
 {
     public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider,
         ITimePeriodProvider

@@ -84,6 +84,7 @@
     <Compile Include="AppSettingsProviderBooleanShould.cs" />
     <Compile Include="AppSettingsProviderDateTimeShould.cs" />
     <Compile Include="AppSettingsProviderTimePeriodShould.cs" />
+    <Compile Include="RavenDBProviderShould.cs" />
     <Compile Include="BooleanSqlServerProviderShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -91,6 +92,10 @@
     <ProjectReference Include="..\..\FeatureToggle.Core\FeatureToggle.Core.csproj">
       <Project>{474aafb7-5560-412a-8c98-d5558d24a59e}</Project>
       <Name>FeatureToggle.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureToggle.RavenDB\FeatureToggle.RavenDB.csproj">
+      <Project>{dc23d49c-81cf-44aa-bf19-ce4622da50bc}</Project>
+      <Name>FeatureToggle.RavenDB</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj">
       <Project>{C09F1554-F0DB-4A3E-9BD1-CCBC2AA1D6E1}</Project>
