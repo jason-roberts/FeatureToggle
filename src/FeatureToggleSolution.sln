@@ -56,7 +56,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.RavenDB.Integ
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{dc23d49c-81cf-44aa-bf19-ce4622da50bc}*SharedItemsImports = 4
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{f766f5cf-9aaf-48ef-9515-a0d808deb9e5}*SharedItemsImports = 4
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{c09f1554-f0db-4a3e-9bd1-ccbc2aa1d6e1}*SharedItemsImports = 4
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{5e161f8f-80b3-48ab-ab8c-b75a1ccd5c31}*SharedItemsImports = 13

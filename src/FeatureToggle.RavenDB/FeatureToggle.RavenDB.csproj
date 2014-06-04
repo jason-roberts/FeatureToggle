@@ -54,12 +54,15 @@
       <Project>{474aafb7-5560-412a-8c98-d5558d24a59e}</Project>
       <Name>FeatureToggle.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FeatureToggle\FeatureToggle.csproj">
+      <Project>{c09f1554-f0db-4a3e-9bd1-ccbc2aa1d6e1}</Project>
+      <Name>FeatureToggle</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
-  <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" Condition="Exists('..\FeatureToggle.Shared\FeatureToggle.Shared.projitems')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
