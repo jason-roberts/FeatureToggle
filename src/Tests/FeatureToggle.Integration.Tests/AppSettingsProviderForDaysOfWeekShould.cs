@@ -31,10 +31,7 @@ namespace FeatureToggle.Integration.Tests
 
             Assert.Equal("The value 'Sun' in config key 'FeatureToggle.InvalidDayToggle' is not a valid day of the week. Days should be specified in long format. E.g. Friday and not Fri.", ex.Message);
         }
-        // case
-
-
-
+    
 
         [Fact]
         public void ErrorWhenKeyNotInConfig()
