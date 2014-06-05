@@ -6,14 +6,14 @@ using FeatureToggle.Toggles;
 using Raven.Client.Document;
 using Xunit;
 
-namespace FeatureToggle.RavenDB.Integration.Tests
+namespace FeatureToggle.Integration.Tests
 {    
 // ReSharper disable InconsistentNaming
-    public class RavenDBProviderShould
+    public class BooleanRavenDBProviderShould
 // ReSharper restore InconsistentNaming
     {
 
-        public RavenDBProviderShould()
+        public BooleanRavenDBProviderShould()
         {
             SetupTestData();
         }
