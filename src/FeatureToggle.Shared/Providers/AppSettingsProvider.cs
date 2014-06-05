@@ -17,53 +17,58 @@ namespace FeatureToggle.Providers
 
         public bool EvaluateBooleanToggleValue(IFeatureToggle toggle)
         {
-            var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
+            var key = ExpectedAppSettingsKeyFor(toggle);
 
-            if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
+            if (!ConfigurationManager.AppSettings.AllKeys.Contains(key))
                 throw new ToggleConfigurationError(string.Format(KeyNotFoundInAppsettingsMessage,
-                    toggleNameInConfig));
+                    key));
 
-            var configValue = ConfigurationManager.AppSettings[toggleNameInConfig];
+            var configValue = ConfigurationManager.AppSettings[key];
 
-            return ParseConfigString(configValue, toggleNameInConfig);
+            return ParseConfigString(configValue, key);
+        }
+
+        private static string ExpectedAppSettingsKeyFor(IFeatureToggle toggle)
+        {
+            return AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
         }
 
 
         public DateTime EvaluateDateTimeToggleValue(IFeatureToggle toggle)
         {
-            var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
+            var key = ExpectedAppSettingsKeyFor(toggle);
 
-            if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
+            if (!ConfigurationManager.AppSettings.AllKeys.Contains(key))
                 throw new ToggleConfigurationError(string.Format(KeyNotFoundInAppsettingsMessage,
-                    toggleNameInConfig));
+                    key));
 
-            var configValue = ConfigurationManager.AppSettings[toggleNameInConfig];
+            var configValue = ConfigurationManager.AppSettings[key];
 
             var parser = new ConfigurationDateParser();
 
-            return parser.ParseDateTimeConfigString(configValue, toggleNameInConfig);            
+            return parser.ParseDateTimeConfigString(configValue, key);            
         }
 
 
         public Tuple<DateTime, DateTime> EvaluateTimePeriod(IFeatureToggle toggle)
         {
-            var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
+            var key = ExpectedAppSettingsKeyFor(toggle);
 
-            if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
+            if (!ConfigurationManager.AppSettings.AllKeys.Contains(key))
                 throw new ToggleConfigurationError(string.Format(KeyNotFoundInAppsettingsMessage,
-                    toggleNameInConfig));
+                    key));
 
 
-            var configValues = ConfigurationManager.AppSettings[toggleNameInConfig].Split(new[] {'|'});
+            var configValues = ConfigurationManager.AppSettings[key].Split(new[] {'|'});
 
             var parser = new ConfigurationDateParser();
 
-            var startDate = parser.ParseDateTimeConfigString(configValues[0].Trim(), toggleNameInConfig);
-            var endDate = parser.ParseDateTimeConfigString(configValues[1].Trim(), toggleNameInConfig);
+            var startDate = parser.ParseDateTimeConfigString(configValues[0].Trim(), key);
+            var endDate = parser.ParseDateTimeConfigString(configValues[1].Trim(), key);
 
             var v = new ConfigurationValidator();
 
-            v.ValidateStartAndEndDates(startDate, endDate, toggleNameInConfig);
+            v.ValidateStartAndEndDates(startDate, endDate, key);
 
             return new Tuple<DateTime, DateTime>(startDate, endDate);
         }
@@ -86,7 +91,33 @@ namespace FeatureToggle.Providers
 
         public IEnumerable<DayOfWeek> GetDaysOfWeek(IFeatureToggle toggle)
         {
-            throw new NotImplementedException();
+            var key = ExpectedAppSettingsKeyFor(toggle);
+
+            if (!ConfigurationManager.AppSettings.AllKeys.Contains(key))
+                throw new ToggleConfigurationError(string.Format(KeyNotFoundInAppsettingsMessage,
+                    key));
+
+            var configValues = ConfigurationManager.AppSettings[key].Split(new[] { ',' }).Select(x => x.Trim());
+
+            foreach (var configValue in configValues)
+            {
+                DayOfWeek day;
+
+                var isValidDay = DayOfWeek.TryParse(configValue, true, out day);
+
+                if (isValidDay)
+                {
+                    yield return day;
+                }
+                else
+                {
+                    throw new ToggleConfigurationError(
+                        string.Format(
+                            "The value '{0}' in config key '{1}' is not a valid day of the week. Days should be specified in long format. E.g. Friday and not Fri.",
+                            configValue, key));
+
+                }
+            }            
         }
     }
 }

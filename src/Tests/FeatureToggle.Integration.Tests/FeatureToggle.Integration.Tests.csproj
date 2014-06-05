@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="AppSettingsProviderBooleanShould.cs" />
     <Compile Include="AppSettingsProviderDateTimeShould.cs" />
+    <Compile Include="AppSettingsProviderForDaysOfWeekShould.cs" />
     <Compile Include="AppSettingsProviderTimePeriodShould.cs" />
     <Compile Include="BooleanSqlServerProviderShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
