@@ -22,6 +22,7 @@
 * New portable class library core will define simplest of toggles plus the interfaces, but will not contain any providers. This enables use in other PCL places where custom providers can be built by implementers. 
 * Added Windows Phone 8 support
 * Windows Store NuGet now comes with ARM, x86, and x64 DLLs. You will need to select a specific build platform, rather than AnyCPU.
+* New RavenDB support in additional NuGet package
 
 
 -------------------------------------------------
