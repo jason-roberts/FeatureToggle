@@ -1,5 +1,11 @@
 #Release Notes 
 
+# Version 2.1 In Development
+
+## New Features
+
+* New toggle to allow enabling on specific day(s) of the week [#32](https://github.com/jason-roberts/FeatureToggle/issues/32)
+
 # Version 2
 
 ## Breaking Changes
