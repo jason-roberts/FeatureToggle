@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
@@ -30,7 +31,11 @@ namespace FeatureToggle.Toggles
         {
             get
             {
-                return false;// NowProvider.Invoke() >= ToggleValueProvider.EvaluateDateTimeToggleValue(this); 
+                var dayToday= NowProvider.Invoke().DayOfWeek;
+
+                var daysShouldBeEnabled = ToggleValueProvider.GetDaysOfWeek(this);
+
+                return daysShouldBeEnabled.Contains(dayToday);
             }
         }   
     }

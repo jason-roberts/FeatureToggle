@@ -13,62 +13,39 @@ namespace FeatureToggle.Tests
         [Fact]
         public void HaveDefaultProvider()
         {
-            var sut = new MyEnabledOnMonAndFriFeatureToggle();
+            var sut = new MyEnabledOnDaysFeatureToggle();
 
             Assert.Equal(typeof(AppSettingsProvider), sut.ToggleValueProvider.GetType());
         }
 
-        //[Fact]
-        //public void DisableFeatureBeforeToggleDateTime()
-        //{
-        //    var expectedNow = DateTime.Now;
+        [Fact]
+        public void BeEnabledOnlyOnSpecifiedDaysOfWeek()
+        {
+            var aMonday = new DateTime(2014, 6, 2);
+            var aFriday = new DateTime(2014, 6, 6);
+            var aSaturday= new DateTime(2014, 6, 7);
 
-        //    var fakeToggleValueProvider = new Mock<IDateTimeToggleValueProvider>();
-        //    fakeToggleValueProvider.Setup(x => x.EvaluateDateTimeToggleValue(It.IsAny<EnabledOnOrAfterDateFeatureToggle>())).Returns(expectedNow.AddMilliseconds(1));
+            var fakeToggleValueProvider = new Mock<IDaysOfWeekToggleValueProvider>();
 
-        //    var sut = new MyEnabledOnOrAfterDateFeatureToggle
-        //              {
-        //                  ToggleValueProvider = fakeToggleValueProvider.Object,
-        //                  NowProvider = () => expectedNow
-        //              };
+            fakeToggleValueProvider.Setup(x => x.GetDaysOfWeek(It.IsAny<EnabledOnDaysOfWeekFeatureToggle>()))
+                .Returns(new[] {DayOfWeek.Monday, DayOfWeek.Friday});
 
-        //    Assert.False(sut.FeatureEnabled);
-        //}
+            var sut = new MyEnabledOnDaysFeatureToggle
+                      {
+                          ToggleValueProvider = fakeToggleValueProvider.Object,                          
+                      };
 
-        //[Fact]
-        //public void EnableFeatureAfterToggleDateTime()
-        //{
-        //    var expectedNow = DateTime.Now;
+            sut.NowProvider = () => aMonday;
+            Assert.True(sut.FeatureEnabled);
 
-        //    var fakeToggleValueProvider = new Mock<IDateTimeToggleValueProvider>();
-        //    fakeToggleValueProvider.Setup(x => x.EvaluateDateTimeToggleValue(It.IsAny<EnabledOnOrAfterDateFeatureToggle>())).Returns(expectedNow.AddMilliseconds(-1));
+            sut.NowProvider = () => aFriday;
+            Assert.True(sut.FeatureEnabled);
 
-        //    var sut = new MyEnabledOnOrAfterDateFeatureToggle
-        //    {
-        //        ToggleValueProvider = fakeToggleValueProvider.Object,
-        //        NowProvider = () => expectedNow
-        //    };
+            sut.NowProvider = () => aSaturday;
+            Assert.False(sut.FeatureEnabled);
+        }
 
-        //    Assert.True(sut.FeatureEnabled);
-        //}
 
-        //[Fact]
-        //public void EnableFeatureOnToggleDateTime()
-        //{
-        //    var expectedNow = DateTime.Now;
-
-        //    var fakeToggleValueProvider = new Mock<IDateTimeToggleValueProvider>();
-        //    fakeToggleValueProvider.Setup(x => x.EvaluateDateTimeToggleValue(It.IsAny<EnabledOnOrAfterDateFeatureToggle>())).Returns(expectedNow);
-
-        //    var sut = new MyEnabledOnOrAfterDateFeatureToggle
-        //    {
-        //        ToggleValueProvider = fakeToggleValueProvider.Object,
-        //        NowProvider = () => expectedNow
-        //    };
-
-        //    Assert.True(sut.FeatureEnabled);
-        //}
-
-        private class MyEnabledOnMonAndFriFeatureToggle : EnabledOnDaysOfWeekFeatureToggle { }
+        private class MyEnabledOnDaysFeatureToggle : EnabledOnDaysOfWeekFeatureToggle { }
     }  
 }
