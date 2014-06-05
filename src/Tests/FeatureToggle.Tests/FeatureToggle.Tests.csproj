@@ -95,6 +95,7 @@
     <Compile Include="AlwaysOffFeatureToggleShould.cs" />
     <Compile Include="ConventionTests\TypeIsAbstractConvention.cs" />
     <Compile Include="EnabledBetweenDatesFeatureToggleShould.cs" />
+    <Compile Include="EnabledOnDaysOfWeekFeatureToggleShould.cs" />
     <Compile Include="EnabledOnOrAfterDateFeatureToggleShould.cs" />
     <Compile Include="EnabledOnOrBeforeDateFeatureToggleShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

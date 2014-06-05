@@ -1,5 +1,5 @@
-﻿#if (FEATURETOGGLE_FULL)
-
+﻿using System.Collections.Generic;
+#if (FEATURETOGGLE_FULL)
 using System;
 using System.Configuration;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace FeatureToggle.Providers
 // ReSharper restore CheckNamespace
 {
     public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider,
-        ITimePeriodProvider
+        ITimePeriodProvider, IDaysOfWeekToggleValueProvider
     {
         private const string KeyNotFoundInAppsettingsMessage = "The key '{0}' was not found in AppSettings";
 
@@ -84,7 +84,10 @@ namespace FeatureToggle.Providers
         }
 
 
-
+        public IEnumerable<DayOfWeek> GetDaysOfWeek(IFeatureToggle toggle)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Providers\AppSettingsProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Providers\BooleanSqlServerProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledBetweenDatesFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnDaysOfWeekFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnOrAfterDateFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnOrBeforeDateFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\FeatureToggleToVisibilityConverter.cs" />

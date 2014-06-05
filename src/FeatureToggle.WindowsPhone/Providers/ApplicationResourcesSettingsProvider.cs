@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FeatureToggle.Core;
 
 
@@ -11,7 +12,7 @@ using FeatureToggle.Core;
 
 namespace FeatureToggle.Providers
 {
-    public class ApplicationResourcesSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider, ITimePeriodProvider
+    public class ApplicationResourcesSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider, ITimePeriodProvider, IDaysOfWeekToggleValueProvider
     {
         private const string ConfigPrefix = "FeatureToggle.";
         private const string KeyNotFoundInApplicationResourcesMessage = "The key '{0}' was not found in Application.Current.Resources";
@@ -75,6 +76,11 @@ namespace FeatureToggle.Providers
 #endif
 
             
+        }
+
+        public IEnumerable<DayOfWeek> GetDaysOfWeek(IFeatureToggle toggle)
+        {
+            throw new NotImplementedException();
         }
     }
 }
