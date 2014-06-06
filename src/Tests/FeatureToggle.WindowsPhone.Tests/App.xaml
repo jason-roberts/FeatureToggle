@@ -17,6 +17,8 @@
 
         <system:String  x:Key="FeatureToggle.PeriodToggle">01-Jan-2000 23:22:21 | 01-Jan-2001 23:22:21</system:String>
         
+        <system:String  x:Key="FeatureToggle.DaysToggle">Wednesday, Saturday</system:String>
+        
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

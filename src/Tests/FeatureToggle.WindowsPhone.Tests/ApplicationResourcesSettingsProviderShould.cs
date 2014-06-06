@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using FeatureToggle.Providers;
 using FeatureToggle.Toggles;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
@@ -83,6 +85,20 @@ namespace FeatureToggle.WindowsPhone.Tests
         }
 
 
+        [TestMethod]
+        public void ReadDaysOfWeek()
+        {
+            List<DayOfWeek> result = null;
+
+            var sut = new ApplicationResourcesSettingsProvider();
+
+            RunOn.Dispatcher(() => { result = sut.GetDaysOfWeek(new DaysToggle()).ToList(); });
+
+            Assert.AreEqual(DayOfWeek.Wednesday, result[0]);
+            Assert.AreEqual(DayOfWeek.Saturday, result[1]);
+            Assert.AreEqual(2, result.Count);   
+        }
+
 
         private class BooleanTrue : SimpleFeatureToggle
         {
@@ -100,8 +116,11 @@ namespace FeatureToggle.WindowsPhone.Tests
         {
         }
 
-
         private class PeriodToggle : SimpleFeatureToggle
+        {
+        }
+
+        private class DaysToggle : EnabledOnDaysOfWeekFeatureToggle
         {
         }
         

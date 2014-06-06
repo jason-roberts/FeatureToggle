@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using FeatureToggle.Core;
 
 
@@ -80,7 +81,32 @@ namespace FeatureToggle.Providers
 
         public IEnumerable<DayOfWeek> GetDaysOfWeek(IFeatureToggle toggle)
         {
-            throw new NotImplementedException();
+            var toggleNameInConfig = ConfigPrefix + toggle.GetType().Name;
+
+            if (!ConfigurationContains(toggleNameInConfig))
+                throw new Exception(string.Format(KeyNotFoundInApplicationResourcesMessage, toggleNameInConfig));
+
+            var configValues = ((string)Application.Current.Resources[toggleNameInConfig]).Split(new[] {','}).Select(x => x.Trim());
+            
+
+            foreach (var configValue in configValues)
+            {
+                DayOfWeek day;
+
+                var isValidDay = DayOfWeek.TryParse(configValue, true, out day);
+
+                if (isValidDay)
+                {
+                    yield return day;
+                }
+                else
+                {
+                    throw new ToggleConfigurationError(
+                        string.Format(
+                            "The value '{0}' in config key '{1}' is not a valid day of the week. Days should be specified in long format. E.g. Friday and not Fri.",
+                            configValue, toggleNameInConfig));
+                }
+            }
         }
     }
 }
