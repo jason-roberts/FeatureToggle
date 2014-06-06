@@ -123,6 +123,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FridayImInLoveFeature.cs" />
     <Compile Include="FeatureB.cs" />
     <Compile Include="FeatureA.cs" />
     <Compile Include="LocalizedStrings.cs" />

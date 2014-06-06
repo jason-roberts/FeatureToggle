@@ -38,6 +38,7 @@
             <StackPanel Orientation="Vertical">
                 <Button x:Name="FeatureA" Content="Feature A"/>
                 <Button x:Name="FeatureB" Content="Feature B" Visibility="{Binding Fb, Converter={StaticResource Con}}"  />
+                <Button x:Name="FridayImInLove" Content="Friday I'm In Love" Visibility="{Binding Fri, Converter={StaticResource Con}}"  />
             </StackPanel>
         </Grid>
 
