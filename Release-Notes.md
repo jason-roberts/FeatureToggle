@@ -5,6 +5,7 @@
 ## New Features
 
 * New toggle to allow enabling on specific day(s) of the week [#32](https://github.com/jason-roberts/FeatureToggle/issues/32)
+* New randomly enabled feature toggle [#43](https://github.com/jason-roberts/FeatureToggle/issues/43)
 
 # Version 2
 
