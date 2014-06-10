@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlwaysOffFeatureToggle.cs" />
+    <Compile Include="RandomFeatureToggle.cs" />
     <Compile Include="AlwaysOnFeatureToggle.cs" />
     <Compile Include="ConfigurationDateParser.cs" />
     <Compile Include="ConfigurationValidator.cs" />

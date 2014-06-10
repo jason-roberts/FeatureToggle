@@ -91,6 +91,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RandomFeatureToggleShould.cs" />
     <Compile Include="AlwaysOnFeatureToggleShould.cs" />
     <Compile Include="AlwaysOffFeatureToggleShould.cs" />
     <Compile Include="ConventionTests\TypeIsAbstractConvention.cs" />
