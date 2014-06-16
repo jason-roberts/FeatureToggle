@@ -7,7 +7,6 @@ using FeatureToggle.Core;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Data;
 #elif (WINDOWS_PHONE)
-    using System.Globalization;
     using System.Windows;
     using System.Windows.Data;
 #endif

@@ -19,6 +19,7 @@ namespace FeatureToggle.WindowsPhone.Tests
                 }
                 catch (Exception ex)
                 {
+                    Debug.WriteLine(ex);
                     Debugger.Break();
                 }
                 finally
