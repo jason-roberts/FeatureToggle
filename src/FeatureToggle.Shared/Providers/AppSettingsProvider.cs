@@ -101,7 +101,7 @@ namespace FeatureToggle.Providers
 
         private static string ExpectedAppSettingsKeyFor(IFeatureToggle toggle)
         {
-            return AppSettingsKeys.Prefix + "." + toggle.GetType().Name;
+            return ToggleConfigurationSettings.Prefix + toggle.GetType().Name;
         }
 
         private bool ParseConfigString(string valueToParse, string configKey)

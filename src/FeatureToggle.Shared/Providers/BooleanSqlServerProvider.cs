@@ -28,7 +28,7 @@ namespace FeatureToggle.Providers
 
         private string GetConnectionStringFromConfig(IFeatureToggle toggle)
         {
-            var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name + ".ConnectionString";
+            var toggleNameInConfig = ToggleConfigurationSettings.Prefix + toggle.GetType().Name + ".ConnectionString";
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
                 throw new ToggleConfigurationError(string.Format("The key '{0}' was not found in AppSettings",
@@ -39,7 +39,7 @@ namespace FeatureToggle.Providers
 
         private string GetCommandTextFromAppConfig(IFeatureToggle toggle)
         {
-            var toggleNameInConfig = AppSettingsKeys.Prefix + "." + toggle.GetType().Name + ".SqlStatement";
+            var toggleNameInConfig = ToggleConfigurationSettings.Prefix + toggle.GetType().Name + ".SqlStatement";
 
             if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
                 throw new ToggleConfigurationError(string.Format("The key '{0}' was not found in AppSettings",
