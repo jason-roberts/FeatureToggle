@@ -1,5 +1,11 @@
 #Release Notes 
 
+# Version 2.2 In Development
+
+## New Features
+
+* New HttpJsonFeatureToggle [#50](https://github.com/jason-roberts/FeatureToggle/issues/50)
+
 # Version 2.1
 
 ## New Features
