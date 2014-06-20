@@ -12,6 +12,7 @@ namespace FeatureToggle.Integration.Tests
     public class BooleanHttpJsonProviderShould
     {
         private const string Url = "http://localhost:8084";
+        private const string AlternateUrl = "http://localhost:8089";
 
         [Fact]
         public void ReadBooleanTrueFromHttpJsonEndpoint()
@@ -41,6 +42,34 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
+        public void ErrorWhenInvalidJsonReceived()
+        {
+            using (WebApp.Start<Startup>(Url))
+            {
+                var sut = new AppSettingsProvider();
+
+                var toggle = new InvalidHttpJsonToggle();
+
+                Assert.Throws<WebException>(() => sut.EvaluateBooleanToggleValue(toggle));
+            }
+        }
+
+
+        [Fact]
+        public void ErrorWhen404()
+        {
+            using (WebApp.Start<Startup>(AlternateUrl))
+            {
+                var sut = new AppSettingsProvider();
+
+                var toggle = new InvalidHttpJsonToggle();
+
+                Assert.Throws<WebException>(() => sut.EvaluateBooleanToggleValue(toggle));
+            }
+        }
+
+
+        [Fact]
         public void ErrorWhenUrlNotInConfig()
         {
             var sut = new MissingUrlToggle();
@@ -49,9 +78,12 @@ namespace FeatureToggle.Integration.Tests
         }
 
 
+
+
         private class MissingUrlToggle : HttpJsonFeatureToggle { }
         private class HttpJsonTrueToggle : HttpJsonFeatureToggle { }
         private class HttpJsonFalseToggle : HttpJsonFeatureToggle { }
+        private class InvalidHttpJsonToggle : HttpJsonFeatureToggle { }
 
     }
 }

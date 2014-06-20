@@ -44,16 +44,37 @@ namespace FeatureToggle.Providers
 
         private bool GetJsonBoolFromServer(string url)
         {
-            using (var c = new WebClient())
+            string json;
+
+            using (var wc = new WebClient())
             {
-                var json = c.DownloadString(url);
+                json = wc.DownloadString(url);                
+            }
 
-                var serializer = new JavaScriptSerializer();
+            AssertValidJson(json);
 
-                var toggleSettings = serializer.Deserialize<JsonEnabledResponse>(json);
+            var serializer = new JavaScriptSerializer();
 
-                return toggleSettings.Enabled;    
-            }            
+            var toggleSettings = serializer.Deserialize<JsonEnabledResponse>(json);
+
+            return toggleSettings.Enabled;    
+        }
+
+        /// <summary>
+        /// Doing this manually as JavaScriptSerializer doesn't error if bad json parsed
+        /// and I don't want to introduce a dependency for users on json.net et al
+        /// </summary>
+        /// <param name="json">json to verify</param>
+        private void AssertValidJson(string json)
+        {
+            var canonicalised = json.Replace(" ","").Replace(Environment.NewLine, "").Replace("\"", "'").ToLowerInvariant();
+
+            var isValid = canonicalised == "{'enabled':true}" || canonicalised == "{'enabled':false}";
+
+            if (!isValid)
+            {
+                throw new WebException("The following json is invalid:" + json);
+            }
         }
 
 

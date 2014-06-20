@@ -16,15 +16,14 @@ namespace FeatureToggle.Integration.Tests.TestApiServer
             return new JsonEnabledResponse { Enabled = false };
         }
 
-        //public IEnumerable<string> Get()
-        //{
-        //    return new[] { "hello", "world" };
-        //}
-
-
-        public string Get(int id)
+        public KittyKat GetBadJson()
         {
-            return "hello world";
+            return new KittyKat {Name = "SnowyWowy"};
+        }
+
+        public class KittyKat
+        {
+            public string Name { get; set; }
         }
     }
 }

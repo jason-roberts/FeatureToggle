@@ -132,7 +132,6 @@
     <Compile Include="BooleanSqlServerProviderShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BooleanRavenDBProviderShould.cs" />
-    <Compile Include="TestApiServer\HelloModule.cs" />
     <Compile Include="TestApiServer\Startup.cs" />
     <Compile Include="TestApiServer\TestController.cs" />
   </ItemGroup>
