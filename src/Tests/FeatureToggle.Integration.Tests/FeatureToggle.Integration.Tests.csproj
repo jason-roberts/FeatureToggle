@@ -97,6 +97,7 @@
     <Compile Include="AppSettingsProviderDateTimeShould.cs" />
     <Compile Include="AppSettingsProviderForDaysOfWeekShould.cs" />
     <Compile Include="AppSettingsProviderTimePeriodShould.cs" />
+    <Compile Include="BooleanHttpJsonProviderShould.cs" />
     <Compile Include="BooleanSqlServerProviderShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BooleanRavenDBProviderShould.cs" />

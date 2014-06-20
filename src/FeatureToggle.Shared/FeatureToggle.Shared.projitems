@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnOrBeforeDateFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\FeatureToggleToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\SimpleFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Toggles\HttpJsonFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\SqlFeatureToggle.cs" />
   </ItemGroup>
 </Project>
