@@ -8,15 +8,15 @@ namespace FeatureToggle.Integration.Tests
 {    
     public class BooleanHttpJsonProviderShould
     {
-        //[Fact]
-        //public void ReadBooleanTrueFromSqlServer()
-        //{            
-        //    var sut = new BooleanSqlServerProvider();
+        [Fact]
+        public void ReadBooleanTrueFromHttpJsonEndpoint()
+        {
+            var sut = new AppSettingsProvider();
 
-        //    var toggle = new MySqlServerToggleTrue();
+            var toggle = new HttpJsonTrueToggle();
 
-        //    Assert.True(sut.EvaluateBooleanToggleValue(toggle));
-        //}
+            Assert.True(sut.EvaluateBooleanToggleValue(toggle));
+        }
 
 
         //[Fact]
@@ -35,13 +35,14 @@ namespace FeatureToggle.Integration.Tests
         public void ErrorWhenUrlNotInConfig()
         {
             var sut = new MissingUrlToggle();
-
+            
             Assert.Throws<ToggleConfigurationError>(() => sut.FeatureEnabled);            
         }
 
 
 
         private class MissingUrlToggle : HttpJsonFeatureToggle { }
+        private class HttpJsonTrueToggle : HttpJsonFeatureToggle { }
 
     }
 }

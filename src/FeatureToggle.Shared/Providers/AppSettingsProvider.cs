@@ -1,11 +1,15 @@
-﻿#if (FEATURETOGGLE_FULL)
+﻿
+#if (FEATURETOGGLE_FULL)
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 
-using FeatureToggle.Core;
+using System.Net;
+using System.Web.Script.Serialization;
 
+using FeatureToggle.Core;
+using FeatureToggle.Toggles;
 // ReSharper disable CheckNamespace
 
 namespace FeatureToggle.Providers
@@ -25,7 +29,31 @@ namespace FeatureToggle.Providers
 
             var configValue = ConfigurationManager.AppSettings[key];
 
-            return ParseConfigString(configValue, key);
+            // TODO: don't really like this, in v3 providers and toggles will be broken apart more
+            if (toggle is HttpJsonFeatureToggle)
+            {
+                return GetJsonBoolFromServer(configValue);
+            }
+            else
+            {
+                return ParseConfigString(configValue, key);    
+            }
+
+            
+        }
+
+        private bool GetJsonBoolFromServer(string url)
+        {
+            using (var c = new WebClient())
+            {
+                var json = c.DownloadString(url);
+
+                var serializer = new JavaScriptSerializer();
+
+                var toggleSettings = serializer.Deserialize<JsonEnabledResponse>(json);
+
+                return toggleSettings.Enabled;    
+            }            
         }
 
 

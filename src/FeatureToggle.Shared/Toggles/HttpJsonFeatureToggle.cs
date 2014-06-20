@@ -1,5 +1,5 @@
-﻿using System;
-#if (FEATURETOGGLE_FULL)
+﻿#if (FEATURETOGGLE_FULL)
+using System;
 using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
@@ -9,7 +9,7 @@ namespace FeatureToggle.Toggles
     {
         protected HttpJsonFeatureToggle()
         {
-            //ToggleValueProvider = new BooleanSqlServerProvider();
+            ToggleValueProvider = new AppSettingsProvider();
         }
 
 
@@ -20,8 +20,7 @@ namespace FeatureToggle.Toggles
         {
             get
             {
-                throw new NotImplementedException();
-                //return ToggleValueProvider.EvaluateBooleanToggleValue(this);
+                return ToggleValueProvider.EvaluateBooleanToggleValue(this);
             }
         }
 
