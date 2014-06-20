@@ -1,34 +1,43 @@
 ﻿using System.Configuration;
+using System.Net;
 using FeatureToggle.Core;
+using FeatureToggle.Integration.Tests.TestApiServer;
 using FeatureToggle.Providers;
 using FeatureToggle.Toggles;
+using Microsoft.Owin.Hosting;
 using Xunit;
 
 namespace FeatureToggle.Integration.Tests
 {    
     public class BooleanHttpJsonProviderShould
     {
+        private const string Url = "http://localhost:8084";
+
         [Fact]
         public void ReadBooleanTrueFromHttpJsonEndpoint()
         {
-            var sut = new AppSettingsProvider();
+            using (WebApp.Start<Startup>(Url))
+            {
+                var sut = new AppSettingsProvider();
 
-            var toggle = new HttpJsonTrueToggle();
+                var toggle = new HttpJsonTrueToggle();
 
-            Assert.True(sut.EvaluateBooleanToggleValue(toggle));
+                Assert.True(sut.EvaluateBooleanToggleValue(toggle));
+            }
         }
 
+        [Fact]
+        public void ReadBooleanFalseFromHttpJsonEndpoint()
+        {
+            using (WebApp.Start<Startup>(Url))
+            {
+                var sut = new AppSettingsProvider();
 
-        //[Fact]
-        //public void ReadBooleanFalseFromSqlServer()
-        //{
-        //    var sut = new BooleanSqlServerProvider();
+                var toggle = new HttpJsonFalseToggle();
 
-        //    var toggle = new MySqlServerToggleFalse();
-
-        //    Assert.False(sut.EvaluateBooleanToggleValue(toggle));
-        //}
-
+                Assert.False(sut.EvaluateBooleanToggleValue(toggle));
+            }
+        }
 
 
         [Fact]
@@ -40,9 +49,9 @@ namespace FeatureToggle.Integration.Tests
         }
 
 
-
         private class MissingUrlToggle : HttpJsonFeatureToggle { }
         private class HttpJsonTrueToggle : HttpJsonFeatureToggle { }
+        private class HttpJsonFalseToggle : HttpJsonFeatureToggle { }
 
     }
 }
