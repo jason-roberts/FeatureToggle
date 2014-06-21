@@ -79,6 +79,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ToggleFromJsonHttpEndpoint.cs" />
     <Compile Include="Feature3Toggle.cs" />
     <Compile Include="Feature2Toggle.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -124,6 +125,9 @@
       <Project>{c09f1554-f0db-4a3e-9bd1-ccbc2aa1d6e1}</Project>
       <Name>FeatureToggle</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

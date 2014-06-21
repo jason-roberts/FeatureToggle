@@ -11,7 +11,8 @@
             <Button>Feature 1 - exisiting in production - not toggled</Button>
             <Button Visibility="{Binding Path=Feature2Toggle, Converter={StaticResource Converter}}">Feature 2 - still in development</Button>
             <TextBlock>Note that the feature2 button is not visible at runtime because it is disabled in the app config.</TextBlock>
-            <Button Visibility="{Binding Path=Feature3Toggle, Converter={StaticResource Converter}}">Feature 3 - enabled because it's after a toggled date</Button>            
+            <Button Visibility="{Binding Path=Feature3Toggle, Converter={StaticResource Converter}}">Feature 3 - enabled because it's after a toggled date</Button>
+            <Button Visibility="{Binding Path=ToggleFromJsonHttpEndpoint, Converter={StaticResource Converter}}">Feature 4 - enabled because rest api returned true</Button>            
         </StackPanel>
     </Grid>
 </Window>

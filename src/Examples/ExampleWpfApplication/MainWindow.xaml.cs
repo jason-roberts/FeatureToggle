@@ -7,12 +7,15 @@ namespace ExampleWpfApplication
     {
         private Feature2Toggle _feature2Toggle;
         private Feature3Toggle _feature3Toggle;
+        private ToggleFromJsonHttpEndpoint _toggleFromJsonHttpEndpoint;
 
         public MainWindow()
         {
             InitializeComponent();
             Feature2Toggle = new Feature2Toggle();
             Feature3Toggle = new Feature3Toggle();
+            ToggleFromJsonHttpEndpoint = new ToggleFromJsonHttpEndpoint();
+
             DataContext = this;
         }
 
@@ -33,6 +36,17 @@ namespace ExampleWpfApplication
             {
                 _feature3Toggle = value;
                 Notify("Feature3Toggle");
+            }
+        }
+
+
+        public ToggleFromJsonHttpEndpoint ToggleFromJsonHttpEndpoint
+        {
+            get { return _toggleFromJsonHttpEndpoint; }
+            set
+            {
+                _toggleFromJsonHttpEndpoint = value;
+                Notify("ToggleFromJsonHttpEndpoint");
             }
         }
 
