@@ -1,6 +1,6 @@
 #Release Notes 
 
-# Version 2.2 In Development
+# Version 2.2
 
 ## New Features
 
