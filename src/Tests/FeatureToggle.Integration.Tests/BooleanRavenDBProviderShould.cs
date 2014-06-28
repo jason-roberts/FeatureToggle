@@ -13,15 +13,11 @@ namespace FeatureToggle.Integration.Tests
 // ReSharper restore InconsistentNaming
     {
 
-        public BooleanRavenDBProviderShould()
-        {
-            SetupTestData();
-        }
-
-
         [Fact]
         public void ReadBooleanTrue()
         {
+            SetupTestData();
+
             var sut = new BooleanRavenDBProvider();
 
             var toggle = new MyRavenDBToggleTrue();
@@ -33,6 +29,8 @@ namespace FeatureToggle.Integration.Tests
         [Fact]
         public void ReadBooleanFalse()
         {
+            SetupTestData();
+
             var sut = new BooleanRavenDBProvider();
 
             var toggle = new MyRavenDBToggleFalse();
@@ -55,6 +53,8 @@ namespace FeatureToggle.Integration.Tests
         [Fact]
         public void ErrorWhenToggleNotInDatabase()
         {
+            SetupTestData();
+
             var sut = new NotInDatabaseToggle();
 
             Assert.Throws<ToggleConfigurationError>(() => sut.FeatureEnabled);            
