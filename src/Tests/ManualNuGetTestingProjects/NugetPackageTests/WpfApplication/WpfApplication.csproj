@@ -35,16 +35,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FeatureToggle">
-      <HintPath>..\packages\FeatureToggle.2.0.0\lib\net40\FeatureToggle.dll</HintPath>
+    <Reference Include="FeatureToggle, Version=2.0.5292.33677, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FeatureToggle.2.2.0\lib\net40\FeatureToggle.dll</HintPath>
     </Reference>
-    <Reference Include="FeatureToggle.Core">
-      <HintPath>..\packages\FeatureToggle.Core.2.0.0\lib\portable-net45+sl50+wp80+win\FeatureToggle.Core.dll</HintPath>
+    <Reference Include="FeatureToggle.Core, Version=2.0.5292.33684, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FeatureToggle.Core.2.2.1\lib\portable-net40+sl50+wp80+win\FeatureToggle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FeatureToggle.RavenDB">
+      <HintPath>..\packages\FeatureToggle.RavenDB.2.2.0\lib\net40\FeatureToggle.RavenDB.dll</HintPath>
     </Reference>
     <Reference Include="FeatureToggle.WpfExtensions">
-      <HintPath>..\packages\FeatureToggle.WPFExtensions.2.0.0\lib\net40\FeatureToggle.WpfExtensions.dll</HintPath>
+      <HintPath>..\packages\FeatureToggle.WPFExtensions.2.2.0\lib\net40\FeatureToggle.WpfExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Abstractions">
+      <HintPath>..\packages\RavenDB.Client.2.5.2879\lib\net45\Raven.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Lightweight">
+      <HintPath>..\packages\RavenDB.Client.2.5.2879\lib\net45\Raven.Client.Lightweight.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,8 +75,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Toggle.cs" />
     <Compile Include="SampleFeatureToggles\SampleFeatureToggle.cs" />
+    <Compile Include="Toggle.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
