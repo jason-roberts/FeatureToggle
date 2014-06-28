@@ -16,7 +16,7 @@ msbuild src\WindowsPhoneBuild.sln /t:Rebuild /p:Configuration=Release /p:Platfor
 
 echo copying nuget package files
 
-copy src\FeatureToggle.Core\bin\Release\FeatureToggle.Core.dll "NuGet\FeatureToggle.Core\lib\portable-net45+sl50+wp80+win"
+copy src\FeatureToggle.Core\bin\Release\FeatureToggle.Core.dll "NuGet\FeatureToggle.Core\lib\portable-net40+sl50+wp80+win"
 
 copy src\FeatureToggle\bin\Release\FeatureToggle.dll NuGet\FeatureToggle\lib\net40
 

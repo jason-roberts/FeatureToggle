@@ -15,7 +15,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>WindowsStoreApp_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <NuGetPackageImportStamp>403b7059</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>6f79f6e6</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -135,24 +135,25 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="FeatureToggle.Core, Version=2.0.5231.26025, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="FeatureToggle.Core, Version=2.0.5292.33684, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FeatureToggle.Core.2.0.0\lib\portable-net45+sl50+wp80+win\FeatureToggle.Core.dll</HintPath>
+      <HintPath>..\packages\FeatureToggle.Core.2.2.1\lib\portable-net40+sl50+wp80+win\FeatureToggle.Core.dll</HintPath>
     </Reference>
     <Reference Include="FeatureToggle.WindowsStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\FeatureToggle.2.0.0\lib\netcore451\FeatureToggle.WindowsStore.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FeatureToggle.2.2.0\lib\netcore451\FeatureToggle.WindowsStore.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <Import Project="..\packages\FeatureToggle.2.0.0\build\netcore451\FeatureToggle.targets" Condition="Exists('..\packages\FeatureToggle.2.0.0\build\netcore451\FeatureToggle.targets')" />
+  <Import Project="..\packages\FeatureToggle.2.2.0\build\netcore451\FeatureToggle.targets" Condition="Exists('..\packages\FeatureToggle.2.2.0\build\netcore451\FeatureToggle.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\FeatureToggle.2.0.0\build\netcore451\FeatureToggle.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\FeatureToggle.2.0.0\build\netcore451\FeatureToggle.targets'))" />
+    <Error Condition="!Exists('..\packages\FeatureToggle.2.2.0\build\netcore451\FeatureToggle.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\FeatureToggle.2.2.0\build\netcore451\FeatureToggle.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

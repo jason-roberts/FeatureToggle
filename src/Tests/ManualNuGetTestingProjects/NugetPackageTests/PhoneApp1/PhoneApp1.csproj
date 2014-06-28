@@ -25,7 +25,7 @@
     <ValidateXaml>true</ValidateXaml>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
-    <NuGetPackageImportStamp>69c64e4e</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>8866fda2</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -151,11 +151,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="FeatureToggle.Core">
-      <HintPath>..\packages\FeatureToggle.Core.2.0.0\lib\portable-net45+sl50+wp80+win\FeatureToggle.Core.dll</HintPath>
+    <Reference Include="FeatureToggle.Core, Version=2.0.5292.33684, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FeatureToggle.Core.2.2.1\lib\portable-net40+sl50+wp80+win\FeatureToggle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FeatureToggle.WindowsPhone">
-      <HintPath>..\packages\FeatureToggle.2.0.0\lib\windowsphone8\FeatureToggle.WindowsPhone.dll</HintPath>
+    <Reference Include="FeatureToggle.WindowsPhone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FeatureToggle.2.2.0\lib\windowsphone8\FeatureToggle.WindowsPhone.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
@@ -168,11 +170,11 @@
   </Target>
   -->
   <ProjectExtensions />
-  <Import Project="..\packages\FeatureToggle.2.0.0\build\windowsphone8\FeatureToggle.targets" Condition="Exists('..\packages\FeatureToggle.2.0.0\build\windowsphone8\FeatureToggle.targets')" />
+  <Import Project="..\packages\FeatureToggle.2.2.0\build\windowsphone8\FeatureToggle.targets" Condition="Exists('..\packages\FeatureToggle.2.2.0\build\windowsphone8\FeatureToggle.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\FeatureToggle.2.0.0\build\windowsphone8\FeatureToggle.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\FeatureToggle.2.0.0\build\windowsphone8\FeatureToggle.targets'))" />
+    <Error Condition="!Exists('..\packages\FeatureToggle.2.2.0\build\windowsphone8\FeatureToggle.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\FeatureToggle.2.2.0\build\windowsphone8\FeatureToggle.targets'))" />
   </Target>
 </Project>
