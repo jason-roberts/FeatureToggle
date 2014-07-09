@@ -1,5 +1,9 @@
 #Release Notes 
 
+# Version 2.2.1
+
+* Fixed .Net 4 support [#62](https://github.com/jason-roberts/FeatureToggle/issues/62)
+
 # Version 2.2
 
 ## New Features
