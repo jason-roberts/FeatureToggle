@@ -18,7 +18,7 @@
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>FeatureToggle.WindowsStore.Tests_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxBundle>Never</AppxBundle>
-    <PackageCertificateThumbprint>AD1FD2F841751081D351ECE8F3B2672614A9E365</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>8BBB4788954E0C071FC837C8BF3290533DA4498A</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
