@@ -9,6 +9,7 @@ namespace FeatureToggle.Integration.Tests
     public class BooleanSqlServerProviderShould
     {
         [Fact]
+        [Trait("Category", "LocalIntegrationResourcesRequired")]
         public void ReadBooleanTrueFromSqlServer()
         {            
             var sut = new BooleanSqlServerProvider();
@@ -20,6 +21,7 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
+        [Trait("Category", "LocalIntegrationResourcesRequired")]
         public void ReadBooleanFalseFromSqlServer()
         {
             var sut = new BooleanSqlServerProvider();
