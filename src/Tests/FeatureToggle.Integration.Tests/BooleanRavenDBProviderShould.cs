@@ -14,7 +14,7 @@ namespace FeatureToggle.Integration.Tests
     {
 
         [Fact]
-        [Trait("Category", "LocalIntegrationResourcesRequired")]
+        [Trait("category", "LocalIntegrationResourcesRequired")]
         public void ReadBooleanTrue()
         {
             SetupTestData();
@@ -28,7 +28,7 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
-        [Trait("Category", "LocalIntegrationResourcesRequired")]
+        [Trait("category", "LocalIntegrationResourcesRequired")]
         public void ReadBooleanFalse()
         {
             SetupTestData();
@@ -53,7 +53,7 @@ namespace FeatureToggle.Integration.Tests
 
 
         [Fact]
-        [Trait("Category", "LocalIntegrationResourcesRequired")]
+        [Trait("category", "LocalIntegrationResourcesRequired")]
         public void ErrorWhenToggleNotInDatabase()
         {
             SetupTestData();
