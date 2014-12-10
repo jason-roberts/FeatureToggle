@@ -1,0 +1,5 @@
+<configuration>
+	<appSettings>
+		<add key="FeatureToggle.SampleFeatureToggle" value="false" />    
+	</appSettings>
+</configuration>

@@ -2,7 +2,7 @@
 <package>
   <metadata minClientVersion="2.8.1">
     <id>FeatureToggle</id>
-    <version>2.2.1</version>
+    <version>2.2.2</version>
     <authors>Jason Roberts - dontcodetired.com</authors>
     <owners>Jason Roberts</owners>
     <licenseUrl>https://github.com/jason-roberts/FeatureToggle/blob/master/LICENSE.txt</licenseUrl>
@@ -14,7 +14,7 @@
     <copyright>Copyright 2011-2014 Jason Roberts</copyright>
     <tags>feature toggle branch merge featuretoggle cd continuous delivery</tags>
 	<dependencies>
-      <dependency id="FeatureToggle.Core" version="2.2.1" />
+      <dependency id="FeatureToggle.Core" version="2.2.2" />
     </dependencies>
   </metadata>
 </package>
