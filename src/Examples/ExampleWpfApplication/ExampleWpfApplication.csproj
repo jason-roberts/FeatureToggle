@@ -79,6 +79,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BooleanToVisibilityConverter.cs" />
     <Compile Include="ToggleFromJsonHttpEndpoint.cs" />
     <Compile Include="Feature3Toggle.cs" />
     <Compile Include="Feature2Toggle.cs" />
@@ -116,10 +117,6 @@
     <ProjectReference Include="..\..\FeatureToggle.Core\FeatureToggle.Core.csproj">
       <Project>{474aafb7-5560-412a-8c98-d5558d24a59e}</Project>
       <Name>FeatureToggle.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FeatureToggle.WpfExtensions\FeatureToggle.WpfExtensions.csproj">
-      <Project>{e43d7542-3ffc-49bf-beca-9fd203a379c4}</Project>
-      <Name>FeatureToggle.WpfExtensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj">
       <Project>{c09f1554-f0db-4a3e-9bd1-ccbc2aa1d6e1}</Project>

@@ -12,6 +12,7 @@ namespace ExampleWpfApplication
         public MainWindow()
         {
             InitializeComponent();
+
             Feature2Toggle = new Feature2Toggle();
             Feature3Toggle = new Feature3Toggle();
             ToggleFromJsonHttpEndpoint = new ToggleFromJsonHttpEndpoint();

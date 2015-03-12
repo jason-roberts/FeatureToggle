@@ -4,6 +4,12 @@
 
 Currently in development.
 
+##Breaking Changes
+
+* Remove the WPF, etc Visibility converters. [#67](https://github.com/jason-roberts/FeatureToggle/issues/67)
+
+## Enhancements
+
 # Version 2.2.1
 
 * Fixed .Net 4 support [#62](https://github.com/jason-roberts/FeatureToggle/issues/62)
