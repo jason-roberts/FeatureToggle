@@ -12,8 +12,6 @@ PM> Install-Package FeatureToggle.WPFExtensions
 #[Pluralsight Feature Toggle Course](http://bit.ly/psfeaturetoggle)
 
 
-[![Build status](https://ci.appveyor.com/api/projects/status/78q3e4vyihapl98w?svg=true)](https://ci.appveyor.com/project/jason-roberts/featuretoggle)
-
 --------
 
 ## About Jason Roberts
