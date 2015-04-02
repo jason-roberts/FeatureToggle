@@ -9,7 +9,7 @@ using Xunit;
 
 namespace FeatureToggle.UniversalApps81.Tests
 {
-
+    [Trait("category", "Threaded")]
     public class ApplicationResourcesSettingsProviderShould
     {
         [Fact]        
