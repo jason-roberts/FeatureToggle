@@ -8,7 +8,12 @@ Currently in development.
 
 * Remove the WPF, etc Visibility converters. [#67](https://github.com/jason-roberts/FeatureToggle/issues/67)
 
-## Enhancements
+## Enhancements / New Features
+
+* Windows Phone 8.1 Silverlight support [#81](https://github.com/jason-roberts/FeatureToggle/issues/81)
+
+
+
 
 # Version 2.2.1
 
