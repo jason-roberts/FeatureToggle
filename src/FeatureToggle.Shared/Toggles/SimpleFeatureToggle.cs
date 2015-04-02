@@ -1,7 +1,9 @@
 ﻿using FeatureToggle.Core;
 using FeatureToggle.Providers;
 
+// ReSharper disable CheckNamespace
 namespace FeatureToggle.Toggles
+// ReSharper restore CheckNamespace
 {
     public abstract class SimpleFeatureToggle : IFeatureToggle
     {
