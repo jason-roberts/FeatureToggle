@@ -4,9 +4,12 @@ using System.Linq;
 using FeatureToggle.Core;
 #if NETFX_CORE
     using Windows.UI.Xaml;
-#else
+#elif WINDOWS_PHONE
     using System.Windows;
 #endif
+
+
+#if WINDOWS_PHONE || NETFX_CORE
 
 namespace FeatureToggle.Providers
 {
@@ -120,3 +123,5 @@ namespace FeatureToggle.Providers
         }
     }
 }
+
+#endif

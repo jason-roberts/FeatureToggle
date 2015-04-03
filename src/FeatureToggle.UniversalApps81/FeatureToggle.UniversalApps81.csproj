@@ -45,9 +45,6 @@
     <TargetPlatform Include="Windows, Version=8.1" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\featuretoggle.windowsphone\providers\ApplicationResourcesSettingsProvider.cs">
-      <Link>Providers\ApplicationResourcesSettingsProvider.cs</Link>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" Condition="Exists('..\FeatureToggle.Shared\FeatureToggle.Shared.projitems')" />

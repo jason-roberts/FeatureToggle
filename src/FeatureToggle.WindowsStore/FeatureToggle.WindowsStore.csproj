@@ -103,9 +103,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\FeatureToggle.WindowsPhone\Providers\ApplicationResourcesSettingsProvider.cs">
-      <Link>Providers\ApplicationResourcesSettingsProvider.cs</Link>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
