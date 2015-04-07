@@ -13,7 +13,7 @@
         <system:String x:Key="FeatureToggle.BooleanTrue">true</system:String>
         <system:String x:Key="FeatureToggle.BooleanFalse">false</system:String>
 
-        <system:String  x:Key="FeatureToggle.SimpleToggle">01-Jan-2000 23:22:21</system:String>
+        <system:String  x:Key="FeatureToggle.SimpleToggle">01-Feb-2000 23:22:21</system:String>
 
         <system:String  x:Key="FeatureToggle.PeriodToggle">01-Jan-2000 23:22:21 | 01-Jan-2001 23:22:21</system:String>
 

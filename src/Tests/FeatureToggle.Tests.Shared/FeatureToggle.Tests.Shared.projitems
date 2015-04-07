@@ -9,7 +9,9 @@
     <Import_RootNamespace>FeatureToggle.Tests.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ApplicationResourcesSetter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ApplicationResourcesSettingsProviderShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AssertFacade.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RunOn.cs" />
   </ItemGroup>
 </Project>
