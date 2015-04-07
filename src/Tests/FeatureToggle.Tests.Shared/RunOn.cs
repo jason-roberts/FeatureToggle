@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Windows.UI.Core;
 
-namespace FeatureToggle.UniversalApps81.Tests
+namespace FeatureToggle.Tests.Shared
 {   
     public static class RunOn
     {

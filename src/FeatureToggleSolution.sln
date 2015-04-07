@@ -52,11 +52,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.WindowsPhone8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.WindowsPhone81Silverlight.Tests", "Tests\FeatureToggle.WindowsPhone81Silverlight.Tests\FeatureToggle.WindowsPhone81Silverlight.Tests.csproj", "{8B2342A9-4FA0-49E0-A7FE-6630263E9CE0}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FeatureToggle.Tests.Shared", "Tests\FeatureToggle.Tests.Shared\FeatureToggle.Tests.Shared.shproj", "{09B6DB37-B8DF-4AF4-A3BE-3D0A0CB1466A}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Tests\FeatureToggle.Tests.Shared\FeatureToggle.Tests.Shared.projitems*{09b6db37-b8df-4af4-a3be-3d0a0cb1466a}*SharedItemsImports = 13
+		Tests\FeatureToggle.Tests.Shared\FeatureToggle.Tests.Shared.projitems*{ebcf67fa-cca0-4119-b108-90d8cf5a760a}*SharedItemsImports = 4
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{f766f5cf-9aaf-48ef-9515-a0d808deb9e5}*SharedItemsImports = 4
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{c09f1554-f0db-4a3e-9bd1-ccbc2aa1d6e1}*SharedItemsImports = 4
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{d43bbcde-2c19-4f44-a57d-e2b57c741fbc}*SharedItemsImports = 4
+		Tests\FeatureToggle.Tests.Shared\FeatureToggle.Tests.Shared.projitems*{fbff364a-d072-46c7-8382-7f95cca685c8}*SharedItemsImports = 4
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{5e161f8f-80b3-48ab-ab8c-b75a1ccd5c31}*SharedItemsImports = 13
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{e80213df-1e94-4748-90ed-9a527bfd2371}*SharedItemsImports = 4
 	EndGlobalSection
@@ -387,5 +392,6 @@ Global
 		{FBFF364A-D072-46C7-8382-7F95CCA685C8} = {91AF4095-22DF-45BF-8F01-56C74B4EBD66}
 		{E80213DF-1E94-4748-90ED-9A527BFD2371} = {CCA826B0-BBAB-4A04-AB87-B1C3028849BF}
 		{8B2342A9-4FA0-49E0-A7FE-6630263E9CE0} = {91AF4095-22DF-45BF-8F01-56C74B4EBD66}
+		{09B6DB37-B8DF-4AF4-A3BE-3D0A0CB1466A} = {91AF4095-22DF-45BF-8F01-56C74B4EBD66}
 	EndGlobalSection
 EndGlobal
