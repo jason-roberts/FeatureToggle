@@ -12,6 +12,7 @@ Currently in development.
 ## Enhancements / New Features
 
 * Windows Phone 8.1 Silverlight support [#81](https://github.com/jason-roberts/FeatureToggle/issues/81)
+* Windows Universal Apps 8.1 support [#21](https://github.com/jason-roberts/FeatureToggle/issues/21)
 
 
 
