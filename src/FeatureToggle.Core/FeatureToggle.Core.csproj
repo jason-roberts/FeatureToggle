@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlwaysOffFeatureToggle.cs" />
+    <Compile Include="DefaultToEnabledOnErrorDecorator.cs" />
     <Compile Include="ToggleConfigurationSettings.cs" />
     <Compile Include="RandomFeatureToggle.cs" />
     <Compile Include="AlwaysOnFeatureToggle.cs" />
