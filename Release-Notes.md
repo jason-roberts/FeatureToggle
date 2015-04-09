@@ -13,7 +13,7 @@ Currently in development.
 
 * Windows Phone 8.1 Silverlight support [#81](https://github.com/jason-roberts/FeatureToggle/issues/81)
 * Windows Universal Apps 8.1 support [#21](https://github.com/jason-roberts/FeatureToggle/issues/21)
-
+* New toggle decorator that defaults to true when a toggle (configuration) error occurs [#61](https://github.com/jason-roberts/FeatureToggle/issues/61)
 
 
 
