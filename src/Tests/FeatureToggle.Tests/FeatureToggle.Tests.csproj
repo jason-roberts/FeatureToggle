@@ -105,6 +105,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefaultToDisabledOnErrorDecoratorShould.cs" />
     <Compile Include="DefaultToEnabledOnErrorDecoratorShould.cs" />
     <Compile Include="RandomFeatureToggleShould.cs" />
     <Compile Include="AlwaysOnFeatureToggleShould.cs" />
