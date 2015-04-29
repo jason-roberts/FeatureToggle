@@ -7,16 +7,16 @@ using System.Linq;
 
 using System.Net;
 using System.Web.Script.Serialization;
-
 using FeatureToggle.Core;
 using FeatureToggle.Toggles;
-// ReSharper disable CheckNamespace
 
+
+// ReSharper disable CheckNamespace
 namespace FeatureToggle.Providers
 // ReSharper restore CheckNamespace
 {
     public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider,
-        ITimePeriodProvider, IDaysOfWeekToggleValueProvider
+        ITimePeriodProvider, IDaysOfWeekToggleValueProvider, IAssemblyVersionProvider
     {
         private const string KeyNotFoundInAppsettingsMessage = "The key '{0}' was not found in AppSettings";
 
@@ -140,6 +140,19 @@ namespace FeatureToggle.Providers
 
             return new Tuple<DateTime, DateTime>(startDate, endDate);
         }
+
+
+        public Version EvaluateVersion(IFeatureToggle toggle)
+        {
+            var key = ExpectedAppSettingsKeyFor(toggle);
+
+            ValidateKeyExists(key);
+
+            string configuredVersion = ConfigurationManager.AppSettings[key];
+
+            return Version.Parse(configuredVersion);
+        }
+
 
         private static void ValidateKeyExists(string key)
         {

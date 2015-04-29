@@ -50,6 +50,7 @@
     <Compile Include="AlwaysOffFeatureToggle.cs" />
     <Compile Include="DefaultToDisabledOnErrorDecorator.cs" />
     <Compile Include="DefaultToEnabledOnErrorDecorator.cs" />
+    <Compile Include="IAssemblyVersionProvider.cs" />
     <Compile Include="ToggleConfigurationSettings.cs" />
     <Compile Include="RandomFeatureToggle.cs" />
     <Compile Include="AlwaysOnFeatureToggle.cs" />
