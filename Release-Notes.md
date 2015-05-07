@@ -15,6 +15,7 @@ Currently in development.
 * Windows Universal Apps 8.1 support [#21](https://github.com/jason-roberts/FeatureToggle/issues/21)
 * New toggle decorator that defaults to true when a toggle (configuration) error occurs [#61](https://github.com/jason-roberts/FeatureToggle/issues/61)
 * New toggle decorator that defaults to false when a toggle (configuration) error occurs [#60](https://github.com/jason-roberts/FeatureToggle/issues/60)
+* New toggle that becomes enabled once specific assembly version number is reached [#63](https://github.com/jason-roberts/FeatureToggle/issues/63)
 
 
 # Version 2.2.1

@@ -13,8 +13,7 @@ namespace FeatureToggle.Toggles
         {
 #if (WINDOWS_PHONE || NETFX_CORE)
 
-            throw new NotImplementedException();
-            //ToggleValueProvider = new ApplicationResourcesSettingsProvider();
+            ToggleValueProvider = new ApplicationResourcesSettingsProvider();
 
 #else
 
@@ -40,7 +39,8 @@ namespace FeatureToggle.Toggles
         private Version GetAssemblyVersionOfDerivedToggle()
         {
 #if (WINDOWS_PHONE || NETFX_CORE)
-            throw new NotImplementedException();
+
+            return new AssemblyName(this.GetType().AssemblyQualifiedName).Version;
 #else
             return new AssemblyName(GetType().Assembly.FullName).Version;
 #endif

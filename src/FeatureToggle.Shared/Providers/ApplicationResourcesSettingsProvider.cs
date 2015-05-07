@@ -14,7 +14,7 @@ using FeatureToggle.Core;
 namespace FeatureToggle.Providers
 {
     public class ApplicationResourcesSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider,
-        ITimePeriodProvider, IDaysOfWeekToggleValueProvider
+        ITimePeriodProvider, IDaysOfWeekToggleValueProvider, IAssemblyVersionProvider
     {
         private const string KeyNotFoundInApplicationResourcesMessage =
             "The key '{0}' was not found in Application.Current.Resources";
@@ -120,6 +120,17 @@ namespace FeatureToggle.Providers
             return ((string) Application.Current.Resources[toggleNameInConfig])
                 .Split(new[] {','})
                 .Select(x => x.Trim());
+        }
+
+        public Version EvaluateVersion(IFeatureToggle toggle)
+        {
+            var toggleNameInConfig = CalculateToggleNameAsItShouldAppearInConfig(toggle);
+
+            AssertThatToggleHasConfiguredValue(toggleNameInConfig);
+
+            string configuredVersion = (string)Application.Current.Resources[toggleNameInConfig];
+
+            return Version.Parse(configuredVersion);
         }
     }
 }
