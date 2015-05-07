@@ -95,13 +95,14 @@ namespace FeatureToggle.Tests.Shared
 
             var sut = new MyVersionToggleFor_v0_0_2_0();
 
+            
 
 #if NETFX_CORE
             await 
 #endif
             RunOn.Dispatcher(() =>
             {
-                ApplicationResourcesSetter.Set("FeatureToggle.MyVersionToggleFor_v0_0_2_0", "0.0.2.0");
+                ApplicationResourcesSetter.Set("FeatureToggle.MyVersionToggleFor_v0_0_2_0", "0.0.2.0");    
                 result = sut.FeatureEnabled;
             });
 

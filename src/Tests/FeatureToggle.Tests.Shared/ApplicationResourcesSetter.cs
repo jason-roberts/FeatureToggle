@@ -1,7 +1,9 @@
 ﻿#if NETFX_CORE    
     using Windows.UI.Xaml;
 #endif
-
+#if WINDOWS_PHONE
+    using System.Windows;
+#endif
 // ReSharper disable CheckNamespace
 namespace FeatureToggle.Tests.Shared
 // ReSharper restore CheckNamespace
@@ -10,7 +12,12 @@ namespace FeatureToggle.Tests.Shared
     {
         public static void Set(string key, object value)
         {
-// Windows phone Silverlight 8.1 has resources pre-set in app.xaml
+#if WINDOWS_PHONE
+            // cannot do this in win phone 8.1: Application.Current.Resources[key] = value;
+
+            // the expected settings must be in the actual app.xaml resources
+#endif           
+
 #if NETFX_CORE
       Application.Current.Resources[key] = value;
 #endif

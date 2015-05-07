@@ -18,6 +18,11 @@
         <system:String  x:Key="FeatureToggle.PeriodToggle">01-Jan-2000 23:22:21 | 01-Jan-2001 23:22:21</system:String>
 
         <system:String  x:Key="FeatureToggle.DaysToggle">Wednesday, Saturday</system:String>
+
+        <system:String  x:Key="FeatureToggle.MyVersionToggleFor_v0_0_2_0">0.0.2.0</system:String>
+        <system:String  x:Key="FeatureToggle.MyVersionToggleFor_v0_0_2_1">0.0.2.1</system:String>
+        <system:String  x:Key="FeatureToggle.MyVersionToggleFor_v0_0_2_2">0.0.2.2</system:String>
+        
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

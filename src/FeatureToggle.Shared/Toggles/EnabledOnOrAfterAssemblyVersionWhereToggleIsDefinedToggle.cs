@@ -40,7 +40,11 @@ namespace FeatureToggle.Toggles
         {
 #if (WINDOWS_PHONE || NETFX_CORE)
 
-            return new AssemblyName(this.GetType().AssemblyQualifiedName).Version;
+            var assemblyName = this.GetType().GetTypeInfo().Assembly.FullName;
+
+            var assembly = new AssemblyName(assemblyName);
+
+            return assembly.Version;
 #else
             return new AssemblyName(GetType().Assembly.FullName).Version;
 #endif
