@@ -17,6 +17,12 @@ using FeatureToggle.Toggles;
 namespace FeatureToggle.Tests.Shared
 // ReSharper restore CheckNamespace
 {
+
+#if NETFX_CORE
+    [Trait("category", "Threaded")]
+#else
+    [TestClass]
+#endif
     public class EnabledOnOrAfterToggleAssemblyVersionShould
     {        
         // assembly info has specific value
