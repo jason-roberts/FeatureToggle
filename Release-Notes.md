@@ -16,6 +16,7 @@ Currently in development.
 * New toggle decorator that defaults to true when a toggle (configuration) error occurs [#61](https://github.com/jason-roberts/FeatureToggle/issues/61)
 * New toggle decorator that defaults to false when a toggle (configuration) error occurs [#60](https://github.com/jason-roberts/FeatureToggle/issues/60)
 * New toggle that becomes enabled once specific assembly version number is reached [#63](https://github.com/jason-roberts/FeatureToggle/issues/63)
+* New toggle decorator that becomes enabled if all wrapped toggles are enabled [#68](https://github.com/jason-roberts/FeatureToggle/issues/68)
 
 
 # Version 2.2.1
