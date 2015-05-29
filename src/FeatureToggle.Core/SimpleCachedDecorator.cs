@@ -6,12 +6,9 @@ namespace FeatureToggle.Core
     {
         private readonly TimeSpan _cacheDuration;
         private bool _cachedValue;
-        private DateTime _cachedValueLastUpdatedTime;
-        private DateTime _cacheExpiryTime;
-        public IFeatureToggle WrappedToggle { get; private set; }
 
-        public SimpleCachedDecorator(IFeatureToggle toggleToWrap, TimeSpan cacheDuration)
-        {            
+        public SimpleCachedDecorator(IFeatureToggle toggleToWrap, TimeSpan cacheDuration, Func<DateTime> alternativeNowProvider = null)
+        {
             if (toggleToWrap == null)
             {
                 throw new ArgumentNullException("toggleToWrap");
@@ -20,23 +17,28 @@ namespace FeatureToggle.Core
             WrappedToggle = toggleToWrap;
             _cacheDuration = cacheDuration;
 
+            if (alternativeNowProvider == null)
+            {
+                NowProvider = () => DateTime.Now;
+            }
+            else
+            {
+                NowProvider = alternativeNowProvider;
+            }
+
             SetCachedValue();
         }
 
-        private void SetCachedValue()
-        {
-            _cachedValue = WrappedToggle.FeatureEnabled;
-
-            _cachedValueLastUpdatedTime = DateTime.Now;
-            _cacheExpiryTime = _cachedValueLastUpdatedTime.Add(_cacheDuration);
-        }
-
+        public DateTime CachedValueLastUpdatedTime { get; private set; }
+        public DateTime CacheExpiryTime { get; private set; }
+        public IFeatureToggle WrappedToggle { get; private set; }
+        public Func<DateTime> NowProvider { get; set; }
 
         public bool FeatureEnabled
         {
             get
             {
-                var cacheHasExpired = DateTime.Now > _cacheExpiryTime;
+                var cacheHasExpired = NowProvider() > CacheExpiryTime;
 
                 if (cacheHasExpired)
                 {
@@ -45,6 +47,16 @@ namespace FeatureToggle.Core
 
                 return _cachedValue;
             }
+        }
+
+    
+
+        private void SetCachedValue()
+        {
+            _cachedValue = WrappedToggle.FeatureEnabled;
+
+            CachedValueLastUpdatedTime = NowProvider();
+            CacheExpiryTime = CachedValueLastUpdatedTime.Add(_cacheDuration);
         }
     }
 }

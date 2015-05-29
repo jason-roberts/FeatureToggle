@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using FeatureToggle.Core;
 using Xunit;
 
@@ -8,7 +7,7 @@ namespace FeatureToggle.Tests
     public class SimpleCacheDecoratorShould
     {      
         [Fact]
-        public void ErrorWhenNullWrappedTogglesSupplied()
+        public void ErrorWhenNoWrappedToggleSupplied()
         {
             Assert.Throws<ArgumentNullException>(() => new SimpleCachedDecorator(null, TimeSpan.Zero));
         }
@@ -27,7 +26,7 @@ namespace FeatureToggle.Tests
 
 
         [Fact]
-        public void MaintainInitialValueWithinCacheDurationWhenUnderlyingToggleValueChanges()
+        public void MaintainInitialValueWithinCacheDurationEvenWhenUnderlyingToggleValueChanges()
         {
             var cachedToggle = new CacheTestToggle();
             cachedToggle.Enable();
@@ -41,20 +40,65 @@ namespace FeatureToggle.Tests
 
 
         [Fact]
-        public void UpdateNewValueAfterCacheDurationWhenUnderlyingToggleValueChanged()
+        public void UpdateNewValueAfterCacheExpires()
         {
             var cachedToggle = new CacheTestToggle();
             cachedToggle.Enable();
 
-            var sut = new SimpleCachedDecorator(cachedToggle, TimeSpan.FromSeconds(1));
+            var creationTime = new DateTime(2000, 1, 25);
+            const int durationTicks = 1;
+
+            var sut = new SimpleCachedDecorator(cachedToggle, TimeSpan.FromTicks(durationTicks), () => creationTime);
+
 
             cachedToggle.Disable();
 
-            Thread.Sleep(TimeSpan.FromSeconds(2));
 
+            sut.NowProvider = () => creationTime.AddTicks(durationTicks + 1);
             Assert.False(sut.FeatureEnabled);
         }
 
+
+        [Fact]
+        public void CacheTimesShouldBeInitialisedOnCreation()
+        {
+            var cachedToggle = new CacheTestToggle();
+            var duration = TimeSpan.FromMilliseconds(42);
+
+            var sut = new SimpleCachedDecorator(cachedToggle, duration, () => new DateTime(2000, 1, 25));
+
+            Assert.Equal(new DateTime(2000, 1, 25), sut.CachedValueLastUpdatedTime);
+            Assert.Equal(new DateTime(2000, 1, 25).Add(duration), sut.CacheExpiryTime);
+        }
+
+
+        [Fact]
+        public void CacheTimesShouldBeUpdatedAfterExpiry()
+        {
+            var cachedToggle = new CacheTestToggle();
+            cachedToggle.Enable();
+
+            var creationTime = new DateTime(2000, 1, 25);
+            const int durationTicks = 1;
+
+            var sut = new SimpleCachedDecorator(cachedToggle, TimeSpan.FromTicks(durationTicks), () => creationTime);
+
+
+            cachedToggle.Disable();
+
+
+            const int passedTimeInTicks = durationTicks + 1;
+
+            sut.NowProvider = () => creationTime.AddTicks(passedTimeInTicks);
+
+            var dontCare = sut.FeatureEnabled;
+
+            Assert.Equal(creationTime.AddTicks(passedTimeInTicks), sut.CachedValueLastUpdatedTime);
+            Assert.Equal(creationTime.AddTicks(passedTimeInTicks).AddTicks(durationTicks), sut.CacheExpiryTime);
+        }
+
+
+        // TODO: manual refresh method
         
         private class CacheTestToggle : IFeatureToggle
         {
