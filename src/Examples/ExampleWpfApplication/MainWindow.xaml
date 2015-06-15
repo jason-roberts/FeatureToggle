@@ -9,9 +9,11 @@
         <StackPanel>            
             <Button>Feature 1 - exisiting in production - not feature toggle applied</Button>
             <Button Visibility="{Binding Path=Feature2Toggle.FeatureEnabled, Converter={StaticResource Converter}}">Feature 2 - still in development</Button>
-            <TextBlock>Note that the feature2 button is not visible at runtime because it is disabled in the app config.</TextBlock>
+            <TextBlock>Note that the feature2 button is not visible at runtime because it is disabled in the app config.</TextBlock>            
             <Button Visibility="{Binding Path=Feature3Toggle.FeatureEnabled, Converter={StaticResource Converter}}">Feature 3 - enabled because it's after a toggled date</Button>
             <Button Visibility="{Binding Path=ToggleFromJsonHttpEndpoint.FeatureEnabled, Converter={StaticResource Converter}}">Feature 4 - enabled because rest api returned true</Button>            
+            <TextBlock>Note that the Feature 5 button is not visible at runtime because one of its "children" is disabled in the app config.</TextBlock>
+            <Button Visibility="{Binding Path=Feature5.FeatureEnabled, Converter={StaticResource Converter}}">Feature 5</Button>
         </StackPanel>
     </Grid>
 </Window>

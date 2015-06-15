@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using FeatureToggle.Core;
 
 namespace ExampleWpfApplication
 {
@@ -8,6 +9,7 @@ namespace ExampleWpfApplication
         private Feature2Toggle _feature2Toggle;
         private Feature3Toggle _feature3Toggle;
         private ToggleFromJsonHttpEndpoint _toggleFromJsonHttpEndpoint;
+        private IFeatureToggle _feature5;
 
         public MainWindow()
         {
@@ -16,6 +18,8 @@ namespace ExampleWpfApplication
             Feature2Toggle = new Feature2Toggle();
             Feature3Toggle = new Feature3Toggle();
             ToggleFromJsonHttpEndpoint = new ToggleFromJsonHttpEndpoint();
+
+            Feature5 = new CompositeAndDecorator(new FeatureXToggle(), new FeatureYToggle());
 
             DataContext = this;
         }
@@ -50,6 +54,19 @@ namespace ExampleWpfApplication
                 Notify("ToggleFromJsonHttpEndpoint");
             }
         }
+
+
+        public IFeatureToggle Feature5
+        {
+            get { return _feature5; }
+            set
+            {
+                _feature5 = value;
+                Notify("Feature5");
+            }
+        }
+
+
 
         #region INotifyPropertyChanged Members
 
