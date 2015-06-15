@@ -2,12 +2,13 @@
 
 namespace FeatureToggle.Core
 {
-    public class SimpleCachedDecorator : IFeatureToggle
+    public class FixedTimeCacheDecorator : IFeatureToggle
     {
         private readonly TimeSpan _cacheDuration;
         private bool _cachedValue;
 
-        public SimpleCachedDecorator(IFeatureToggle toggleToWrap, TimeSpan cacheDuration, Func<DateTime> alternativeNowProvider = null)
+        public FixedTimeCacheDecorator(IFeatureToggle toggleToWrap, TimeSpan cacheDuration,
+            Func<DateTime> alternativeNowProvider = null)
         {
             if (toggleToWrap == null)
             {
@@ -15,6 +16,7 @@ namespace FeatureToggle.Core
             }
 
             WrappedToggle = toggleToWrap;
+
             _cacheDuration = cacheDuration;
 
             if (alternativeNowProvider == null)
@@ -48,8 +50,6 @@ namespace FeatureToggle.Core
                 return _cachedValue;
             }
         }
-
-    
 
         private void SetCachedValue()
         {

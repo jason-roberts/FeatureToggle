@@ -4,12 +4,12 @@ using Xunit;
 
 namespace FeatureToggle.Tests
 {
-    public class SimpleCacheDecoratorShould
+    public class FixedTimeCacheDecoratorShould
     {      
         [Fact]
         public void ErrorWhenNoWrappedToggleSupplied()
         {
-            Assert.Throws<ArgumentNullException>(() => new SimpleCachedDecorator(null, TimeSpan.Zero));
+            Assert.Throws<ArgumentNullException>(() => new FixedTimeCacheDecorator(null, TimeSpan.Zero));
         }
 
 
@@ -19,7 +19,7 @@ namespace FeatureToggle.Tests
             var cachedToggle = new CacheTestToggle();
             cachedToggle.Enable();
 
-            var sut = new SimpleCachedDecorator(cachedToggle, TimeSpan.FromSeconds(1));
+            var sut = new FixedTimeCacheDecorator(cachedToggle, TimeSpan.FromSeconds(1));
 
             Assert.True(sut.FeatureEnabled);
         }
@@ -31,7 +31,7 @@ namespace FeatureToggle.Tests
             var cachedToggle = new CacheTestToggle();
             cachedToggle.Enable();
 
-            var sut = new SimpleCachedDecorator(cachedToggle, TimeSpan.FromSeconds(1));
+            var sut = new FixedTimeCacheDecorator(cachedToggle, TimeSpan.FromSeconds(1));
 
             cachedToggle.Disable();
 
@@ -48,7 +48,7 @@ namespace FeatureToggle.Tests
             var creationTime = new DateTime(2000, 1, 25);
             const int durationTicks = 1;
 
-            var sut = new SimpleCachedDecorator(cachedToggle, TimeSpan.FromTicks(durationTicks), () => creationTime);
+            var sut = new FixedTimeCacheDecorator(cachedToggle, TimeSpan.FromTicks(durationTicks), () => creationTime);
 
 
             cachedToggle.Disable();
@@ -65,7 +65,7 @@ namespace FeatureToggle.Tests
             var cachedToggle = new CacheTestToggle();
             var duration = TimeSpan.FromMilliseconds(42);
 
-            var sut = new SimpleCachedDecorator(cachedToggle, duration, () => new DateTime(2000, 1, 25));
+            var sut = new FixedTimeCacheDecorator(cachedToggle, duration, () => new DateTime(2000, 1, 25));
 
             Assert.Equal(new DateTime(2000, 1, 25), sut.CachedValueLastUpdatedTime);
             Assert.Equal(new DateTime(2000, 1, 25).Add(duration), sut.CacheExpiryTime);
@@ -81,7 +81,7 @@ namespace FeatureToggle.Tests
             var creationTime = new DateTime(2000, 1, 25);
             const int durationTicks = 1;
 
-            var sut = new SimpleCachedDecorator(cachedToggle, TimeSpan.FromTicks(durationTicks), () => creationTime);
+            var sut = new FixedTimeCacheDecorator(cachedToggle, TimeSpan.FromTicks(durationTicks), () => creationTime);
 
 
             cachedToggle.Disable();
@@ -98,7 +98,6 @@ namespace FeatureToggle.Tests
         }
 
 
-        // TODO: manual refresh method
         
         private class CacheTestToggle : IFeatureToggle
         {
