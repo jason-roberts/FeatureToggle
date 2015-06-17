@@ -16,7 +16,7 @@ namespace FeatureToggle.Providers
 
             var connectionNameInConfig = ToggleConfigurationSettings.Prefix + toggleName;
 
-            // TODO: need to consider not creating a new document store each time for performance reasons
+            // To not create a new document store each time for performance reasons see https://github.com/jason-roberts/FeatureToggle/issues/64
             var documentStore = new DocumentStore
             {
                 ConnectionStringName = connectionNameInConfig
