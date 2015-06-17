@@ -2,7 +2,7 @@
 <package>
   <metadata minClientVersion="2.8.1">
     <id>FeatureToggle</id>
-    <version>2.2.2</version>
+    <version>3.0.0</version>
     <authors>Jason Roberts - dontcodetired.com</authors>
     <owners>Jason Roberts</owners>
     <licenseUrl>https://github.com/jason-roberts/FeatureToggle/blob/master/LICENSE.txt</licenseUrl>
@@ -10,11 +10,11 @@
     <iconUrl>https://github.com/jason-roberts/FeatureToggle/raw/master/etc/logo.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Simple, reliable feature toggles in .NET</description>
-    <releaseNotes>WARNING: Version 2.x introduces breaking changes over 1.x. For breaking changes see https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md</releaseNotes>
-    <copyright>Copyright 2011-2014 Jason Roberts</copyright>
+    <releaseNotes>WARNING: Version 3.x introduces breaking changes from 2.x. For breaking changes see https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md</releaseNotes>
+    <copyright>Copyright 2014-2015 Jason Roberts</copyright>
     <tags>feature toggle branch merge featuretoggle cd continuous delivery</tags>
 	<dependencies>
-      <dependency id="FeatureToggle.Core" version="2.2.2" />
+      <dependency id="FeatureToggle.Core" version="3.0.0" />
     </dependencies>
   </metadata>
 </package>

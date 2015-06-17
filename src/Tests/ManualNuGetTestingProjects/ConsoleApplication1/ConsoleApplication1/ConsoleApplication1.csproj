@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C4A1BA9D-180D-49B7-8D11-089E4951E691}</ProjectGuid>
+    <ProjectGuid>{C3B66C8C-60FE-488F-9F83-46AEDFC83D06}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConsoleApplication1</RootNamespace>
     <AssemblyName>ConsoleApplication1</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FeatureToggle">
-      <HintPath>..\packages\FeatureToggle.2.2.2\lib\net40\FeatureToggle.dll</HintPath>
+      <HintPath>..\packages\FeatureToggle.3.0.0\lib\net40\FeatureToggle.dll</HintPath>
     </Reference>
     <Reference Include="FeatureToggle.Core">
-      <HintPath>..\packages\FeatureToggle.Core.2.2.2\lib\portable-net40+sl50+wp80+win\FeatureToggle.Core.dll</HintPath>
+      <HintPath>..\packages\FeatureToggle.Core.3.0.0\lib\portable-net40+sl50+wp81+wpa+win\FeatureToggle.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

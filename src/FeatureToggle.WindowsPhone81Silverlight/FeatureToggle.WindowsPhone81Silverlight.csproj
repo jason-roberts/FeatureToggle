@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FeatureToggle.WindowsPhone81Silverlight</RootNamespace>
-    <AssemblyName>FeatureToggle</AssemblyName>
+    <AssemblyName>FeatureToggle.WindowsPhone81Silverlight</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
