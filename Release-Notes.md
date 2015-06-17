@@ -2,12 +2,10 @@
 
 # Version 3.0
 
-Currently in development.
-
 ##Breaking Changes
 
-* Remove the WPF, etc Visibility converters. [#67](https://github.com/jason-roberts/FeatureToggle/issues/67)
-* Remove Windows phone 8.0 support [#80](https://github.com/jason-roberts/FeatureToggle/issues/80)
+* Removed the WPF, etc Visibility converters. [#67](https://github.com/jason-roberts/FeatureToggle/issues/67)
+* Removed Windows phone 8.0 support [#80](https://github.com/jason-roberts/FeatureToggle/issues/80)
 
 ## Enhancements / New Features
 
