@@ -11,15 +11,15 @@ namespace FeatureToggle.Providers
     {
         public bool EvaluateBooleanToggleValue(IFeatureToggle toggle)
         {
-            var cmdText = GetCommandTextFromAppConfig(toggle);
+            var connectionString = GetConnectionStringFromConfig(toggle);
+            var sqlCommandText = GetCommandTextFromAppConfig(toggle);
+            
 
-            var cnString = GetConnectionStringFromConfig(toggle);
-
-            using (var cn = new SqlConnection(cnString))
+            using (var connection = new SqlConnection(connectionString))
             {
-                cn.Open();
+                connection.Open();
 
-                using (var cmd = new SqlCommand(cmdText, cn))
+                using (var cmd = new SqlCommand(sqlCommandText, connection))
                 {
                     return (bool) cmd.ExecuteScalar();                    
                 }
@@ -28,44 +28,74 @@ namespace FeatureToggle.Providers
 
         private string GetConnectionStringFromConfig(IFeatureToggle toggle)
         {
-            var toggleNameInConfig = ToggleConfigurationSettings.Prefix + toggle.GetType().Name + ".ConnectionString";
-            var toggleConnectionNameInConfig = ToggleConfigurationSettings.Prefix + toggle.GetType().Name + ".ConnectionStringName";
+            var prefixedToggleConfigName = ToggleConfigurationSettings.Prefix + toggle.GetType().Name;
+            var appSettingsKey = prefixedToggleConfigName + ".ConnectionString";            
 
-            //Check if either a ConnectionString or a ConnectionStringName exists
-            if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig) && !ConfigurationManager.AppSettings.AllKeys.Contains(toggleConnectionNameInConfig))
-                throw new ToggleConfigurationError(string.Format("The key '{0}' or '{1}' was not found in AppSettings",
-                                                                     toggleNameInConfig, 
-                                                                     toggleConnectionNameInConfig));
 
-            string connectionString;
-            //Use the ConnectionStringName if it's given
-            if(ConfigurationManager.AppSettings.AllKeys.Contains(toggleConnectionNameInConfig))
+            var isConnectionConfiguredViaAppSettings = ConfigurationManager.AppSettings.AllKeys.Contains(appSettingsKey);
+            var isConnectionConfiguredViaConnectionStrings = ConfigurationManager.ConnectionStrings[prefixedToggleConfigName] != null;
+
+            if (isConnectionConfiguredViaAppSettings && isConnectionConfiguredViaConnectionStrings)
             {
-                string connectionStringName = ConfigurationManager.AppSettings[toggleConnectionNameInConfig];
-                ConnectionStringSettings connectionStringSettings = ConfigurationManager.ConnectionStrings[connectionStringName];
-                if (connectionStringSettings == null || string.IsNullOrEmpty(connectionStringSettings.ConnectionString))
-                    throw new ToggleConfigurationError(string.Format("The connectionString with Key '{0}' was not found or is empty in the web.config file.",
-                                                                     connectionStringName));
-                connectionString = connectionStringSettings.ConnectionString;
-            }
-            else
-            {
-                connectionString = ConfigurationManager.AppSettings[toggleNameInConfig];
+                throw new ToggleConfigurationError(
+                    string.Format(
+                        "The connection string for '{0}' is specified in both <appSettings> and <connectionStrings>.",
+                        prefixedToggleConfigName));
+
             }
 
+            if (!isConnectionConfiguredViaAppSettings && !isConnectionConfiguredViaConnectionStrings)
+            {
+                throw new ToggleConfigurationError(
+                    string.Format(
+                        "The connection string was not found in <appSettings> with a key of '{0}' or in <connectionStrings> with a name of '{1}'.",
+                        appSettingsKey, prefixedToggleConfigName));
+            }
 
-            return connectionString;
+            string configuredConnectionString;
+
+            if (isConnectionConfiguredViaAppSettings)
+            {
+                configuredConnectionString = ConfigurationManager.AppSettings[appSettingsKey];
+
+                if (string.IsNullOrWhiteSpace(configuredConnectionString))
+                {
+                    throw new ToggleConfigurationError(string.Format("The <appSettings> value for key '{0}' is empty.", appSettingsKey));                    
+                }
+
+                return configuredConnectionString;
+            }
+
+            configuredConnectionString = ConfigurationManager.ConnectionStrings[prefixedToggleConfigName].ConnectionString;
+
+            if (string.IsNullOrWhiteSpace(configuredConnectionString))
+            {
+                throw new ToggleConfigurationError(string.Format("The <connectionStrings> value for connected named '{0}' is empty.", prefixedToggleConfigName));
+            }
+
+            return configuredConnectionString; 
         }
 
         private string GetCommandTextFromAppConfig(IFeatureToggle toggle)
         {
-            var toggleNameInConfig = ToggleConfigurationSettings.Prefix + toggle.GetType().Name + ".SqlStatement";
+            var sqlCommandKey = ToggleConfigurationSettings.Prefix + toggle.GetType().Name + ".SqlStatement";
 
-            if (!ConfigurationManager.AppSettings.AllKeys.Contains(toggleNameInConfig))
-                throw new ToggleConfigurationError(string.Format("The key '{0}' was not found in AppSettings",
-                                                                     toggleNameInConfig));
+            var sqlCommandIsMissing = !ConfigurationManager.AppSettings.AllKeys.Contains(sqlCommandKey);
 
-            return ConfigurationManager.AppSettings[toggleNameInConfig];
+            if (sqlCommandIsMissing)
+            {
+                throw new ToggleConfigurationError(string.Format("The appSettings key '{0}' was not found.",
+                    sqlCommandKey));
+            }
+
+            var configuredSqlCommand = ConfigurationManager.AppSettings[sqlCommandKey];
+
+            if (string.IsNullOrWhiteSpace(configuredSqlCommand))
+            {
+                throw new ToggleConfigurationError(string.Format("The <appSettings> value for key '{0}' is empty.", sqlCommandKey));                
+            }
+
+            return configuredSqlCommand;
         }
     }
 }

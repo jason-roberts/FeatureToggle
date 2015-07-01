@@ -1,5 +1,9 @@
 #Release Notes 
 
+# Version 3.1
+
+* The BooleanSqlServerProvider will now look for a connection string in both app settings or connection string settings [#88](https://github.com/jason-roberts/FeatureToggle/pull/88)
+
 # Version 3.0
 
 ##Breaking Changes
