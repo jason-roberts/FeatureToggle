@@ -11,7 +11,7 @@ namespace FeatureToggle.Toggles
     /// Example : Explains how the app works only one time (no matter how many devices user have)
     /// Retrieve toggle through Roaming Settings
     /// </summary>
-    public class ApplyOncePerUserFeatureToggle : IFeatureToggle
+    public abstract class ApplyOncePerUserFeatureToggle : IFeatureToggle
     {
         public bool FeatureEnabled
         {

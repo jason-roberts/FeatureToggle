@@ -7,7 +7,7 @@ namespace FeatureToggle.Toggles
     /// <summary>
     /// This toggle is activated only one time, it could be created at any time
     /// </summary>
-    public class ApplyOnceFeatureToggle : IFeatureToggle
+    public abstract class ApplyOnceFeatureToggle : IFeatureToggle
     {
         public bool FeatureEnabled { get; private set; }
 

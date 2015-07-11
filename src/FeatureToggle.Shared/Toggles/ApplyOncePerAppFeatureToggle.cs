@@ -10,7 +10,7 @@ namespace FeatureToggle.Toggles
     /// This toggle is activated only one time per app, 
     /// Retrieve toggle through Local Settings
     /// </summary>
-    public class ApplyOncePerAppFeatureToggle : IFeatureToggle
+    public abstract class ApplyOncePerAppFeatureToggle : IFeatureToggle
     {
         // BUG : Local Settings are remove when app is removed (save in Roaming with device ID ?)
         public bool FeatureEnabled
