@@ -1,5 +1,9 @@
 #Release Notes 
 
+# Version 3.2
+
+* Multiple Boolean Sql server toggles can now share a single <connectionStrings> named connection string [#96](https://github.com/jason-roberts/FeatureToggle/issues/96) (thanks to @craig-wagner)
+
 # Version 3.1
 
 * The BooleanSqlServerProvider will now look for a connection string in both app settings or connection string settings [#88](https://github.com/jason-roberts/FeatureToggle/pull/88) (thanks to @bastianjohn)
