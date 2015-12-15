@@ -6,8 +6,6 @@ Install FeatureToggle easily via NuGet:
 
 PM> Install-Package FeatureToggle
 
-PM> Install-Package FeatureToggle.WPFExtensions
-
 #[Documentation](http://jason-roberts.github.io/FeatureToggle.Docs/)
 #[Pluralsight Feature Toggle Course](http://bit.ly/psfeaturetoggle)
 
@@ -20,4 +18,4 @@ PM> Install-Package FeatureToggle.WPFExtensions
 
 Jason Roberts is a Microsoft MVP, [Pluralsight course author](http://bit.ly/psjasonroberts) and Journeyman Software Developer with over 12 years experience.
 
-He is the author of the books [Keeping Software Soft](http://keepingsoftwaresoft.com) and [C# Tips](http://bit.ly/sharpbook) and writes at his blog [DontCodeTired.com](http://dontcodetired.com).
+He is the author of the books [Clean C#](http://cleancsharp.com/), [C# Tips](http://bit.ly/sharpbook), and [Keeping Software Soft](http://keepingsoftwaresoft.com). He writes at his blog [DontCodeTired.com](http://dontcodetired.com).
