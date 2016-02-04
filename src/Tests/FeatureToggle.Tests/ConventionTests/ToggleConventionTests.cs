@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using ApprovalUtilities.Utilities;
 using FeatureToggle.Toggles;
 using TestStack.ConventionTests;
 using TestStack.ConventionTests.ConventionData;
@@ -14,10 +16,10 @@ namespace FeatureToggle.Tests.ConventionTests
         [Fact]
         public void TogglesInCorrectNamespace()
         {
-            var typesToCheck = Types.InAssemblyOf<SimpleFeatureToggle>();           
+            var typesToCheck = Types.InAssemblyOf<SimpleFeatureToggle>("NonNested", types=>types.Where(t=>!t.IsNestedPrivate));     
+            
 
-            Convention.Is(new ClassTypeHasSpecificNamespace(
-                x => x.Name.EndsWith("Toggle"),
+            Convention.Is(new ClassTypeHasSpecificNamespace(x=> x.Name.EndsWith("Toggle"),
                 TogglesNamespace,
                 "Toggle Base Classes"), typesToCheck);
         }
