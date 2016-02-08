@@ -105,6 +105,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompositeOrDecoratorShould.cs" />
     <Compile Include="SimpleCacheDecoratorShould.cs" />
     <Compile Include="CompositeAndDecoratorShould.cs" />
     <Compile Include="DefaultToDisabledOnErrorDecoratorShould.cs" />

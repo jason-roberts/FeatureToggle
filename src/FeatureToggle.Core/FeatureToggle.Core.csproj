@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlwaysOffFeatureToggle.cs" />
+    <Compile Include="CompositeOrDecorator.cs" />
     <Compile Include="FixedTimeCacheDecorator.cs" />
     <Compile Include="CompositeAndDecorator.cs" />
     <Compile Include="DefaultToDisabledOnErrorDecorator.cs" />
