@@ -1,5 +1,9 @@
 #Release Notes 
 
+# Version 3.3
+
+* New CompositeOrDecorator [#87](https://github.com/jason-roberts/FeatureToggle/issues/87)
+
 # Version 3.2
 
 * Multiple Boolean Sql server toggles can now share a single <connectionStrings> named connection string [#96](https://github.com/jason-roberts/FeatureToggle/issues/96) (thanks to @craig-wagner)
