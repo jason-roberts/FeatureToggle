@@ -229,3 +229,6 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# VS2015 related
+.vs/
