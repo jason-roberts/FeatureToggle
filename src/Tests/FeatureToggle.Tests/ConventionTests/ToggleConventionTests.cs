@@ -25,7 +25,8 @@ namespace FeatureToggle.Tests.ConventionTests
         [Fact]
         public void TogglesAreAbstract()
         {
-            var typesToCheck = Types.InAssemblyOf<SimpleFeatureToggle>("Toggle base classes", types => types.Where(x => x.Namespace == TogglesNamespace));
+            //var typesToCheck = Types.InAssemblyOf<SimpleFeatureToggle>("Toggle base classes", types => types.Where(x => x.Namespace == TogglesNamespace));
+            var typesToCheck = Types.InAssemblyOf<SimpleFeatureToggle>("Toggle base classes", type => type.Namespace == TogglesNamespace);
 
             Convention.Is(new TypeIsAbstractConvention(), typesToCheck);
         }

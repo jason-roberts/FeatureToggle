@@ -85,8 +85,9 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="TestStack.ConventionTests">
-      <HintPath>..\..\packages\TestStack.ConventionTests.2.2.0\lib\net40\TestStack.ConventionTests.dll</HintPath>
+    <Reference Include="TestStack.ConventionTests, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\TestStack.ConventionTests.2.2.1\lib\net40\TestStack.ConventionTests.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="xunit.abstractions">
       <HintPath>..\..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>

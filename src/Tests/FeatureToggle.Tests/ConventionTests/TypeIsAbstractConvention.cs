@@ -8,7 +8,7 @@ namespace FeatureToggle.Tests.ConventionTests
     {
         public void Execute(Types data, IConventionResultContext result)
         {
-            var invalidTypes = data.TypesToVerify.Where(type => !type.IsAbstract).ToList();
+            var invalidTypes = data.TypesToVerify.Where(type => !type.IsAbstract && !type.IsCompilerGenerated()).ToList();
 
             result.Is("Types should be abstract", invalidTypes);
         }
