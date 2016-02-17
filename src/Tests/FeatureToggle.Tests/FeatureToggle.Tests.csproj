@@ -106,6 +106,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FallbackValueDecoratorShould.cs" />
     <Compile Include="CompositeOrDecoratorShould.cs" />
     <Compile Include="SimpleCacheDecoratorShould.cs" />
     <Compile Include="CompositeAndDecoratorShould.cs" />
