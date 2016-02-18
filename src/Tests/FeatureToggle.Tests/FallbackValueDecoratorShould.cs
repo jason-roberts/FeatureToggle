@@ -16,7 +16,7 @@ namespace FeatureToggle.Tests
 
 
         [Fact]
-        public void ReturnValueOfFallbackToggleIfPrimaryToggleNotCOnfiguredOrErrors()
+        public void ReturnValueOfFallbackToggleIfPrimaryToggleNotConfiguredOrErrors()
         {
             var sut = new FallbackValueDecorator(new AnErroringToggle(), new AnEnabledFeature());
 
@@ -33,7 +33,6 @@ namespace FeatureToggle.Tests
         }
 
 
-
         [Fact]
         public void ErrorWhenNullPrimaryToggleSupplied()
         {
@@ -48,23 +47,34 @@ namespace FeatureToggle.Tests
         }
 
 
+        [Fact]
+        public void CallLoggingActionOnPrimaryToggleFailIfConfigured()
+        {
+            var actionWasCalled = false;
+
+            var sut = new FallbackValueDecorator(new AnErroringToggle(), new AnEnabledFeature(),
+                ex => actionWasCalled = true);
+
+            var isEnabled = sut.FeatureEnabled;
+
+            Assert.True(actionWasCalled);
+        }
 
 
+        private class AnEnabledFeature : AlwaysOnFeatureToggle
+        {
+        }
 
-        private class AnEnabledFeature : AlwaysOnFeatureToggle {}
-        private class ADisabledFeature : AlwaysOffFeatureToggle {}
+        private class ADisabledFeature : AlwaysOffFeatureToggle
+        {
+        }
 
         private class AnErroringToggle : IFeatureToggle
         {
             public bool FeatureEnabled
             {
-                get
-                {
-                    throw new ToggleConfigurationError("Simulated toggle exception");                     
-                }
+                get { throw new ToggleConfigurationError("Simulated toggle exception"); }
             }
         }
-
-  
     }
 }

@@ -2,14 +2,12 @@
 
 namespace FeatureToggle.Core
 {
-
     public class FallbackValueDecorator : IFeatureToggle
     {
-        public IFeatureToggle PrimaryToggle { get; private set; }
-        public IFeatureToggle FallbackToggle { get; private set; }
         private readonly Action<Exception> _logAction;
 
-        public FallbackValueDecorator(IFeatureToggle primaryToggle, IFeatureToggle fallbackToggle, Action<Exception> logAction = null)
+        public FallbackValueDecorator(IFeatureToggle primaryToggle, IFeatureToggle fallbackToggle,
+            Action<Exception> logAction = null)
         {
             if (primaryToggle == null)
             {
@@ -26,6 +24,9 @@ namespace FeatureToggle.Core
             _logAction = logAction;
         }
 
+        public IFeatureToggle PrimaryToggle { get; }
+        public IFeatureToggle FallbackToggle { get; }
+
         public bool FeatureEnabled
         {
             get
@@ -35,8 +36,10 @@ namespace FeatureToggle.Core
                     return PrimaryToggle.FeatureEnabled;
                 }
                 catch (Exception ex)
-                {                    
-                    return FallbackToggle.FeatureEnabled;                    
+                {
+                    _logAction?.Invoke(ex);
+
+                    return FallbackToggle.FeatureEnabled;
                 }
             }
         }
