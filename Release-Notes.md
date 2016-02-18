@@ -3,6 +3,7 @@
 # Version 3.3
 
 * New CompositeOrDecorator [#87](https://github.com/jason-roberts/FeatureToggle/issues/87)
+* New CompositeOFallbackValueDecoratorrDecorator allows the specification of a primary toggle, if the primary toggle fails or is not configured the specified fallback toggle will be used. Optionally a "logging" action can be specified if the primary toggle fails. [#111](https://github.com/jason-roberts/FeatureToggle/issues/111)
 
 # Version 3.2
 
