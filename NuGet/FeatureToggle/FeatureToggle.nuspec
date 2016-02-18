@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Simple, reliable feature toggles in .NET</description>
     <releaseNotes>WARNING: Version 3.x introduces breaking changes from 2.x. For breaking changes see https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md</releaseNotes>
-    <copyright>Copyright 2014-2015 Jason Roberts</copyright>
+    <copyright>Copyright 2014-2016 Jason Roberts</copyright>
     <tags>feature toggle branch merge featuretoggle cd continuous delivery</tags>
 	<dependencies>
       <dependency id="FeatureToggle.Core" version="3.3.0" />
