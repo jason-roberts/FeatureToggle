@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>FeatureToggle.Core</id>
-    <version>3.0.0</version>
+    <version>3.3.0</version>
     <authors>Jason Roberts - dontcodetired.com</authors>
     <owners>Jason Roberts</owners>
     <licenseUrl>https://github.com/jason-roberts/FeatureToggle/blob/master/LICENSE.txt</licenseUrl>

@@ -26,7 +26,8 @@
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <NuGetPackageImportStamp>65e82936</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -163,11 +164,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="FeatureToggle.Core">
-      <HintPath>..\packages\FeatureToggle.Core.3.0.0\lib\portable-net40+sl50+wp81+wpa+win\FeatureToggle.Core.dll</HintPath>
+    <Reference Include="FeatureToggle.Core, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FeatureToggle.Core.3.3.0\lib\portable-net40+sl50+wp81+wpa+win\FeatureToggle.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="FeatureToggle.WindowsPhone81Silverlight">
-      <HintPath>..\packages\FeatureToggle.3.0.0\lib\wp81\FeatureToggle.WindowsPhone81Silverlight.dll</HintPath>
+    <Reference Include="FeatureToggle.WindowsPhone81Silverlight, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FeatureToggle.3.3.0\lib\wp81\FeatureToggle.WindowsPhone81Silverlight.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
@@ -180,11 +183,11 @@
   </Target>
   -->
   <ProjectExtensions />
-  <Import Project="..\packages\FeatureToggle.3.0.0\build\wp81\FeatureToggle.targets" Condition="Exists('..\packages\FeatureToggle.3.0.0\build\wp81\FeatureToggle.targets')" />
+  <Import Project="..\packages\FeatureToggle.3.3.0\build\wp81\FeatureToggle.targets" Condition="Exists('..\packages\FeatureToggle.3.3.0\build\wp81\FeatureToggle.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\FeatureToggle.3.0.0\build\wp81\FeatureToggle.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\FeatureToggle.3.0.0\build\wp81\FeatureToggle.targets'))" />
+    <Error Condition="!Exists('..\packages\FeatureToggle.3.3.0\build\wp81\FeatureToggle.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\FeatureToggle.3.3.0\build\wp81\FeatureToggle.targets'))" />
   </Target>
 </Project>

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>FeatureToggle.RavenDB</id>
-    <version>3.0.0</version>
+    <version>3.3.0</version>
     <authors>Jason Roberts - dontcodetired.com</authors>
     <owners>Jason Roberts</owners>
     <licenseUrl>https://github.com/jason-roberts/FeatureToggle/blob/master/LICENSE.txt</licenseUrl>
@@ -14,8 +14,8 @@
     <copyright>Copyright 2014-2015 Jason Roberts</copyright>
     <tags>feature toggle branch merge featuretoggle cd continuous delivery ravendb</tags>
     <dependencies>      
-	  <dependency id="FeatureToggle.Core" version="3.0.0" />
-	  <dependency id="FeatureToggle" version="3.0.0" />
+	  <dependency id="FeatureToggle.Core" version="3.3.0" />
+	  <dependency id="FeatureToggle" version="3.3.0" />
 	  <dependency id="RavenDB.Client" version="2.5.2879" />
     </dependencies>
   </metadata>
