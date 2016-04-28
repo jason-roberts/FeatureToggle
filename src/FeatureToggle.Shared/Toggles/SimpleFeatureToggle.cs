@@ -23,7 +23,7 @@ namespace FeatureToggle.Toggles
         public virtual IBooleanToggleValueProvider ToggleValueProvider { get; set; }
 
 
-        public bool FeatureEnabled
+        public virtual bool FeatureEnabled
         {
             get { return ToggleValueProvider.EvaluateBooleanToggleValue(this); }
         }
