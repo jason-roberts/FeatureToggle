@@ -1,5 +1,6 @@
 ﻿using System;
 using FeatureToggle.Core;
+using FeatureToggle.Tests.TestToggles;
 using Xunit;
 
 namespace FeatureToggle.Tests
@@ -69,12 +70,6 @@ namespace FeatureToggle.Tests
         {
         }
 
-        private class AnErroringToggle : IFeatureToggle
-        {
-            public bool FeatureEnabled
-            {
-                get { throw new ToggleConfigurationError("Simulated toggle exception"); }
-            }
-        }
+
     }
 }
