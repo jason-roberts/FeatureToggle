@@ -1,5 +1,17 @@
 #Release Notes 
 
+#Version 3.4
+
+* New fluent static way of getting value of a toggle [#72](https://github.com/jason-roberts/FeatureToggle/issues/72) without needing to manually create an instance of the toggle.
+
+E.g. 
+```
+using FeatureToggle.Core.Fluent;
+...
+Is<Printing>.Enabled;
+Is<Printing>.Disabled;
+```
+
 # Version 3.3
 
 * New CompositeOrDecorator [#87](https://github.com/jason-roberts/FeatureToggle/issues/87)
