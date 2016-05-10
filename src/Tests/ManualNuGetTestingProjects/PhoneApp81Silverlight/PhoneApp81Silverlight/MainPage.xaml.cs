@@ -5,6 +5,7 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using FeatureToggle.Core.Fluent;
 using FeatureToggle.Toggles;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -21,6 +22,8 @@ namespace PhoneApp81Silverlight
             InitializeComponent();
 
             var x = new TestToggle().FeatureEnabled;
+
+            var y = Is<TestToggle>.Enabled;
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();

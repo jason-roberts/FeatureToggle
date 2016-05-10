@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConsoleApplication1.SampleFeatureToggles;
+using FeatureToggle.Core.Fluent;
 
 namespace ConsoleApplication1
 {
@@ -11,7 +12,8 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            var x = new SampleFeatureToggle().FeatureEnabled;
+            Console.WriteLine(new SampleFeatureToggle().FeatureEnabled);
+            Console.WriteLine(Is<SampleFeatureToggle>.Enabled);
 
             Console.ReadLine();
         }
