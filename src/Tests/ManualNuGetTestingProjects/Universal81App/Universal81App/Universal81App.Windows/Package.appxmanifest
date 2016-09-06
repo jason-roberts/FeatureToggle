@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="06ea5789-1c3a-4cf4-bfb1-eb9d20773ba3" Publisher="CN=FTTest" Version="1.0.0.0" />
+  <Identity Name="06ea5789-1c3a-4cf4-bfb1-eb9d20773ba3" Publisher="CN=TestCert" Version="1.0.0.0" />
   <Properties>
     <DisplayName>Universal81App.Windows</DisplayName>
     <PublisherDisplayName>FTTest</PublisherDisplayName>

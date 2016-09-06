@@ -16,7 +16,7 @@
     <SynthesizeLinkMetadata>true</SynthesizeLinkMetadata>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>Universal81App.Windows_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>BE5189A41B46F11927606CB19EF105E42E1D9A33</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>9622721AE91D5C10BC9934AE5B44C6B60C58524C</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -130,11 +130,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FeatureToggle.Core, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FeatureToggle.Core.3.4.0\lib\portable-net40+sl50+wp81+wpa+win\FeatureToggle.Core.dll</HintPath>
+      <HintPath>..\..\packages\FeatureToggle.Core.3.5.0\lib\portable-net40+sl50+wp81+wpa+win\FeatureToggle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FeatureToggle.UniversalApps81, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FeatureToggle.3.4.0\lib\portable-net451+netcore451+wpa81\FeatureToggle.UniversalApps81.dll</HintPath>
+      <HintPath>..\..\packages\FeatureToggle.3.5.0\lib\portable-net451+netcore451+wpa81\FeatureToggle.UniversalApps81.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
