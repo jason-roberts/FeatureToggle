@@ -1,5 +1,9 @@
 #Release Notes 
 
+#Version 3.5
+
+* Updated NuGet installer, no longer installs code-only sample toggles [#117](https://github.com/jason-roberts/FeatureToggle/issues/117)
+
 #Version 3.4
 
 * New fluent static way of getting value of a toggle [#72](https://github.com/jason-roberts/FeatureToggle/issues/72) without needing to manually create an instance of the toggle.
