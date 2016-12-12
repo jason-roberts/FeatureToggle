@@ -106,11 +106,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FeatureToggle.Core, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FeatureToggle.Core.3.5.0\lib\portable-net40+sl50+wp81+wpa+win\FeatureToggle.Core.dll</HintPath>
+      <HintPath>..\..\packages\FeatureToggle.Core.3.5.1\lib\portable-net40+sl50+wp81+wpa+win\FeatureToggle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FeatureToggle.UniversalApps81, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FeatureToggle.3.5.0\lib\portable-net451+netcore451+wpa81\FeatureToggle.UniversalApps81.dll</HintPath>
+      <HintPath>..\..\packages\FeatureToggle.3.5.1\lib\portable-net451+netcore451+wpa81\FeatureToggle.UniversalApps81.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
