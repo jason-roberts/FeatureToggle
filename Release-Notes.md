@@ -1,5 +1,9 @@
 #Release Notes 
 
+#Version 3.5.1
+
+* Updated NuGet version to set exact version [#127](https://github.com/jason-roberts/FeatureToggle/issues/127)
+
 #Version 3.5
 
 * Updated NuGet installer, no longer installs code-only sample toggles [#117](https://github.com/jason-roberts/FeatureToggle/issues/117)
