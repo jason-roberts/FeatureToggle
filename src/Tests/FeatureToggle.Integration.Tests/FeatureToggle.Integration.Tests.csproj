@@ -92,14 +92,6 @@
     <Reference Include="Owin">
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Raven.Abstractions, Version=2.5.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\RavenDB.Client.2.5.2879\lib\net45\Raven.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Raven.Client.Lightweight">
-      <HintPath>..\..\packages\RavenDB.Client.2.5.2879\lib\net45\Raven.Client.Lightweight.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Shouldly">
       <HintPath>..\..\packages\Shouldly.2.5.0\lib\net40\Shouldly.dll</HintPath>
     </Reference>
@@ -145,7 +137,6 @@
     <Compile Include="BooleanSqlServerProviderShould.cs" />
     <Compile Include="EnabledOnOrAfterToggleAssemblyVersionShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BooleanRavenDBProviderShould.cs" />
     <Compile Include="TestApiServer\Startup.cs" />
     <Compile Include="TestApiServer\TestController.cs" />
   </ItemGroup>
@@ -153,10 +144,6 @@
     <ProjectReference Include="..\..\FeatureToggle.Core\FeatureToggle.Core.csproj">
       <Project>{474aafb7-5560-412a-8c98-d5558d24a59e}</Project>
       <Name>FeatureToggle.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FeatureToggle.RavenDB\FeatureToggle.RavenDB.csproj">
-      <Project>{dc23d49c-81cf-44aa-bf19-ce4622da50bc}</Project>
-      <Name>FeatureToggle.RavenDB</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj">
       <Project>{C09F1554-F0DB-4A3E-9BD1-CCBC2AA1D6E1}</Project>

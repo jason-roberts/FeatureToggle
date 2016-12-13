@@ -2,7 +2,7 @@ echo building .net framework and core PCL binaries
 msbuild src\FeatureToggleSolution.sln /t:Rebuild /p:Configuration=Release /verbosity:q
 copy src\FeatureToggle.Core\bin\Release\FeatureToggle.Core.dll "NuGet\FeatureToggle.Core\lib\portable-net40+sl50+wp81+wpa+win"
 copy src\FeatureToggle\bin\Release\FeatureToggle.dll NuGet\FeatureToggle\lib\net40
-copy src\FeatureToggle.RavenDB\bin\Release\FeatureToggle.RavenDB.dll NuGet\FeatureToggle.RavenDB\lib\net40
+
 
 
 

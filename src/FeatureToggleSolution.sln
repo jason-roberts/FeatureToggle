@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B539178D-F175-4C7A-84BA-64559A289B06}"
 EndProject
@@ -34,8 +34,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.Integration.T
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FeatureToggle.Shared", "FeatureToggle.Shared\FeatureToggle.Shared.shproj", "{5E161F8F-80B3-48AB-AB8C-B75A1CCD5C31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.RavenDB", "FeatureToggle.RavenDB\FeatureToggle.RavenDB.csproj", "{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServicesForExamples", "Examples\WebServicesForExamples\WebServicesForExamples.csproj", "{8BEDB33B-A1C5-46F1-85B4-74249FDB3486}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.UniversalApps81", "FeatureToggle.UniversalApps81\FeatureToggle.UniversalApps81.csproj", "{D43BBCDE-2C19-4F44-A57D-E2B57C741FBC}"
@@ -51,12 +49,12 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Tests\FeatureToggle.Tests.Shared\FeatureToggle.Tests.Shared.projitems*{09b6db37-b8df-4af4-a3be-3d0a0cb1466a}*SharedItemsImports = 13
+		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{5e161f8f-80b3-48ab-ab8c-b75a1ccd5c31}*SharedItemsImports = 13
 		Tests\FeatureToggle.Tests.Shared\FeatureToggle.Tests.Shared.projitems*{8b2342a9-4fa0-49e0-a7fe-6630263e9ce0}*SharedItemsImports = 4
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{c09f1554-f0db-4a3e-9bd1-ccbc2aa1d6e1}*SharedItemsImports = 4
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{d43bbcde-2c19-4f44-a57d-e2b57c741fbc}*SharedItemsImports = 4
-		Tests\FeatureToggle.Tests.Shared\FeatureToggle.Tests.Shared.projitems*{fbff364a-d072-46c7-8382-7f95cca685c8}*SharedItemsImports = 4
-		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{5e161f8f-80b3-48ab-ab8c-b75a1ccd5c31}*SharedItemsImports = 13
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{e80213df-1e94-4748-90ed-9a527bfd2371}*SharedItemsImports = 4
+		Tests\FeatureToggle.Tests.Shared\FeatureToggle.Tests.Shared.projitems*{fbff364a-d072-46c7-8382-7f95cca685c8}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,20 +169,6 @@ Global
 		{30633F03-7417-4EEE-8DA2-2B7DD3E07CCD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{30633F03-7417-4EEE-8DA2-2B7DD3E07CCD}.Release|x64.ActiveCfg = Release|Any CPU
 		{30633F03-7417-4EEE-8DA2-2B7DD3E07CCD}.Release|x86.ActiveCfg = Release|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Release|ARM.ActiveCfg = Release|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Release|x64.ActiveCfg = Release|Any CPU
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC}.Release|x86.ActiveCfg = Release|Any CPU
 		{8BEDB33B-A1C5-46F1-85B4-74249FDB3486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8BEDB33B-A1C5-46F1-85B4-74249FDB3486}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BEDB33B-A1C5-46F1-85B4-74249FDB3486}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -296,7 +280,6 @@ Global
 		{9A78B997-21F0-4741-925D-D942B3DC12CA} = {91AF4095-22DF-45BF-8F01-56C74B4EBD66}
 		{30633F03-7417-4EEE-8DA2-2B7DD3E07CCD} = {91AF4095-22DF-45BF-8F01-56C74B4EBD66}
 		{5E161F8F-80B3-48AB-AB8C-B75A1CCD5C31} = {CCA826B0-BBAB-4A04-AB87-B1C3028849BF}
-		{DC23D49C-81CF-44AA-BF19-CE4622DA50BC} = {CCA826B0-BBAB-4A04-AB87-B1C3028849BF}
 		{8BEDB33B-A1C5-46F1-85B4-74249FDB3486} = {C0FE398E-F0F0-4346-A0E9-C2EFA1C4EBC9}
 		{D43BBCDE-2C19-4F44-A57D-E2B57C741FBC} = {CCA826B0-BBAB-4A04-AB87-B1C3028849BF}
 		{FBFF364A-D072-46C7-8382-7F95CCA685C8} = {91AF4095-22DF-45BF-8F01-56C74B4EBD66}
