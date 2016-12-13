@@ -1,5 +1,11 @@
 #Release Notes 
 
+#Version 4 - In Development 
+
+[v4 planned work](https://github.com/jason-roberts/FeatureToggle/issues?utf8=%E2%9C%93&q=milestone%3A%22Version%204.0%22%20)
+
+v4 will add .NET Core support and remove some support for older platforms. ETA Q1 2017.
+
 #Version 3.5.1
 
 * Updated NuGet version to set exact version [#127](https://github.com/jason-roberts/FeatureToggle/issues/127)
