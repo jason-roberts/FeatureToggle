@@ -13,6 +13,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Providers\AppSettingsProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Providers\BooleanSqlServerProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Providers\JsonEnabledResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Toggles\ApplyOnceFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Toggles\ApplyOncePerAppFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Toggles\ApplyOncePerUserFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledBetweenDatesFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnDaysOfWeekFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnOrAfterDateFeatureToggle.cs" />
