@@ -9,5 +9,9 @@
     <Import_RootNamespace>FeatureToggle.Shared.Tests</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ApplicationResourcesSetter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApplicationResourcesSettingsProviderShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterToggleAssemblyVersionShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RunOn.cs" />
   </ItemGroup>
 </Project>
