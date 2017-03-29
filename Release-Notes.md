@@ -11,7 +11,7 @@ v4 will add .NET Core support and remove some support for older platforms. ETA Q
 * Min framework now 4.6.1 / .NET Standard 1.4
 * Windows 8.*, Windows phone 8.*, Windows Phone Silverlight 8.* no longer supported
 * Namespace changes: most types needed for application developers are now under root FeatureToggle namespace
-* Windows UWP now supported explicitly from vxxxxxxx 
+* Windows UWP now supported explicitly from build 14393 
 
 
 
