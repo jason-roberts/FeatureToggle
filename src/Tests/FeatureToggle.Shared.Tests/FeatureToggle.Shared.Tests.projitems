@@ -9,9 +9,21 @@
     <Import_RootNamespace>FeatureToggle.Shared.Tests</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AlwaysOffFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AlwaysOnFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ApplicationResourcesSetter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ApplicationResourcesSettingsProviderShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CompositeAndDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CompositeOrDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DefaultToDisabledOnErrorDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DefaultToEnabledOnErrorDecoratorShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterToggleAssemblyVersionShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FallbackValueDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IsShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RandomFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RunOn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SimpleCacheDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SimpleFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestToggles\AnErroringToggle.cs" />
   </ItemGroup>
 </Project>

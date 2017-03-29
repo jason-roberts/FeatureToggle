@@ -23999,11 +23999,11 @@
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "D:\\dev\\FeatureToggle\\src\\FeatureToggle.UAP\\FeatureToggle.UAP.csproj": {
-              "projectPath": "D:\\dev\\FeatureToggle\\src\\FeatureToggle.UAP\\FeatureToggle.UAP.csproj"
-            },
             "D:\\dev\\FeatureToggle\\src\\FeatureToggle.NetStandard\\FeatureToggle.NetStandard.csproj": {
               "projectPath": "D:\\dev\\FeatureToggle\\src\\FeatureToggle.NetStandard\\FeatureToggle.NetStandard.csproj"
+            },
+            "D:\\dev\\FeatureToggle\\src\\FeatureToggle.UAP\\FeatureToggle.UAP.csproj": {
+              "projectPath": "D:\\dev\\FeatureToggle\\src\\FeatureToggle.UAP\\FeatureToggle.UAP.csproj"
             }
           }
         }

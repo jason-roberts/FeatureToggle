@@ -29,14 +29,14 @@ namespace FeatureToggle.Internal
 
             var configValue = ConfigurationManager.AppSettings[key];
 
-            // TODO: don't really like this, in v3 providers and toggles will be broken apart more
+            // TODO: don't really like this
             if (toggle is HttpJsonFeatureToggle)
             {
                 return GetJsonBoolFromServer(configValue);
             }
             else
             {
-                return ParseConfigString(configValue, key);    
+                return ParseBooleanConfigString(configValue, key);    
             }
 
             
@@ -166,7 +166,7 @@ namespace FeatureToggle.Internal
             return ToggleConfigurationSettings.Prefix + toggle.GetType().Name;
         }
 
-        private bool ParseConfigString(string valueToParse, string configKey)
+        private bool ParseBooleanConfigString(string valueToParse, string configKey)
         {
             try
             {

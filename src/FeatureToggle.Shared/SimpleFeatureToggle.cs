@@ -16,7 +16,7 @@ namespace FeatureToggle
 
 #elif NETCORE
 
-            throw new NotImplementedException();
+            throw new NotImplementedException("core todo");
 #else
             ToggleValueProvider = new AppSettingsProvider();
 #endif
