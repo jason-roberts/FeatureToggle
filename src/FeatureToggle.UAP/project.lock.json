@@ -2333,90 +2333,11 @@
           }
         }
       },
-      "xunit/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.assert": "[2.2.0]",
-          "xunit.core": "[2.2.0]"
-        }
-      },
-      "xunit.abstractions/2.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        }
-      },
-      "xunit.assert/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        }
-      },
-      "xunit.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.extensibility.core": "[2.2.0]",
-          "xunit.extensibility.execution": "[2.2.0]"
-        },
-        "build": {
-          "build/uap10.0/xunit.core.props": {}
-        }
-      },
-      "xunit.extensibility.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.abstractions": "2.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        }
-      },
-      "xunit.extensibility.execution/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.extensibility.core": "[2.2.0]"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        }
-      },
-      "xunit.runner.visualstudio/2.2.0": {
-        "type": "package",
-        "build": {
-          "build/uap10.0/xunit.runner.visualstudio.props": {},
-          "build/uap10.0/xunit.runner.visualstudio.targets": {}
-        }
-      },
       "FeatureToggle.NetStandard/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.4",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
-        }
-      },
-      "FeatureToggle.UAP/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0",
-        "dependencies": {
-          "FeatureToggle.NetStandard": "1.0.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
     },
@@ -4807,90 +4728,11 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "xunit/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.assert": "[2.2.0]",
-          "xunit.core": "[2.2.0]"
-        }
-      },
-      "xunit.abstractions/2.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        }
-      },
-      "xunit.assert/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        }
-      },
-      "xunit.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.extensibility.core": "[2.2.0]",
-          "xunit.extensibility.execution": "[2.2.0]"
-        },
-        "build": {
-          "build/uap10.0/xunit.core.props": {}
-        }
-      },
-      "xunit.extensibility.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.abstractions": "2.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        }
-      },
-      "xunit.extensibility.execution/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.extensibility.core": "[2.2.0]"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        }
-      },
-      "xunit.runner.visualstudio/2.2.0": {
-        "type": "package",
-        "build": {
-          "build/uap10.0/xunit.runner.visualstudio.props": {},
-          "build/uap10.0/xunit.runner.visualstudio.targets": {}
-        }
-      },
       "FeatureToggle.NetStandard/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.4",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
-        }
-      },
-      "FeatureToggle.UAP/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0",
-        "dependencies": {
-          "FeatureToggle.NetStandard": "1.0.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
     },
@@ -7320,90 +7162,11 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "xunit/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.assert": "[2.2.0]",
-          "xunit.core": "[2.2.0]"
-        }
-      },
-      "xunit.abstractions/2.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        }
-      },
-      "xunit.assert/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        }
-      },
-      "xunit.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.extensibility.core": "[2.2.0]",
-          "xunit.extensibility.execution": "[2.2.0]"
-        },
-        "build": {
-          "build/uap10.0/xunit.core.props": {}
-        }
-      },
-      "xunit.extensibility.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.abstractions": "2.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        }
-      },
-      "xunit.extensibility.execution/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.extensibility.core": "[2.2.0]"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        }
-      },
-      "xunit.runner.visualstudio/2.2.0": {
-        "type": "package",
-        "build": {
-          "build/uap10.0/xunit.runner.visualstudio.props": {},
-          "build/uap10.0/xunit.runner.visualstudio.targets": {}
-        }
-      },
       "FeatureToggle.NetStandard/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.4",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
-        }
-      },
-      "FeatureToggle.UAP/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0",
-        "dependencies": {
-          "FeatureToggle.NetStandard": "1.0.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
     },
@@ -9803,90 +9566,11 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "xunit/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.assert": "[2.2.0]",
-          "xunit.core": "[2.2.0]"
-        }
-      },
-      "xunit.abstractions/2.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        }
-      },
-      "xunit.assert/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        }
-      },
-      "xunit.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.extensibility.core": "[2.2.0]",
-          "xunit.extensibility.execution": "[2.2.0]"
-        },
-        "build": {
-          "build/uap10.0/xunit.core.props": {}
-        }
-      },
-      "xunit.extensibility.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.abstractions": "2.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        }
-      },
-      "xunit.extensibility.execution/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.extensibility.core": "[2.2.0]"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        }
-      },
-      "xunit.runner.visualstudio/2.2.0": {
-        "type": "package",
-        "build": {
-          "build/uap10.0/xunit.runner.visualstudio.props": {},
-          "build/uap10.0/xunit.runner.visualstudio.targets": {}
-        }
-      },
       "FeatureToggle.NetStandard/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.4",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
-        }
-      },
-      "FeatureToggle.UAP/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0",
-        "dependencies": {
-          "FeatureToggle.NetStandard": "1.0.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
     },
@@ -12325,90 +12009,11 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "xunit/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.assert": "[2.2.0]",
-          "xunit.core": "[2.2.0]"
-        }
-      },
-      "xunit.abstractions/2.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        }
-      },
-      "xunit.assert/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        }
-      },
-      "xunit.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.extensibility.core": "[2.2.0]",
-          "xunit.extensibility.execution": "[2.2.0]"
-        },
-        "build": {
-          "build/uap10.0/xunit.core.props": {}
-        }
-      },
-      "xunit.extensibility.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.abstractions": "2.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        }
-      },
-      "xunit.extensibility.execution/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.extensibility.core": "[2.2.0]"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        }
-      },
-      "xunit.runner.visualstudio/2.2.0": {
-        "type": "package",
-        "build": {
-          "build/uap10.0/xunit.runner.visualstudio.props": {},
-          "build/uap10.0/xunit.runner.visualstudio.targets": {}
-        }
-      },
       "FeatureToggle.NetStandard/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.4",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
-        }
-      },
-      "FeatureToggle.UAP/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0",
-        "dependencies": {
-          "FeatureToggle.NetStandard": "1.0.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
     },
@@ -14808,90 +14413,11 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "xunit/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.assert": "[2.2.0]",
-          "xunit.core": "[2.2.0]"
-        }
-      },
-      "xunit.abstractions/2.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        }
-      },
-      "xunit.assert/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        }
-      },
-      "xunit.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.extensibility.core": "[2.2.0]",
-          "xunit.extensibility.execution": "[2.2.0]"
-        },
-        "build": {
-          "build/uap10.0/xunit.core.props": {}
-        }
-      },
-      "xunit.extensibility.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.abstractions": "2.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        }
-      },
-      "xunit.extensibility.execution/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.extensibility.core": "[2.2.0]"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        }
-      },
-      "xunit.runner.visualstudio/2.2.0": {
-        "type": "package",
-        "build": {
-          "build/uap10.0/xunit.runner.visualstudio.props": {},
-          "build/uap10.0/xunit.runner.visualstudio.targets": {}
-        }
-      },
       "FeatureToggle.NetStandard/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.4",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
-        }
-      },
-      "FeatureToggle.UAP/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0",
-        "dependencies": {
-          "FeatureToggle.NetStandard": "1.0.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
     },
@@ -17330,90 +16856,11 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "xunit/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.assert": "[2.2.0]",
-          "xunit.core": "[2.2.0]"
-        }
-      },
-      "xunit.abstractions/2.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        }
-      },
-      "xunit.assert/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        }
-      },
-      "xunit.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.extensibility.core": "[2.2.0]",
-          "xunit.extensibility.execution": "[2.2.0]"
-        },
-        "build": {
-          "build/uap10.0/xunit.core.props": {}
-        }
-      },
-      "xunit.extensibility.core/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.abstractions": "2.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        }
-      },
-      "xunit.extensibility.execution/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0",
-          "xunit.extensibility.core": "[2.2.0]"
-        },
-        "compile": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        }
-      },
-      "xunit.runner.visualstudio/2.2.0": {
-        "type": "package",
-        "build": {
-          "build/uap10.0/xunit.runner.visualstudio.props": {},
-          "build/uap10.0/xunit.runner.visualstudio.targets": {}
-        }
-      },
       "FeatureToggle.NetStandard/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.4",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
-        }
-      },
-      "FeatureToggle.UAP/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0",
-        "dependencies": {
-          "FeatureToggle.NetStandard": "1.0.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
     }
@@ -23872,117 +23319,15 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "xunit/2.2.0": {
-      "sha512": "DoB9o+x3erv1DGP+pSvrIC1pWg+23LeeG8nOGVldoF+qeWNqQbabc5jLfUWW4zLOsNZfvgHcmJIKuRcZMgoV+w==",
-      "type": "package",
-      "path": "xunit/2.2.0",
-      "files": [
-        "xunit.2.2.0.nupkg.sha512",
-        "xunit.nuspec"
-      ]
-    },
-    "xunit.abstractions/2.0.1": {
-      "sha512": "bDm/zdG5rnRDsobKuKwrvL4HccBdC0uvT12be6fG12P3d1U7u9Wkvfoq/PM2GeyIeb0Dtcmm/7k2oaawiqQ2Dg==",
-      "type": "package",
-      "path": "xunit.abstractions/2.0.1",
-      "files": [
-        "lib/net35/xunit.abstractions.dll",
-        "lib/net35/xunit.abstractions.xml",
-        "lib/netstandard1.0/xunit.abstractions.dll",
-        "lib/netstandard1.0/xunit.abstractions.xml",
-        "xunit.abstractions.2.0.1.nupkg.sha512",
-        "xunit.abstractions.nuspec"
-      ]
-    },
-    "xunit.assert/2.2.0": {
-      "sha512": "OZ1HADp3tv48wK+mPxdOr4kYPn3Y1RACYCWkX0IogKIyZ8fwLeLspVk9KdHfhqXGITnTvlMcOw6PmdRAwrUreQ==",
-      "type": "package",
-      "path": "xunit.assert/2.2.0",
-      "files": [
-        "lib/netstandard1.1/xunit.assert.dll",
-        "lib/netstandard1.1/xunit.assert.xml",
-        "xunit.assert.2.2.0.nupkg.sha512",
-        "xunit.assert.nuspec"
-      ]
-    },
-    "xunit.core/2.2.0": {
-      "sha512": "wuGOHofSt4sR/ros6N6S8FI2L9uuP5YsbcxM2kXpcRplMoY1pSgfEZaIRZm3NqDL/JJ/FHEksTEYkvxpc9H4Rw==",
-      "type": "package",
-      "path": "xunit.core/2.2.0",
-      "files": [
-        "build/_desktop/xunit.execution.desktop.dll",
-        "build/netstandard1.0/_._",
-        "build/uap10.0/xunit.core.props",
-        "xunit.core.2.2.0.nupkg.sha512",
-        "xunit.core.nuspec"
-      ]
-    },
-    "xunit.extensibility.core/2.2.0": {
-      "sha512": "2bT3sG8obWbRm45NewcV+Sr2K1whj88LnjQT7szJx1DcydgKR86ggV5rIZ5NccCWo2ctZMRb0QMYttVrhrG9Gw==",
-      "type": "package",
-      "path": "xunit.extensibility.core/2.2.0",
-      "files": [
-        "lib/netstandard1.1/xunit.core.dll",
-        "lib/netstandard1.1/xunit.core.dll.tdnet",
-        "lib/netstandard1.1/xunit.core.xml",
-        "lib/netstandard1.1/xunit.runner.tdnet.dll",
-        "lib/netstandard1.1/xunit.runner.utility.net452.dll",
-        "xunit.extensibility.core.2.2.0.nupkg.sha512",
-        "xunit.extensibility.core.nuspec"
-      ]
-    },
-    "xunit.extensibility.execution/2.2.0": {
-      "sha512": "4gjTrSUd/F6/pdsMsf+a1f1tcaUQnr59JvZQulmF8VwQbCh34ifie3iqriYyKyLmTQDUEJ/ZTPeZEDh0pxpTLA==",
-      "type": "package",
-      "path": "xunit.extensibility.execution/2.2.0",
-      "files": [
-        "lib/net452/xunit.execution.desktop.dll",
-        "lib/net452/xunit.execution.desktop.xml",
-        "lib/netstandard1.1/xunit.execution.dotnet.dll",
-        "lib/netstandard1.1/xunit.execution.dotnet.xml",
-        "xunit.extensibility.execution.2.2.0.nupkg.sha512",
-        "xunit.extensibility.execution.nuspec"
-      ]
-    },
-    "xunit.runner.visualstudio/2.2.0": {
-      "sha512": "CZimTpet23CeI2oXjDtICecAuEJ8Z4xSwNFY2tTKcGfm4IzKBrFmS3yzdqMMdAfiHYUgKlcyefflLOyO9ArKyQ==",
-      "type": "package",
-      "path": "xunit.runner.visualstudio/2.2.0",
-      "files": [
-        "build/_common/xunit.abstractions.dll",
-        "build/_common/xunit.runner.reporters.net452.dll",
-        "build/_common/xunit.runner.utility.net35.dll",
-        "build/_common/xunit.runner.visualstudio.testadapter.dll",
-        "build/net20/xunit.runner.visualstudio.props",
-        "build/netcoreapp1.0/xunit.runner.reporters.netstandard15.dll",
-        "build/netcoreapp1.0/xunit.runner.utility.netstandard15.dll",
-        "build/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll",
-        "build/netcoreapp1.0/xunit.runner.visualstudio.props",
-        "build/uap10.0/xunit.runner.utility.netstandard11.dll",
-        "build/uap10.0/xunit.runner.visualstudio.props",
-        "build/uap10.0/xunit.runner.visualstudio.targets",
-        "build/uap10.0/xunit.runner.visualstudio.uwp.dll",
-        "build/uap10.0/xunit.runner.visualstudio.uwp.pri",
-        "xunit.runner.visualstudio.2.2.0.nupkg.sha512",
-        "xunit.runner.visualstudio.nuspec"
-      ]
-    },
     "FeatureToggle.NetStandard/1.0.0": {
       "type": "project",
-      "path": "../../FeatureToggle.NetStandard/FeatureToggle.NetStandard.csproj",
-      "msbuildProject": "../../FeatureToggle.NetStandard/FeatureToggle.NetStandard.csproj"
-    },
-    "FeatureToggle.UAP/1.0.0": {
-      "type": "project",
-      "path": "../../FeatureToggle.UAP/project.json",
-      "msbuildProject": "../../FeatureToggle.UAP/FeatureToggle.UAP.csproj"
+      "path": "../FeatureToggle.NetStandard/FeatureToggle.NetStandard.csproj",
+      "msbuildProject": "../FeatureToggle.NetStandard/FeatureToggle.NetStandard.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",
-      "xunit >= 2.2.0",
-      "xunit.runner.visualstudio >= 2.2.0"
+      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2"
     ],
     "UAP,Version=v10.0": []
   },
@@ -23991,25 +23336,23 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "D:\\dev\\FeatureToggle\\src\\Tests\\FeatureToggle.UAP.Tests\\FeatureToggle.UAP.Tests.csproj",
-      "projectName": "FeatureToggle.UAP.Tests",
-      "projectPath": "D:\\dev\\FeatureToggle\\src\\Tests\\FeatureToggle.UAP.Tests\\FeatureToggle.UAP.Tests.csproj",
-      "projectJsonPath": "D:\\dev\\FeatureToggle\\src\\Tests\\FeatureToggle.UAP.Tests\\project.json",
+      "projectUniqueName": "D:\\dev\\FeatureToggle\\src\\FeatureToggle.UAP\\FeatureToggle.UAP.csproj",
+      "projectName": "FeatureToggle.UAP",
+      "projectPath": "D:\\dev\\FeatureToggle\\src\\FeatureToggle.UAP\\FeatureToggle.UAP.csproj",
+      "projectJsonPath": "D:\\dev\\FeatureToggle\\src\\FeatureToggle.UAP\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "D:\\dev\\FeatureToggle\\src\\FeatureToggle.UAP\\FeatureToggle.UAP.csproj": {
-              "projectPath": "D:\\dev\\FeatureToggle\\src\\FeatureToggle.UAP\\FeatureToggle.UAP.csproj"
+            "D:\\dev\\FeatureToggle\\src\\FeatureToggle.NetStandard\\FeatureToggle.NetStandard.csproj": {
+              "projectPath": "D:\\dev\\FeatureToggle\\src\\FeatureToggle.NetStandard\\FeatureToggle.NetStandard.csproj"
             }
           }
         }
       }
     },
     "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
-      "xunit": "2.2.0",
-      "xunit.runner.visualstudio": "2.2.0"
+      "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
     },
     "frameworks": {
       "uap10.0": {}
