@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <RootNamespace>FeatureToggle</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj" />
+  </ItemGroup>
+
+</Project>
