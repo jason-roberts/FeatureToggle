@@ -21,10 +21,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.UAP", "Featur
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FeatureToggle.Shared", "FeatureToggle.Shared\FeatureToggle.Shared.shproj", "{8774F64C-A9D9-4405-BBDC-8BA34BD0F250}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FeatureToggle.Shared.Tests", "Tests\FeatureToggle.Shared.Tests\FeatureToggle.Shared.Tests.shproj", "{ED6BD629-1D2B-4ACF-9AD4-23666285AD93}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{75a09049-3355-4577-a62e-12f376f83987}*SharedItemsImports = 4
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{8774f64c-a9d9-4405-bbdc-8ba34bd0f250}*SharedItemsImports = 13
+		Tests\FeatureToggle.Shared.Tests\FeatureToggle.Shared.Tests.projitems*{93852865-148e-4a38-a34c-878b1650c4de}*SharedItemsImports = 4
+		Tests\FeatureToggle.Shared.Tests\FeatureToggle.Shared.Tests.projitems*{e378c19a-178d-4c59-af1e-d03977c1f7ab}*SharedItemsImports = 4
+		Tests\FeatureToggle.Shared.Tests\FeatureToggle.Shared.Tests.projitems*{ed6bd629-1d2b-4acf-9ad4-23666285ad93}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -161,5 +166,6 @@ Global
 		{D53D7427-7230-4AF2-92C1-13084A7DA48E} = {3DB3556F-3F47-42B4-A60C-70A990EE5D3E}
 		{93852865-148E-4A38-A34C-878B1650C4DE} = {3DB3556F-3F47-42B4-A60C-70A990EE5D3E}
 		{E378C19A-178D-4C59-AF1E-D03977C1F7AB} = {3DB3556F-3F47-42B4-A60C-70A990EE5D3E}
+		{ED6BD629-1D2B-4ACF-9AD4-23666285AD93} = {3DB3556F-3F47-42B4-A60C-70A990EE5D3E}
 	EndGlobalSection
 EndGlobal

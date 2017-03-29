@@ -14,4 +14,6 @@
     <ProjectReference Include="..\..\FeatureToggle.NetCore\FeatureToggle.NetCore.csproj" />
   </ItemGroup>
 
+  <Import Project="..\FeatureToggle.Shared.Tests\FeatureToggle.Shared.Tests.projitems" Label="Shared" />
+
 </Project>
