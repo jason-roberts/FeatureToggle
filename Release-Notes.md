@@ -1,20 +1,33 @@
-#Release Notes 
+# Release Notes 
 
-#Version 4 - In Development 
+# Version 4.0.0 - In Development 
 
 [v4 planned work](https://github.com/jason-roberts/FeatureToggle/issues?utf8=%E2%9C%93&q=milestone%3A%22Version%204.0%22%20)
 
 v4 will add .NET Core support and remove some support for older platforms. ETA Q1 2017.
 
-#Version 3.5.1
+## Breaking Changes
+
+* Min framework now 4.6.1 / .NET Standard 1.4
+* Windows 8.*, Windows phone 8.*, Windows Phone Silverlight 8.* no longer supported
+* Namespace changes: most types needed for application developers are now under root FeatureToggle namespace
+* Windows UWP now supported explicitly from vxxxxxxx 
+
+
+
+
+
+
+
+# Version 3.5.1
 
 * Updated NuGet version to set exact version [#127](https://github.com/jason-roberts/FeatureToggle/issues/127)
 
-#Version 3.5
+# Version 3.5
 
 * Updated NuGet installer, no longer installs code-only sample toggles [#117](https://github.com/jason-roberts/FeatureToggle/issues/117)
 
-#Version 3.4
+# Version 3.4
 
 * New fluent static way of getting value of a toggle [#72](https://github.com/jason-roberts/FeatureToggle/issues/72) without needing to manually create an instance of the toggle.
 
@@ -41,7 +54,7 @@ Is<Printing>.Disabled;
 
 # Version 3.0
 
-##Breaking Changes
+## Breaking Changes
 
 * Removed the WPF, etc Visibility converters. [#67](https://github.com/jason-roberts/FeatureToggle/issues/67)
 * Removed Windows phone 8.0 support [#80](https://github.com/jason-roberts/FeatureToggle/issues/80)
@@ -91,7 +104,7 @@ Is<Printing>.Disabled;
 
 
 
-##New Features
+## New Features
 
 * New portable class library core will define simplest of toggles plus the interfaces, but will not contain any providers. This enables use in other PCL places where custom providers can be built by implementers. 
 * Added Windows Phone 8 support
