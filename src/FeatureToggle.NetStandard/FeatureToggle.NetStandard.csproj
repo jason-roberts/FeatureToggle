@@ -5,6 +5,4 @@
     <RootNamespace>FeatureToggle</RootNamespace>
   </PropertyGroup>
 
-  <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" />
-
 </Project>

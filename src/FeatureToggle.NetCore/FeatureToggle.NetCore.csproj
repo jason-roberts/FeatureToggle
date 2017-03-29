@@ -5,6 +5,10 @@
     <RootNamespace>FeatureToggle</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETCORE</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj" />
   </ItemGroup>

@@ -30,6 +30,7 @@ Global
 		Tests\FeatureToggle.Shared.Tests\FeatureToggle.Shared.Tests.projitems*{93852865-148e-4a38-a34c-878b1650c4de}*SharedItemsImports = 4
 		Tests\FeatureToggle.Shared.Tests\FeatureToggle.Shared.Tests.projitems*{e378c19a-178d-4c59-af1e-d03977c1f7ab}*SharedItemsImports = 4
 		Tests\FeatureToggle.Shared.Tests\FeatureToggle.Shared.Tests.projitems*{ed6bd629-1d2b-4acf-9ad4-23666285ad93}*SharedItemsImports = 13
+		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{f3d70be0-3d01-4c12-a049-c329df5423fa}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +124,7 @@ Global
 		{93852865-148E-4A38-A34C-878B1650C4DE}.Release|x86.ActiveCfg = Release|Any CPU
 		{93852865-148E-4A38-A34C-878B1650C4DE}.Release|x86.Build.0 = Release|Any CPU
 		{E378C19A-178D-4C59-AF1E-D03977C1F7AB}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E378C19A-178D-4C59-AF1E-D03977C1F7AB}.Debug|Any CPU.Build.0 = Debug|x86
 		{E378C19A-178D-4C59-AF1E-D03977C1F7AB}.Debug|ARM.ActiveCfg = Debug|ARM
 		{E378C19A-178D-4C59-AF1E-D03977C1F7AB}.Debug|ARM.Build.0 = Debug|ARM
 		{E378C19A-178D-4C59-AF1E-D03977C1F7AB}.Debug|ARM.Deploy.0 = Debug|ARM
