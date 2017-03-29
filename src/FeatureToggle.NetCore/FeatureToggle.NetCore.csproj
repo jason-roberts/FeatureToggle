@@ -9,4 +9,6 @@
     <ProjectReference Include="..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj" />
   </ItemGroup>
 
+  <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" />
+
 </Project>

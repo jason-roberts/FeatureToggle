@@ -49,5 +49,6 @@
       <Name>FeatureToggle.NetStandard</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,7 +19,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.UAP.Tests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.UAP", "FeatureToggle.UAP\FeatureToggle.UAP.csproj", "{F3D70BE0-3D01-4C12-A049-C329DF5423FA}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FeatureToggle.Shared", "FeatureToggle.Shared\FeatureToggle.Shared.shproj", "{8774F64C-A9D9-4405-BBDC-8BA34BD0F250}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{75a09049-3355-4577-a62e-12f376f83987}*SharedItemsImports = 4
+		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{8774f64c-a9d9-4405-bbdc-8ba34bd0f250}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
