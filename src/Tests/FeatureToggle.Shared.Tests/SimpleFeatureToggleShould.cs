@@ -39,6 +39,17 @@ namespace FeatureToggle.Tests
         }
 #endif
 
+
+#if NETCORE
+        [Fact]
+        public void SetOptionalConfigurationBuilder()
+        {
+            throw new NotImplementedException("core todo");
+        }
+
+
+#endif
+
         private class MySimpleFeatureToggle : SimpleFeatureToggle { }
     }  
 }

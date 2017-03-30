@@ -1,5 +1,5 @@
 ﻿// TODO: netcore support
-#if NETFULL
+#if NETFULL //|| NETCORE
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -45,6 +45,9 @@ namespace FeatureToggle.Internal
         private bool GetJsonBoolFromServer(string url)
         {
             string json;
+
+           // var x = HttpWebRequest.CreateHttp(url);
+         //  var y = System.Net.
 
             using (var wc = new WebClient())
             {

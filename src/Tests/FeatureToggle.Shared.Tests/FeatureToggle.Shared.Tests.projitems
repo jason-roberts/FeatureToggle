@@ -19,11 +19,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)DefaultToEnabledOnErrorDecoratorShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterToggleAssemblyVersionShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FallbackValueDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\BooleanHttpJsonProviderShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\TestApiServer\Startup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\TestApiServer\TestController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IsShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RandomFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RunOn.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SimpleCacheDecoratorShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SimpleFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestToggles\AnErroringToggle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Integration\SqlServerSetup\CreateLocalSqlExpressTestDb.sql" />
   </ItemGroup>
 </Project>
