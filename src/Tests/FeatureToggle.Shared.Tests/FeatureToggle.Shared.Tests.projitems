@@ -15,9 +15,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)ApplicationResourcesSettingsProviderShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CompositeAndDecoratorShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CompositeOrDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConfigurationValidatorShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DefaultToDisabledOnErrorDecoratorShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DefaultToEnabledOnErrorDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledBetweenDatesFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnDaysOfWeekFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterDateFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterToggleAssemblyVersionShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrBeforeDateFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FallbackValueDecoratorShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Integration\BooleanHttpJsonProviderShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Integration\TestApiServer\Startup.cs" />
@@ -27,6 +32,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)RunOn.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SimpleCacheDecoratorShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SimpleFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SqlFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestToggles\AnErroringToggle.cs" />
   </ItemGroup>
   <ItemGroup>

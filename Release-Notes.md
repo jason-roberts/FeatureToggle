@@ -13,7 +13,11 @@ v4 will add .NET Core support and remove some support for older platforms. ETA Q
 * Namespace changes: most types needed for application developers are now under root FeatureToggle namespace
 * Windows UWP now supported explicitly from build 14393 
 
+## .Net Core Limitations/Specifics
 
+* No HttpJsonFeatureToggle
+* No SqlFeatureToggle
+* config note.....
 
 
 

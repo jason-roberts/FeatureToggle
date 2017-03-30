@@ -1,7 +1,8 @@
-﻿using System;
-using FeatureToggle.Core;
-using FeatureToggle.Providers;
-using FeatureToggle.Toggles;
+﻿#if NETFULL || NETCORE // no Moq support in UWP test projects
+
+using System;
+using FeatureToggle;
+using FeatureToggle.Internal;
 using Moq;
 using Xunit;
 
@@ -71,3 +72,4 @@ namespace FeatureToggle.Tests
         private class MyEnabledOnOrBeforeDateFeatureToggle : EnabledOnOrBeforeDateFeatureToggle { }
     }  
 }
+#endif

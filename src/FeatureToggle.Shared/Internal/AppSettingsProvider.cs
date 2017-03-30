@@ -1,19 +1,20 @@
 ﻿// TODO: netcore support
-#if NETFULL //|| NETCORE
+#if NETFULL || NETCORE
+
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
-
 using System.Net;
-using System.Web.Script.Serialization;
 using FeatureToggle;
 
 
+#if NETFULL 
+using System.Configuration;
+using System.Web.Script.Serialization;
+#endif
 
-// ReSharper disable CheckNamespace
+
 namespace FeatureToggle.Internal
-// ReSharper restore CheckNamespace
 {
     public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider,
         ITimePeriodProvider, IDaysOfWeekToggleValueProvider, IAssemblyVersionProvider
@@ -27,27 +28,30 @@ namespace FeatureToggle.Internal
 
             ValidateKeyExists(key);
 
-            var configValue = ConfigurationManager.AppSettings[key];
+            var configValue = GetConfigValue(key);
 
+
+#if NETFULL
             // TODO: don't really like this
             if (toggle is HttpJsonFeatureToggle)
             {
                 return GetJsonBoolFromServer(configValue);
             }
             else
+
             {
                 return ParseBooleanConfigString(configValue, key);    
             }
+#else
+            return ParseBooleanConfigString(configValue, key);  
+#endif
 
-            
         }
 
+#if NETFULL
         private bool GetJsonBoolFromServer(string url)
         {
             string json;
-
-           // var x = HttpWebRequest.CreateHttp(url);
-         //  var y = System.Net.
 
             using (var wc = new WebClient())
             {
@@ -62,6 +66,7 @@ namespace FeatureToggle.Internal
 
             return toggleSettings.Enabled;    
         }
+#endif
 
         /// <summary>
         /// Doing this manually as JavaScriptSerializer doesn't error if bad json parsed
@@ -87,12 +92,16 @@ namespace FeatureToggle.Internal
 
             ValidateKeyExists(key);
 
-            var configValue = ConfigurationManager.AppSettings[key];
+            var configValue = GetConfigValue(key);
+            //var configValue = GetConfigValue ConfigurationManager.AppSettings[key];
 
             var parser = new ConfigurationDateParser();
 
             return parser.ParseDateTimeConfigString(configValue, key);
         }
+
+
+
 
         public IEnumerable<DayOfWeek> GetDaysOfWeek(IFeatureToggle toggle)
         {
@@ -100,7 +109,7 @@ namespace FeatureToggle.Internal
 
             ValidateKeyExists(key);
 
-            var configValues = ConfigurationManager.AppSettings[key].Split(new[] {','}).Select(x => x.Trim());
+            var configValues = GetConfigValue(key).Split(new[] {','}).Select(x => x.Trim());
 
             foreach (var configValue in configValues)
             {
@@ -130,7 +139,7 @@ namespace FeatureToggle.Internal
             ValidateKeyExists(key);
 
 
-            var configValues = ConfigurationManager.AppSettings[key].Split(new[] {'|'});
+            var configValues = GetConfigValue(key).Split(new[] {'|'});
 
             var parser = new ConfigurationDateParser();
 
@@ -151,7 +160,7 @@ namespace FeatureToggle.Internal
 
             ValidateKeyExists(key);
 
-            string configuredVersion = ConfigurationManager.AppSettings[key];
+            string configuredVersion = GetConfigValue(key);
 
             return Version.Parse(configuredVersion);
         }
@@ -159,9 +168,10 @@ namespace FeatureToggle.Internal
 
         private static void ValidateKeyExists(string key)
         {
-            if (!ConfigurationManager.AppSettings.AllKeys.Contains(key))
-                throw new ToggleConfigurationError(string.Format(KeyNotFoundInAppsettingsMessage,
-                    key));
+            if (!GetAllConfigKeys().Contains(key))
+            {
+                throw new ToggleConfigurationError(string.Format(KeyNotFoundInAppsettingsMessage, key));
+            }                
         }
 
         private static string ExpectedAppSettingsKeyFor(IFeatureToggle toggle)
@@ -182,6 +192,24 @@ namespace FeatureToggle.Internal
                         valueToParse, configKey),
                     ex);
             }
+        }
+
+        private static string GetConfigValue(string key)
+        {
+#if NETFULL
+            return ConfigurationManager.AppSettings[key];
+#else
+            throw new NotImplementedException("net core");
+#endif
+        }
+
+        private static string[] GetAllConfigKeys()
+        {
+#if NETFULL
+            return ConfigurationManager.AppSettings.AllKeys;
+#else
+            throw new NotImplementedException("net core");
+#endif
         }
     }
 }

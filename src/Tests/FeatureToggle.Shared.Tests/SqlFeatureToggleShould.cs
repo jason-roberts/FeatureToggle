@@ -1,6 +1,7 @@
-﻿using FeatureToggle.Core;
-using FeatureToggle.Providers;
-using FeatureToggle.Toggles;
+﻿#if NETFULL // sql toggle only on full framework for now
+
+using FeatureToggle;
+using FeatureToggle.Internal;
 using Moq;
 using Xunit;
 
@@ -46,3 +47,5 @@ namespace FeatureToggle.Tests
         private class MySqlFeatureToggle : SqlFeatureToggle { }
     }  
 }
+
+#endif

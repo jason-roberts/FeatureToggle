@@ -5,8 +5,4 @@
     <RootNamespace>FeatureToggle</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="NetCorePolyfills\" />
-  </ItemGroup>
-
 </Project>

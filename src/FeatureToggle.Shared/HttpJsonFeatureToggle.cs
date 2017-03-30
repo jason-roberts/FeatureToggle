@@ -1,4 +1,5 @@
 ﻿#if NETFULL
+
 using System;
 using FeatureToggle;
 using FeatureToggle.Internal;

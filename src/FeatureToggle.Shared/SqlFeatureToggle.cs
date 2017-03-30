@@ -2,10 +2,9 @@
 
 
 // TODO: net core sql support?
-using FeatureToggle;
 using FeatureToggle.Internal;
 
-namespace FeatureToggle.Toggles
+namespace FeatureToggle
 {
     public abstract class SqlFeatureToggle : IFeatureToggle
     {

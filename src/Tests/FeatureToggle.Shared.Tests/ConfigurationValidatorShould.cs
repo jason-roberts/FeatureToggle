@@ -1,5 +1,5 @@
 ﻿using System;
-using FeatureToggle.Core;
+using FeatureToggle;
 using Xunit;
 
 namespace FeatureToggle.Tests
