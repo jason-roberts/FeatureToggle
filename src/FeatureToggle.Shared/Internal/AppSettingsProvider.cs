@@ -1,5 +1,4 @@
-﻿// TODO: netcore support
-#if NETFULL || NETCORE
+﻿#if NETFULL || NETCORE
 
 using System;
 using System.Collections.Generic;
@@ -11,6 +10,11 @@ using FeatureToggle;
 #if NETFULL 
 using System.Configuration;
 using System.Web.Script.Serialization;
+#endif
+
+#if NETCORE
+using Microsoft.Extensions.Configuration;
+using System.IO;
 #endif
 
 
@@ -199,7 +203,13 @@ namespace FeatureToggle.Internal
 #if NETFULL
             return ConfigurationManager.AppSettings[key];
 #else
-            throw new NotImplementedException("net core");
+            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+                                                    .AddJsonFile("appsettings.json");
+                                                                
+
+            var configuration = builder.Build();
+
+            return configuration[$"FeatureToggleConfiguration:{key}"];
 #endif
         }
 
@@ -208,7 +218,20 @@ namespace FeatureToggle.Internal
 #if NETFULL
             return ConfigurationManager.AppSettings.AllKeys;
 #else
-            throw new NotImplementedException("net core");
+            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+                                        .AddJsonFile("appsettings.json");
+
+
+            var configuration = builder.Build();
+
+            var allToggleSettings = configuration.GetSection("FeatureToggleConfiguration").GetChildren();
+
+            foreach (var setting in allToggleSettings)
+            {
+
+            }
+
+            return null;
 #endif
         }
     }

@@ -1,8 +1,9 @@
 ﻿using System;
-using FeatureToggle;
 using Xunit;
 
+// ReSharper disable CheckNamespace
 namespace FeatureToggle.Tests
+    // ReSharper restore CheckNamespace
 {
     public class DefaultToDisabledOnErrorDecoratorShould
     {

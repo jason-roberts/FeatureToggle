@@ -1,11 +1,11 @@
-﻿using System;
-using System.Configuration;
-using FeatureToggle.Core;
-using FeatureToggle.Providers;
-using FeatureToggle.Toggles;
+﻿#if NETFULL || NETCORE
+
+using System;
+using FeatureToggle;
+using FeatureToggle.Internal;
 using Xunit;
 
-namespace FeatureToggle.Integration.Tests
+namespace FeatureToggle.Shared.Tests.Integration
 {
     public class AppSettingsProviderBooleanShould
     {
@@ -60,3 +60,5 @@ namespace FeatureToggle.Integration.Tests
         }
     }
 }
+
+#endif

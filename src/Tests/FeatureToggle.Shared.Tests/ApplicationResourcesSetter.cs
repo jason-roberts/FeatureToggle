@@ -5,15 +5,14 @@ using Windows.UI.Xaml;
 namespace FeatureToggle.Shared.Tests
 // ReSharper restore CheckNamespace
 {
+    /// <summary>
+    /// Used to set resources in XAML/UWP app so that tests can configure resource values
+    /// </summary>
     public static class ApplicationResourcesSetter
     {
         public static void Set(string key, object value)
-        {
-         
-
-
-      Application.Current.Resources[key] = value;
-
+        {       
+            Application.Current.Resources[key] = value;
         }
     }
 }

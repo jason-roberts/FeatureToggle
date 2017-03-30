@@ -15,10 +15,10 @@ namespace FeatureToggle.Tests
         public void HaveDefaultProvider()
         {
             var sut = new MySimpleFeatureToggle();
-#if NETFULL
+#if NETFULL || NETCORE
             Assert.Equal(typeof(AppSettingsProvider), sut.ToggleValueProvider.GetType());
-#elif NETCORE
-            throw new NotImplementedException("core todo");
+//#elif NETCORE
+//            throw new NotImplementedException("core todo");
 #else
             Assert.Equal(typeof(ApplicationResourcesSettingsProvider), sut.ToggleValueProvider.GetType());
 #endif

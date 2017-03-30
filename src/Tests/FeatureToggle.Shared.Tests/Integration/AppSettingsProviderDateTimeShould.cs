@@ -1,11 +1,12 @@
-﻿using System;
-using System.Configuration;
-using FeatureToggle.Core;
-using FeatureToggle.Providers;
-using FeatureToggle.Toggles;
+﻿#if NETFULL || NETCORE
+
+using System;
+//using System.Configuration;
+using FeatureToggle;
+using FeatureToggle.Internal;
 using Xunit;
 
-namespace FeatureToggle.Integration.Tests
+namespace FeatureToggle.Shared.Tests.Integration
 {
     public class AppSettingsProviderDateTimeShould
     {
@@ -45,3 +46,5 @@ namespace FeatureToggle.Integration.Tests
 
     }
 }
+
+#endif

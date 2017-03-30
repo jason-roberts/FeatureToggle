@@ -1,8 +1,8 @@
 ﻿#if NETFX_CORE
 
 using System.Threading.Tasks;
-using FeatureToggle;
-    using Xunit;
+using FeatureToggle.UAP.Tests.TestHelpers;
+using Xunit;
 
 // ReSharper disable CheckNamespace
 namespace FeatureToggle.Shared.Tests

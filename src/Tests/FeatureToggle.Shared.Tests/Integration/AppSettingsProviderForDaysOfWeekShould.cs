@@ -1,11 +1,11 @@
-﻿using System;
+﻿#if NETFULL || NETCORE
+
+using System;
 using System.Linq;
-using FeatureToggle.Core;
-using FeatureToggle.Providers;
-using FeatureToggle.Toggles;
+using FeatureToggle.Internal;
 using Xunit;
 
-namespace FeatureToggle.Integration.Tests
+namespace FeatureToggle.Shared.Tests.Integration
 {
     public class AppSettingsProviderForDaysOfWeekShould
     {
@@ -49,3 +49,4 @@ namespace FeatureToggle.Integration.Tests
       
     }
 }
+#endif

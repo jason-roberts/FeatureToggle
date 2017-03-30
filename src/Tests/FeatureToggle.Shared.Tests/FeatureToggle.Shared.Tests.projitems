@@ -12,7 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)AlwaysOffFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AlwaysOnFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ApplicationResourcesSetter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ApplicationResourcesSettingsProviderShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ApplicationResourcesSettingsProviderShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CompositeAndDecoratorShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CompositeOrDecoratorShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConfigurationValidatorShould.cs" />
@@ -24,7 +24,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterToggleAssemblyVersionShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrBeforeDateFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FallbackValueDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\AppSettingsProviderBooleanShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\AppSettingsProviderDateTimeShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\AppSettingsProviderForDaysOfWeekShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\AppSettingsProviderTimePeriodShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Integration\BooleanHttpJsonProviderShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\BooleanSqlServerProviderShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\EnabledOnOrAfterToggleAssemblyVersionShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Integration\TestApiServer\Startup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Integration\TestApiServer\TestController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IsShould.cs" />

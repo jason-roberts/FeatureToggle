@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using System.Windows;
 using FeatureToggle.Internal;
 using FeatureToggle;
+using FeatureToggle.UAP.Tests.TestHelpers;
 using Xunit;
 
 // ReSharper disable CheckNamespace
-namespace FeatureToggle.Shared.Tests
+namespace FeatureToggle.Shared.Tests.Integration
 // ReSharper restore CheckNamespace
 {
 

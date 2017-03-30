@@ -1,10 +1,11 @@
-﻿using FeatureToggle.Core;
-using FeatureToggle.Providers;
-using FeatureToggle.Toggles;
+﻿#if NETFULL // sql toggle not currently supported in code
+
+using FeatureToggle;
+using FeatureToggle.Internal;
 using Shouldly;
 using Xunit;
 
-namespace FeatureToggle.Integration.Tests
+namespace FeatureToggle.Shared.Tests.Integration
 {
     public class BooleanSqlServerProviderShould
     {
@@ -149,3 +150,5 @@ namespace FeatureToggle.Integration.Tests
         private class ConnectionStringConfiguredByNameSqlServerToggle : SqlFeatureToggle { }
     }
 }
+
+#endif
