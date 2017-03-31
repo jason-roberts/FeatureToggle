@@ -14,10 +14,6 @@ namespace FeatureToggle
 #if WINDOWS_UWP
 
             ToggleValueProvider = new ApplicationResourcesSettingsProvider();
-
-//#elif NETCORE
-
-//            throw new NotImplementedException();
 #else
             ToggleValueProvider = new AppSettingsProvider();
 #endif

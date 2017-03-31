@@ -35,7 +35,7 @@ namespace FeatureToggle.Internal
             var configValue = GetConfigValue(key);
 
 
-#if NETFULL
+#if NETFULL // HttpJsonFeatureToggle not currently supported in Core
             // TODO: don't really like this
             if (toggle is HttpJsonFeatureToggle)
             {

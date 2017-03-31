@@ -17,8 +17,6 @@ namespace FeatureToggle.Tests
             var sut = new MySimpleFeatureToggle();
 #if NETFULL || NETCORE
             Assert.Equal(typeof(AppSettingsProvider), sut.ToggleValueProvider.GetType());
-//#elif NETCORE
-//            throw new NotImplementedException("core todo");
 #else
             Assert.Equal(typeof(ApplicationResourcesSettingsProvider), sut.ToggleValueProvider.GetType());
 #endif
@@ -44,6 +42,8 @@ namespace FeatureToggle.Tests
         [Fact]
         public void SetOptionalConfigurationBuilder()
         {
+
+          
             throw new NotImplementedException("core todo");
         }
 
