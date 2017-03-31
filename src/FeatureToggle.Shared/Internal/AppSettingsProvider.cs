@@ -20,11 +20,43 @@ using System.IO;
 
 namespace FeatureToggle.Internal
 {
-    public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider,
-        ITimePeriodProvider, IDaysOfWeekToggleValueProvider, IAssemblyVersionProvider
+    public sealed class AppSettingsProvider : IBooleanToggleValueProvider, IDateTimeToggleValueProvider, ITimePeriodProvider, IDaysOfWeekToggleValueProvider, IAssemblyVersionProvider
     {
         private const string KeyNotFoundInAppsettingsMessage = "The key '{0}' was not found in AppSettings";
 
+
+#if NETCORE
+        
+        IConfigurationRoot _configuration;
+
+        public IConfigurationRoot Configuration
+        { 
+            get
+            {
+                if (_configuration == null)
+                {
+                    var builder = new ConfigurationBuilder().SetBasePath(AppContext.BaseDirectory).AddJsonFile("appSettings.json");
+                    Configuration = builder.Build();
+                }
+               
+                return _configuration;               
+            }
+            set
+            {
+                _configuration = value;
+            }
+        }
+        //public AppSettingsProvider(IConfigurationRoot customConfig)
+        //{
+        //    Configuration = customConfig;
+        //}
+
+        //public AppSettingsProvider()
+        //{
+        //    var builder = new ConfigurationBuilder().SetBasePath(AppContext.BaseDirectory).AddJsonFile("appSettings.json");
+        //    Configuration = builder.Build();
+        //}
+#endif
 
         public bool EvaluateBooleanToggleValue(IFeatureToggle toggle)
         {
@@ -170,15 +202,16 @@ namespace FeatureToggle.Internal
         }
 
 
-        private static void ValidateKeyExists(string key)
+        private void ValidateKeyExists(string key)
         {
-            if (!GetAllConfigKeys().Contains(key))
+            var allKeys = GetAllConfigKeys();
+            if (!allKeys.Contains(key))
             {
                 throw new ToggleConfigurationError(string.Format(KeyNotFoundInAppsettingsMessage, key));
             }                
         }
 
-        private static string ExpectedAppSettingsKeyFor(IFeatureToggle toggle)
+        private string ExpectedAppSettingsKeyFor(IFeatureToggle toggle)
         {
             return ToggleConfigurationSettings.Prefix + toggle.GetType().Name;
         }
@@ -198,40 +231,49 @@ namespace FeatureToggle.Internal
             }
         }
 
-        private static string GetConfigValue(string key)
+        private string GetConfigValue(string key)
         {
 #if NETFULL
             return ConfigurationManager.AppSettings[key];
-#else
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-                                                    .AddJsonFile("appsettings.json");
-                                                                
+#else            
 
-            var configuration = builder.Build();
-
-            return configuration[$"FeatureToggleConfiguration:{key}"];
+            return Configuration[key];
 #endif
         }
 
-        private static string[] GetAllConfigKeys()
+
+#if NETCORE
+        private static string AppDirectory  => AppContext.BaseDirectory;
+#endif
+
+
+
+        private string[] GetAllConfigKeys()
         {
 #if NETFULL
             return ConfigurationManager.AppSettings.AllKeys;
 #else
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-                                        .AddJsonFile("appsettings.json");
+            // var appPath = Path.GetDirectoryName(this.GetType().GetTypeInfo().Assembly.Location);
+            // var appPath = AppContext.BaseDirectory;
+            //var builder = new ConfigurationBuilder().SetBasePath(AppDirectory)
+            //                                        .AddJsonFile("appSettings.json");
 
 
-            var configuration = builder.Build();
+            //var configuration = builder.Build();
 
-            var allToggleSettings = configuration.GetSection("FeatureToggleConfiguration").GetChildren();
+            //var allToggleSettings = configuration.GetChildren();
 
+
+
+            var allToggleSettings = Configuration.GetChildren();
+
+            var temp= new List<string>();
             foreach (var setting in allToggleSettings)
             {
-
+                temp.Add(setting.Key);
             }
 
-            return null;
+            return temp.ToArray();
 #endif
         }
     }
