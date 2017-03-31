@@ -36,18 +36,31 @@ namespace FeatureToggle
 
         private Version GetAssemblyVersionOfDerivedToggle()
         {
-#if WINDOWS_UWP
-
             var assemblyName = this.GetType().GetTypeInfo().Assembly.FullName;
 
             var assembly = new AssemblyName(assemblyName);
 
             return assembly.Version;
-#elif NETCORE
-            throw new NotImplementedException();
-#else
-            return new AssemblyName(GetType().Assembly.FullName).Version;
-#endif
+//#if WINDOWS_UWP
+
+//            var assemblyName = this.GetType().GetTypeInfo().Assembly.FullName;
+
+//            var assembly = new AssemblyName(assemblyName);
+
+//            return assembly.Version;
+//#elif NETCORE
+
+//            var assemblyName = this.GetType().GetTypeInfo().Assembly.FullName;
+
+//            var assembly = new AssemblyName(assemblyName);
+
+//            return assembly.Version;
+            
+//#else
+//            var assemblyName = this.GetType().GetTypeInfo().Assembly.FullName;
+//            return new AssemblyName(GetType().Assembly.FullName).Version;
+            
+//#endif
         }
 
         private Version GetConfiguredVersion()
