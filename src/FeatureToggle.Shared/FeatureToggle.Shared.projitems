@@ -18,7 +18,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterAssemblyVersionWhereToggleIsDefinedToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterDateFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrBeforeDateFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)FeatureToggleToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HttpJsonFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SimpleFeatureToggle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SqlFeatureToggle.cs" />
