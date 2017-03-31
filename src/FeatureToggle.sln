@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26228.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.NetStandard", "FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj", "{CF907E9A-84E6-4816-A2A6-CDC1350C05EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureToggle.NetStandard", "FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj", "{CF907E9A-84E6-4816-A2A6-CDC1350C05EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.NetFull", "FeatureToggle.NetFull\FeatureToggle.NetFull.csproj", "{75A09049-3355-4577-A62E-12F376F83987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.NetCore", "FeatureToggle.NetCore\FeatureToggle.NetCore.csproj", "{B08179C8-9BC1-43F8-9121-431889FFDBE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureToggle.NetCore", "FeatureToggle.NetCore\FeatureToggle.NetCore.csproj", "{B08179C8-9BC1-43F8-9121-431889FFDBE3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3DB3556F-3F47-42B4-A60C-70A990EE5D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.NetCore.Tests", "Tests\FeatureToggle.NetCore.Tests\FeatureToggle.NetCore.Tests.csproj", "{D53D7427-7230-4AF2-92C1-13084A7DA48E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureToggle.NetCore.Tests", "Tests\FeatureToggle.NetCore.Tests\FeatureToggle.NetCore.Tests.csproj", "{D53D7427-7230-4AF2-92C1-13084A7DA48E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle.NetFull.Tests", "Tests\FeatureToggle.NetFull.Tests\FeatureToggle.NetFull.Tests.csproj", "{93852865-148E-4A38-A34C-878B1650C4DE}"
 EndProject
@@ -22,6 +22,10 @@ EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FeatureToggle.Shared", "FeatureToggle.Shared\FeatureToggle.Shared.shproj", "{8774F64C-A9D9-4405-BBDC-8BA34BD0F250}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FeatureToggle.Shared.Tests", "Tests\FeatureToggle.Shared.Tests\FeatureToggle.Shared.Tests.shproj", "{ED6BD629-1D2B-4ACF-9AD4-23666285AD93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{79664515-248D-4CA5-94F7-A1F59AA56197}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UWP10Example", "Examples\UWP10Example\UWP10Example.csproj", "{248F49F8-FEC5-495B-871C-D1E4A22F42B5}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -160,6 +164,28 @@ Global
 		{F3D70BE0-3D01-4C12-A049-C329DF5423FA}.Release|x64.Build.0 = Release|x64
 		{F3D70BE0-3D01-4C12-A049-C329DF5423FA}.Release|x86.ActiveCfg = Release|x86
 		{F3D70BE0-3D01-4C12-A049-C329DF5423FA}.Release|x86.Build.0 = Release|x86
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|Any CPU.Build.0 = Debug|x86
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|Any CPU.Deploy.0 = Debug|x86
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|ARM.ActiveCfg = Debug|ARM
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|ARM.Build.0 = Debug|ARM
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|ARM.Deploy.0 = Debug|ARM
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|x64.ActiveCfg = Debug|x64
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|x64.Build.0 = Debug|x64
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|x64.Deploy.0 = Debug|x64
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|x86.ActiveCfg = Debug|x86
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|x86.Build.0 = Debug|x86
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Debug|x86.Deploy.0 = Debug|x86
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Release|Any CPU.ActiveCfg = Release|x86
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Release|ARM.ActiveCfg = Release|ARM
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Release|ARM.Build.0 = Release|ARM
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Release|ARM.Deploy.0 = Release|ARM
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Release|x64.ActiveCfg = Release|x64
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Release|x64.Build.0 = Release|x64
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Release|x64.Deploy.0 = Release|x64
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Release|x86.ActiveCfg = Release|x86
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Release|x86.Build.0 = Release|x86
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,5 +195,6 @@ Global
 		{93852865-148E-4A38-A34C-878B1650C4DE} = {3DB3556F-3F47-42B4-A60C-70A990EE5D3E}
 		{E378C19A-178D-4C59-AF1E-D03977C1F7AB} = {3DB3556F-3F47-42B4-A60C-70A990EE5D3E}
 		{ED6BD629-1D2B-4ACF-9AD4-23666285AD93} = {3DB3556F-3F47-42B4-A60C-70A990EE5D3E}
+		{248F49F8-FEC5-495B-871C-D1E4A22F42B5} = {79664515-248D-4CA5-94F7-A1F59AA56197}
 	EndGlobalSection
 EndGlobal
