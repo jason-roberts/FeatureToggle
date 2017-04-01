@@ -9,6 +9,10 @@
     <DefineConstants>TRACE;DEBUG;NETCOREAPP1_0;NETCORE</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;RELEASE;NETCOREAPP1_0;NETCORE</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="ThisIsNeededToMakeSharedTestsAppearInVS2017TestExplorer.cs" />
   </ItemGroup>
