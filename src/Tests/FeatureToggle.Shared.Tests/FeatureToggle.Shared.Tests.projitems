@@ -21,7 +21,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)EnabledBetweenDatesFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnabledOnDaysOfWeekFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterDateFeatureToggleShould.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterToggleAssemblyVersionShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrBeforeDateFeatureToggleShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FallbackValueDecoratorShould.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Integration\AppSettingsProviderBooleanShould.cs" />
