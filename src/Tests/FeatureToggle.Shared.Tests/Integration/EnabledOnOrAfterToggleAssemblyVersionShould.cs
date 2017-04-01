@@ -27,7 +27,7 @@ namespace FeatureToggle.Shared.Tests.Integration
                 result = sut.FeatureEnabled;
             });
 #else
-            result = sut.FeatureEnabled;
+            result = await Task.Run(() => sut.FeatureEnabled);
 #endif
 
             Assert.True(result);
@@ -49,7 +49,7 @@ namespace FeatureToggle.Shared.Tests.Integration
                 result = sut.FeatureEnabled;
             });
 #else
-            result = sut.FeatureEnabled;
+            result = await Task.Run(() => sut.FeatureEnabled);
 #endif
 
             Assert.False(result);
@@ -69,7 +69,7 @@ namespace FeatureToggle.Shared.Tests.Integration
                 result = sut.FeatureEnabled;
             });
 #else
-            result = sut.FeatureEnabled;
+            result = await Task.Run(() => sut.FeatureEnabled);
 #endif
             Assert.True(result);
         }
