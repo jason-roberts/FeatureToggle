@@ -9,6 +9,7 @@
     <Authors>Jason Roberts - dontcodetired.com</Authors>
     <Company />
     <Product />
+    <Description>Simple, reliable feature toggles in .NET. This is the .NET Standard package for the main FeatureToggle package.</Description>
     <Copyright>Copyright 2014-2017 Jason Roberts</Copyright>
     <PackageLicenseUrl>https://github.com/jason-roberts/FeatureToggle/blob/master/LICENSE.txt</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/jason-roberts/FeatureToggle</PackageProjectUrl>
