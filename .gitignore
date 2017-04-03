@@ -84,6 +84,10 @@ TestResult.xml
 [Rr]eleasePS/
 dlldata.c
 
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+
 *_i.c
 *_p.c
 *_i.h
