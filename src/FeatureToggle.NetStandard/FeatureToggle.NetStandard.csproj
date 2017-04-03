@@ -4,6 +4,23 @@
     <TargetFramework>netstandard1.4</TargetFramework>
     <RootNamespace>FeatureToggle</RootNamespace>
     <Version>4.0.0</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <Authors>Jason Roberts - dontcodetired.com</Authors>
+    <Company />
+    <Product />
+    <Copyright>Copyright 2014-2017 Jason Roberts</Copyright>
+    <PackageLicenseUrl>https://github.com/jason-roberts/FeatureToggle/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/jason-roberts/FeatureToggle</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/jason-roberts/FeatureToggle/raw/master/etc/logo.png</PackageIconUrl>
+    <RepositoryUrl />
+    <PackageTags>feature toggle branch merge featuretoggle cd continuous delivery</PackageTags>
+    <PackageReleaseNotes>For release notes and history see https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md</PackageReleaseNotes>
+    <PostBuildEvent></PostBuildEvent>
+    <PreBuildEvent></PreBuildEvent>
   </PropertyGroup>
 
+  <Target Name="CopyPackage" AfterTargets="Pack" Condition="'$(Configuration)' == 'Release'">
+    <Copy SourceFiles="$(OutputPath)\..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(OutputPath)\..\..\..\..\..\NuGet\FeatureToggle.NetStandard" />
+  </Target>
 </Project>

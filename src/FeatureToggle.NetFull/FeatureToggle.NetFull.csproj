@@ -53,4 +53,8 @@
   </ItemGroup>
   <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist $(SolutionDir)..\NuGet\FeatureToggle\lib\net461 md $(SolutionDir)..\NuGet\FeatureToggle\lib\net461
+copy $(TargetPath) $(SolutionDir)..\NuGet\FeatureToggle\lib\net461 /y</PostBuildEvent>
+  </PropertyGroup>
 </Project>

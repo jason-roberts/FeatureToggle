@@ -1,0 +1,1 @@
+Package generated from VS2017/MSBuild and copied here as postbuild
