@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleWebFormsApplication"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleWpfApplication", "Examples\ExampleWpfApplication\ExampleWpfApplication.csproj", "{B430133E-161B-41E3-A2DE-87B388FFBE0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle", "FeatureToggle\FeatureToggle.csproj", "{F635E07D-76C6-49D9-B052-850450AD17A4}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		FeatureToggle.Shared\FeatureToggle.Shared.projitems*{75a09049-3355-4577-a62e-12f376f83987}*SharedItemsImports = 4
@@ -361,6 +363,30 @@ Global
 		{B430133E-161B-41E3-A2DE-87B388FFBE0A}.WindowsStoreOnly|x64.ActiveCfg = WindowsStoreOnly|x86
 		{B430133E-161B-41E3-A2DE-87B388FFBE0A}.WindowsStoreOnly|x86.ActiveCfg = WindowsStoreOnly|x86
 		{B430133E-161B-41E3-A2DE-87B388FFBE0A}.WindowsStoreOnly|x86.Build.0 = WindowsStoreOnly|x86
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Debug|ARM.Build.0 = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Debug|x64.Build.0 = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Debug|x86.Build.0 = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Release|ARM.ActiveCfg = Release|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Release|ARM.Build.0 = Release|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Release|x64.ActiveCfg = Release|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Release|x64.Build.0 = Release|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Release|x86.ActiveCfg = Release|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.Release|x86.Build.0 = Release|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.WindowsStoreOnly|Any CPU.ActiveCfg = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.WindowsStoreOnly|Any CPU.Build.0 = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.WindowsStoreOnly|ARM.ActiveCfg = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.WindowsStoreOnly|ARM.Build.0 = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.WindowsStoreOnly|x64.ActiveCfg = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.WindowsStoreOnly|x64.Build.0 = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.WindowsStoreOnly|x86.ActiveCfg = Debug|Any CPU
+		{F635E07D-76C6-49D9-B052-850450AD17A4}.WindowsStoreOnly|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
