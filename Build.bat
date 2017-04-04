@@ -1,0 +1,1 @@
+msbuild src\FeatureToggle.sln /t:Clean,Build /p:Configuration=Release /verbosity:m

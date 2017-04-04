@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <metadata minClientVersion="2.8.1">
+  <metadata minClientVersion="3.4.4">
     <id>FeatureToggle</id>
     <version>4.0.0</version>
     <authors>Jason Roberts - dontcodetired.com</authors>
@@ -14,7 +14,7 @@
     <copyright>Copyright 2014-2017 Jason Roberts</copyright>
     <tags>feature toggle branch merge featuretoggle cd continuous delivery</tags>
 	<dependencies>
-      <dependency id="FeatureToggle.NetStandard" version="4.0.0" />
+		<dependency id="FeatureToggle.NetStandard" version="4.0.0" />
     </dependencies>
   </metadata>
 </package>

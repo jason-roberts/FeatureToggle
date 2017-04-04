@@ -21,7 +21,5 @@
     <PreBuildEvent></PreBuildEvent>
   </PropertyGroup>
 
-  <Target Name="CopyPackage" AfterTargets="Pack" Condition="'$(Configuration)' == 'Release'">
-    <Copy SourceFiles="$(OutputPath)\..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(OutputPath)\..\..\..\..\..\NuGet\FeatureToggle.NetStandard" />
-  </Target>
+
 </Project>
