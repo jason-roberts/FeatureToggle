@@ -19,8 +19,8 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FeatureToggle.NetCore\FeatureToggle.NetCore.csproj" />
     <ProjectReference Include="..\..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj" />
+    <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj" />
   </ItemGroup>
 
 </Project>

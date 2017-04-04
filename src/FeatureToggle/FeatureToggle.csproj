@@ -1,11 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <!--<Import Condition=" '$(TargetFramework)' == 'uap10.0'" 
-          Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />-->
-  
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp1.0;uap10.0;net461</TargetFrameworks>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <TargetFrameworks>net461;netcoreapp1.0;uap10.0</TargetFrameworks>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <Version>4.0.0</Version>
     <Authors>Jason Roberts - dontcodetired.com</Authors>
@@ -20,7 +17,7 @@
     <PackageReleaseNotes>For release notes and history see https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md</PackageReleaseNotes>
   </PropertyGroup>
 
-  <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" />
+
 
   <ItemGroup>
     <ProjectReference Include="..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj" />
@@ -75,4 +72,12 @@
     <Reference Include="System.Xml" />    
     <Reference Include="System.Xml.Linq" />    
   </ItemGroup>
+
+  <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" />
+
+
+
+  <Target Name="CopyPackage" AfterTargets="Pack" Condition="'$(Configuration)' == 'Release'">
+    <Copy SourceFiles="$(OutputPath)\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(OutputPath)\..\..\..\..\NuGet\FeatureToggleNugetTestFeed" />
+  </Target>
 </Project>

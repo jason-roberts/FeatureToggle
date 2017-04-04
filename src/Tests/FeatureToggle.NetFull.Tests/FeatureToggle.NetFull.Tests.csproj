@@ -96,13 +96,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FeatureToggle.NetFull\FeatureToggle.NetFull.csproj">
-      <Project>{75a09049-3355-4577-a62e-12f376f83987}</Project>
-      <Name>FeatureToggle.NetFull</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj">
       <Project>{cf907e9a-84e6-4816-a2a6-cdc1350c05ec}</Project>
       <Name>FeatureToggle.NetStandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FeatureToggle.NetFull\FeatureToggle.NetFull.csproj">
+      <Project>{2368c117-6f0f-439b-8ed8-0b3b3adb1d31}</Project>
+      <Name>FeatureToggle.NetFull</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

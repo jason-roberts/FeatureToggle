@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FeatureToggle, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FeatureToggle.4.0.0\lib\net461\FeatureToggle.dll</HintPath>
+    </Reference>
     <Reference Include="FeatureToggle.NetFull, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FeatureToggle.4.0.0\lib\net461\FeatureToggle.NetFull.dll</HintPath>
     </Reference>

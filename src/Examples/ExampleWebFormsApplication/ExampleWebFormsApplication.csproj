@@ -90,9 +90,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FeatureToggle.NetFull\FeatureToggle.NetFull.csproj">
-      <Project>{75a09049-3355-4577-a62e-12f376f83987}</Project>
-      <Name>FeatureToggle.NetFull</Name>
+    <ProjectReference Include="..\..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj">
+      <Project>{cf907e9a-84e6-4816-a2a6-cdc1350c05ec}</Project>
+      <Name>FeatureToggle.NetStandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj">
+      <Project>{f635e07d-76c6-49d9-b052-850450ad17a4}</Project>
+      <Name>FeatureToggle</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

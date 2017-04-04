@@ -1,0 +1,1 @@
+﻿This is a multi-targeted project that generates multiple platform binaries

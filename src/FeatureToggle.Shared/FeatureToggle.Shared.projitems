@@ -9,6 +9,7 @@
     <Import_RootNamespace>FeatureToggle.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)FeatureToggleToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Internal\ApplicationResourcesSettingsProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Internal\AppSettingsProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Internal\BooleanSqlServerProvider.cs" />

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3D70BE0-3D01-4C12-A049-C329DF5423FA}</ProjectGuid>
+    <ProjectGuid>{5F3DDD23-FEBB-4BA4-813C-A8D52F164A2D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FeatureToggle.UAP</RootNamespace>
@@ -107,25 +107,20 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FeatureToggleToVisibilityConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\FeatureToggle.UAP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj">
+    <ProjectReference Include="..\..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj">
       <Project>{cf907e9a-84e6-4816-a2a6-cdc1350c05ec}</Project>
       <Name>FeatureToggle.NetStandard</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" />
+  <Import Project="..\..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>if not exist $(SolutionDir)..\NuGet\FeatureToggle\lib\uap md $(SolutionDir)..\NuGet\FeatureToggle\lib\uap
-copy $(TargetPath) $(SolutionDir)..\NuGet\FeatureToggle\lib\uap /y</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

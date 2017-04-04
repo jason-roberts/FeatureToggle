@@ -128,8 +128,8 @@
       <Project>{cf907e9a-84e6-4816-a2a6-cdc1350c05ec}</Project>
       <Name>FeatureToggle.NetStandard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\FeatureToggle.UAP\FeatureToggle.UAP.csproj">
-      <Project>{f3d70be0-3d01-4c12-a049-c329df5423fa}</Project>
+    <ProjectReference Include="..\FeatureToggle.UAP\FeatureToggle.UAP.csproj">
+      <Project>{5f3ddd23-febb-4ba4-813c-a8d52f164a2d}</Project>
       <Name>FeatureToggle.UAP</Name>
     </ProjectReference>
   </ItemGroup>

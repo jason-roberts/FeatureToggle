@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if WINDOWS_UWP
+
+using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 
@@ -30,3 +32,4 @@ namespace FeatureToggle
 
     }
 }
+#endif
