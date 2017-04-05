@@ -13,7 +13,7 @@
     <Copyright>Copyright 2014-2017 Jason Roberts</Copyright>
     <PackageLicenseUrl>https://github.com/jason-roberts/FeatureToggle/blob/master/LICENSE.txt</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/jason-roberts/FeatureToggle</PackageProjectUrl>
-    <PackageIconUrl>https://github.com/jason-roberts/FeatureToggle/raw/master/etc/logo.png</PackageIconUrl>
+    <PackageIconUrl>https://github.com/jason-roberts/FeatureToggle/raw/master/etc/v4/logo.png</PackageIconUrl>
     <RepositoryUrl />
     <PackageTags>feature toggle branch merge featuretoggle cd continuous delivery</PackageTags>
     <PackageReleaseNotes>For release notes and history see https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md</PackageReleaseNotes>
