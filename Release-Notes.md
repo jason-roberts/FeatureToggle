@@ -4,12 +4,12 @@
 
 [v4 planned work](https://github.com/jason-roberts/FeatureToggle/issues?utf8=%E2%9C%93&q=milestone%3A%22Version%204.0%22%20)
 
-v4 will add .NET Core support and remove some support for older platforms. ETA Q1 2017.
+v4 will add .NET Core support and remove some support for older platforms.
 
 ## Breaking Changes
 
 * Min framework now 4.6.1 / .NET Standard 1.4
-* Windows 8.*, Windows phone 8.*, Windows Phone Silverlight 8.* no longer supported
+* Windows 8.n, Windows phone 8.n, Windows Phone Silverlight 8.n no longer supported
 * Namespace changes: most types needed for application developers are now under root FeatureToggle namespace
 * Types not usually required by client code moved to FeatureToggle.Internal
 * Windows UWP now supported explicitly from build 14393 
@@ -18,10 +18,6 @@ v4 will add .NET Core support and remove some support for older platforms. ETA Q
 
 * No HttpJsonFeatureToggle
 * No SqlFeatureToggle
-* config note.....
-
-
-
 
 
 
