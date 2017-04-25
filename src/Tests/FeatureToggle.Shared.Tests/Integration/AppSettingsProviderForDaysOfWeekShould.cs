@@ -28,10 +28,13 @@ namespace FeatureToggle.Shared.Tests.Integration
             var sut = new AppSettingsProvider();
 
             var ex = Assert.Throws<ToggleConfigurationError>(() => sut.GetDaysOfWeek(new InvalidDayToggle()).ToList());
-
+#if NETCORE
+            Assert.Equal("The value 'Sun' in config key 'InvalidDayToggle' is not a valid day of the week. Days should be specified in long format. E.g. Friday and not Fri.", ex.Message);
+#else
             Assert.Equal("The value 'Sun' in config key 'FeatureToggle.InvalidDayToggle' is not a valid day of the week. Days should be specified in long format. E.g. Friday and not Fri.", ex.Message);
+#endif
         }
-    
+
 
         [Fact]
         public void ErrorWhenKeyNotInConfig()

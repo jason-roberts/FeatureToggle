@@ -213,7 +213,11 @@ namespace FeatureToggle.Internal
 
         private string ExpectedAppSettingsKeyFor(IFeatureToggle toggle)
         {
+#if NETFULL
             return ToggleConfigurationSettings.Prefix + toggle.GetType().Name;
+#else
+            return toggle.GetType().Name;
+#endif
         }
 
         private bool ParseBooleanConfigString(string valueToParse, string configKey)
@@ -235,9 +239,9 @@ namespace FeatureToggle.Internal
         {
 #if NETFULL
             return ConfigurationManager.AppSettings[key];
-#else            
+#else
 
-            return Configuration[key];
+            return Configuration.GetSection(ToggleConfigurationSettings.Prefix.Replace(".", ""))[key];
 #endif
         }
 
@@ -253,19 +257,7 @@ namespace FeatureToggle.Internal
 #if NETFULL
             return ConfigurationManager.AppSettings.AllKeys;
 #else
-            // var appPath = Path.GetDirectoryName(this.GetType().GetTypeInfo().Assembly.Location);
-            // var appPath = AppContext.BaseDirectory;
-            //var builder = new ConfigurationBuilder().SetBasePath(AppDirectory)
-            //                                        .AddJsonFile("appSettings.json");
-
-
-            //var configuration = builder.Build();
-
-            //var allToggleSettings = configuration.GetChildren();
-
-
-
-            var allToggleSettings = Configuration.GetChildren();
+            var allToggleSettings = Configuration.GetSection(ToggleConfigurationSettings.Prefix.Replace(".","")).GetChildren();
 
             var temp= new List<string>();
             foreach (var setting in allToggleSettings)

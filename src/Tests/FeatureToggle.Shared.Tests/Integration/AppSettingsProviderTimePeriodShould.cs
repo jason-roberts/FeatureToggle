@@ -31,10 +31,15 @@ namespace FeatureToggle.Shared.Tests.Integration
                 () =>
                     new AppSettingsProvider().EvaluateTimePeriod(
                         new FormatInConfigIsWrong()));
-
+#if NETCORE
             Assert.Equal(
-                "The value '02/01/2050 04:05:44' cannot be converted to a DateTime as defined in config key 'FeatureToggle.FormatInConfigIsWrong'. The expected format is: dd-MMM-yyyy HH:mm:ss",
+                "The value '02/01/2050 04:05:44' cannot be converted to a DateTime as defined in config key 'FormatInConfigIsWrong'. The expected format is: dd-MMM-yyyy HH:mm:ss",
                 ex.Message);
+#else
+            Assert.Equal(
+                            "The value '02/01/2050 04:05:44' cannot be converted to a DateTime as defined in config key 'FeatureToggle.FormatInConfigIsWrong'. The expected format is: dd-MMM-yyyy HH:mm:ss",
+                            ex.Message);
+#endif
         }
 
 
