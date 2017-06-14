@@ -46,16 +46,6 @@ namespace FeatureToggle.Internal
                 _configuration = value;
             }
         }
-        //public AppSettingsProvider(IConfigurationRoot customConfig)
-        //{
-        //    Configuration = customConfig;
-        //}
-
-        //public AppSettingsProvider()
-        //{
-        //    var builder = new ConfigurationBuilder().SetBasePath(AppContext.BaseDirectory).AddJsonFile("appSettings.json");
-        //    Configuration = builder.Build();
-        //}
 #endif
 
         public bool EvaluateBooleanToggleValue(IFeatureToggle toggle)
@@ -128,8 +118,7 @@ namespace FeatureToggle.Internal
 
             ValidateKeyExists(key);
 
-            var configValue = GetConfigValue(key);
-            //var configValue = GetConfigValue ConfigurationManager.AppSettings[key];
+            var configValue = GetConfigValue(key);            
 
             var parser = new ConfigurationDateParser();
 
