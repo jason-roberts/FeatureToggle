@@ -184,6 +184,7 @@ publish/
 
 # NuGet Packages Directory
 src/packages/*
+NuGet/FeatureToggleNugetTestFeed/*
 src/Tests/ManualNugetPackageTesting/packages/*
 ## TODO: If the tool you use requires repositories.config uncomment the next line
 !src/packages/repositories.config
