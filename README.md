@@ -6,6 +6,7 @@ Install FeatureToggle easily via NuGet:
 
 PM> Install-Package FeatureToggle
 
+# [Release notes/versions](https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md)
 # [Documentation](http://jason-roberts.github.io/FeatureToggle.Docs/)
 # [Pluralsight Feature Toggle Course](http://bit.ly/psfeaturetoggle)
 # [Twitter updates](https://twitter.com/robertsjason)
