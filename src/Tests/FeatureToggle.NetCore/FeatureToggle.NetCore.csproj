@@ -12,15 +12,14 @@
     <DefineConstants>TRACE;RELEASE;NETCOREAPP1_0;NETCORE</DefineConstants>
   </PropertyGroup>
 
-  <Import Project="..\..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" />
-
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj" />
+    <ProjectReference Include="..\..\FeatureToggle.Common\FeatureToggle.Common.csproj" />
+    <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj" />
   </ItemGroup>
 
 </Project>

@@ -29,7 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj" />
+    <ProjectReference Include="..\..\FeatureToggle.Common\FeatureToggle.Common.csproj" />
+    <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj" />
     <ProjectReference Include="..\FeatureToggle.NetCore\FeatureToggle.NetCore.csproj" />
   </ItemGroup>
 

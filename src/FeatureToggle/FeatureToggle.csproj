@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <TargetFrameworks>net461;netcoreapp1.0;uap10.0</TargetFrameworks>
+    <TargetFrameworks>net461;uap10.0;netcoreapp1.0;</TargetFrameworks>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <Version>4.0.0-rc2</Version>
@@ -17,12 +17,6 @@
     <PackageTags>feature toggle branch merge featuretoggle cd continuous delivery</PackageTags>
     <PackageReleaseNotes>For release notes and history see https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md</PackageReleaseNotes>
   </PropertyGroup>
-
-
-
-  <ItemGroup>
-    <ProjectReference Include="..\FeatureToggle.NetStandard\FeatureToggle.NetStandard.csproj" />
-  </ItemGroup>
   
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">
     <DefineConstants>NETCORE;NETCOREAPP1_0</DefineConstants>
@@ -68,10 +62,13 @@
     <Reference Include="System.Core" />    
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />    
     <Reference Include="System.Xml.Linq" />    
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FeatureToggle.Common\FeatureToggle.Common.csproj" />
   </ItemGroup>
 
   <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" />
