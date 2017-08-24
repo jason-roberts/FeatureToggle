@@ -1,10 +1,10 @@
 ﻿{
   "dependencies": {
-    "FeatureToggle": "4.0.0",
+    "FeatureToggle": "4.0.1-rc3",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
   },
   "frameworks": {
-    "uap10.0": {}
+    "uap10.0.14393": {}
   },
   "runtimes": {
     "win10-arm": {},

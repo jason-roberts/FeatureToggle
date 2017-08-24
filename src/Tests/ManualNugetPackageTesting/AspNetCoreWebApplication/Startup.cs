@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FeatureToggle.Internal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+
 
 namespace AspNetCoreWebApplication
 {
@@ -26,7 +28,12 @@ namespace AspNetCoreWebApplication
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {  
+            // Set provider config so file is read from content root path
+            var provider = new AppSettingsProvider { Configuration = Configuration };
+
+            services.AddSingleton(new Printing { ToggleValueProvider = provider });
+            services.AddSingleton(new Saving { ToggleValueProvider = provider });
             // Add framework services.
             services.AddMvc();
         }

@@ -25,6 +25,10 @@ namespace UAPApp
         public MainPage()
         {
             this.InitializeComponent();
+
+            var m = new Model();
+
+            bool b = m.Print.FeatureEnabled;
         }
     }
 }
