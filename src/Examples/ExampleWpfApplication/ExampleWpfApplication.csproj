@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ExampleWpfApplication</RootNamespace>
     <AssemblyName>ExampleWpfApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -79,7 +79,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ToggleFromJsonHttpEndpoint.cs" />
+    <Compile Include="BooleanToVisibilityConverter.cs" />
+    <Compile Include="FeatureXToggle.cs" />
+    <Compile Include="FeatureYToggle.cs" />
     <Compile Include="Feature3Toggle.cs" />
     <Compile Include="Feature2Toggle.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -113,21 +115,17 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FeatureToggle.Core\FeatureToggle.Core.csproj">
-      <Project>{474aafb7-5560-412a-8c98-d5558d24a59e}</Project>
-      <Name>FeatureToggle.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FeatureToggle.WpfExtensions\FeatureToggle.WpfExtensions.csproj">
-      <Project>{e43d7542-3ffc-49bf-beca-9fd203a379c4}</Project>
-      <Name>FeatureToggle.WpfExtensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj">
-      <Project>{c09f1554-f0db-4a3e-9bd1-ccbc2aa1d6e1}</Project>
-      <Name>FeatureToggle</Name>
-    </ProjectReference>
+    <Resource Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ReadMe.txt" />
+    <ProjectReference Include="..\..\FeatureToggle.Common\FeatureToggle.Common.csproj">
+      <Project>{8658519f-c972-455a-8ca6-03c674ef0e15}</Project>
+      <Name>FeatureToggle.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj">
+      <Project>{f635e07d-76c6-49d9-b052-850450ad17a4}</Project>
+      <Name>FeatureToggle</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

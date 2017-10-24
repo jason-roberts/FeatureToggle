@@ -1,0 +1,11 @@
+﻿<Application
+    x:Class="UAPApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UAPApp"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <x:String x:Key="FeatureToggle.Printing">false</x:String>
+        
+    </Application.Resources>
+</Application>

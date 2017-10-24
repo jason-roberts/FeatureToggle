@@ -1,0 +1,17 @@
+﻿@model AspDotNetCoreExample.ViewModels.HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (Model.Printing.FeatureEnabled)
+{
+    <Button>Print</Button>
+}
+
+@if (Model.Saving.FeatureEnabled)
+{
+    <Button>Save</Button>
+}
+
+<h1>Notice that the save button is not visible</h1>

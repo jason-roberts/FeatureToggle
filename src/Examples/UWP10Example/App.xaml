@@ -1,0 +1,14 @@
+﻿<Application
+    x:Class="UWP10Example.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP10Example"
+    xmlns:system="using:System"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+        <x:String x:Key="FeatureToggle.Feature2Toggle">false</x:String>
+        <x:String x:Key="FeatureToggle.Feature3Toggle">01-Jan-2014 18:00:00</x:String>
+    </Application.Resources>
+
+</Application>

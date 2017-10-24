@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>ed6bd629-1d2b-4acf-9ad4-23666285ad93</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>FeatureToggle.Shared.Tests</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AlwaysOffFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AlwaysOnFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApplicationResourcesSetter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\ApplicationResourcesSettingsProviderShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CompositeAndDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CompositeOrDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConfigurationValidatorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DefaultToDisabledOnErrorDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DefaultToEnabledOnErrorDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledBetweenDatesFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnDaysOfWeekFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterDateFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrBeforeDateFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FallbackValueDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\AppSettingsProviderBooleanShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\AppSettingsProviderDateTimeShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\AppSettingsProviderForDaysOfWeekShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\AppSettingsProviderTimePeriodShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\BooleanHttpJsonProviderShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\BooleanSqlServerProviderShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\EnabledOnOrAfterToggleAssemblyVersionShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\TestApiServer\Startup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Integration\TestApiServer\TestController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IsShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RandomFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RunOn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SimpleCacheDecoratorShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SimpleFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SqlFeatureToggleShould.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestToggles\AnErroringToggle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Integration\SqlServerSetup\CreateLocalSqlExpressTestDb.sql" />
+  </ItemGroup>
+</Project>

@@ -1,20 +1,23 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using FeatureToggle;
 
 namespace ExampleWpfApplication
 {
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private Feature2Toggle _feature2Toggle;
-        private Feature3Toggle _feature3Toggle;
-        private ToggleFromJsonHttpEndpoint _toggleFromJsonHttpEndpoint;
+        private Feature3Toggle _feature3Toggle;       
+        private IFeatureToggle _feature5;
 
         public MainWindow()
         {
             InitializeComponent();
+
             Feature2Toggle = new Feature2Toggle();
-            Feature3Toggle = new Feature3Toggle();
-            ToggleFromJsonHttpEndpoint = new ToggleFromJsonHttpEndpoint();
+            Feature3Toggle = new Feature3Toggle();            
+
+            Feature5 = new CompositeAndDecorator(new FeatureXToggle(), new FeatureYToggle());
 
             DataContext = this;
         }
@@ -40,15 +43,18 @@ namespace ExampleWpfApplication
         }
 
 
-        public ToggleFromJsonHttpEndpoint ToggleFromJsonHttpEndpoint
+
+        public IFeatureToggle Feature5
         {
-            get { return _toggleFromJsonHttpEndpoint; }
+            get { return _feature5; }
             set
             {
-                _toggleFromJsonHttpEndpoint = value;
-                Notify("ToggleFromJsonHttpEndpoint");
+                _feature5 = value;
+                Notify("Feature5");
             }
         }
+
+
 
         #region INotifyPropertyChanged Members
 

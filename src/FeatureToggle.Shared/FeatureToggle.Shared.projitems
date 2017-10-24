@@ -3,22 +3,24 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>5e161f8f-80b3-48ab-ab8c-b75a1ccd5c31</SharedGUID>
+    <SharedGUID>8774f64c-a9d9-4405-bbdc-8ba34bd0f250</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>FeatureToggle.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Providers\AppSettingsProvider.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Providers\BooleanSqlServerProvider.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Providers\JsonEnabledResponse.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledBetweenDatesFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnDaysOfWeekFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnOrAfterDateFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Toggles\EnabledOnOrBeforeDateFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Toggles\FeatureToggleToVisibilityConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Toggles\SimpleFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Toggles\HttpJsonFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Toggles\SqlFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FeatureToggleToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\ApplicationResourcesSettingsProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\AppSettingsProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\BooleanSqlServerProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\JsonEnabledResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledBetweenDatesFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnDaysOfWeekFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterAssemblyVersionWhereToggleIsDefinedToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterDateFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrBeforeDateFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HttpJsonFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SimpleFeatureToggle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SqlFeatureToggle.cs" />
   </ItemGroup>
 </Project>

@@ -84,6 +84,10 @@ TestResult.xml
 [Rr]eleasePS/
 dlldata.c
 
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+
 *_i.c
 *_p.c
 *_i.h
@@ -180,6 +184,8 @@ publish/
 
 # NuGet Packages Directory
 src/packages/*
+NuGet/FeatureToggleNugetTestFeed/*
+src/Tests/ManualNugetPackageTesting/packages/*
 ## TODO: If the tool you use requires repositories.config uncomment the next line
 !src/packages/repositories.config
 
@@ -229,3 +235,6 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# VS2015 related
+.vs/
