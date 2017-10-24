@@ -1,6 +1,6 @@
 # Release Notes 
 
-# Version 4.0.0
+# Version 4.0.2
 
 Added initial .NET Core support and removed support for some older platforms.
 
