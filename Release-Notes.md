@@ -1,10 +1,12 @@
 # Release Notes 
 
-# Version 4.0.0 - In Development 
+# Version 4.0.0
 
-[v4 planned work](https://github.com/jason-roberts/FeatureToggle/issues?utf8=%E2%9C%93&q=milestone%3A%22Version%204.0%22%20)
+Added initial .NET Core support and removed support for some older platforms.
 
-v4 will add .NET Core support and remove some support for older platforms.
+[v4 issues / work log](https://github.com/jason-roberts/FeatureToggle/issues?utf8=%E2%9C%93&q=milestone%3A%22Version%204.0%22%20)
+
+This project follows semantic versioning, an increase in the major release number (in this case from 3 to 4) indicates there are breaking changes.
 
 ## Breaking Changes
 

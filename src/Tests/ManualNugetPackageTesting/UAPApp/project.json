@@ -1,6 +1,6 @@
 ﻿{
   "dependencies": {
-    "FeatureToggle": "4.0.1-rc3",
+    "FeatureToggle": "4.0.2",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
   },
   "frameworks": {

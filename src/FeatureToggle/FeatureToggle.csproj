@@ -5,7 +5,7 @@
     <TargetFrameworks>net461;uap10.0;netcoreapp1.0;</TargetFrameworks>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Version>4.0.1-rc3</Version>
+    <Version>4.0.2</Version>
     <Authors>Jason Roberts - dontcodetired.com</Authors>
     <Company />
     <Product />

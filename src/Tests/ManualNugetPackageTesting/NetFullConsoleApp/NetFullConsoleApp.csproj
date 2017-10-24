@@ -33,11 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FeatureToggle, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FeatureToggle.4.0.1-rc3\lib\net461\FeatureToggle.dll</HintPath>
+    <Reference Include="FeatureToggle, Version=4.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FeatureToggle.4.0.2\lib\net461\FeatureToggle.dll</HintPath>
     </Reference>
-    <Reference Include="FeatureToggle.Common, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FeatureToggle.Common.4.0.1-rc3\lib\netstandard1.4\FeatureToggle.Common.dll</HintPath>
+    <Reference Include="FeatureToggle.Common, Version=4.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FeatureToggle.Common.4.0.2\lib\netstandard1.4\FeatureToggle.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
