@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <TargetFrameworks>net461;uap10.0;netcoreapp1.0;</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <Version>4.0.2</Version>
@@ -17,59 +17,12 @@
     <PackageTags>feature toggle branch merge featuretoggle cd continuous delivery</PackageTags>
     <PackageReleaseNotes>For release notes and history see https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md</PackageReleaseNotes>
   </PropertyGroup>
-  
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">
-    <DefineConstants>NETCORE;NETCOREAPP1_0</DefineConstants>
-  </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">    
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.1" />
+  <ItemGroup>    
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.4.2" />
   </ItemGroup>
-
-
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'uap10.0'">
-    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-    <NugetTargetMoniker>UAP,Version=v10.0</NugetTargetMoniker>
-    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
-    <TargetFrameworkIdentifier>.NETCore</TargetFrameworkIdentifier>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
-    <DefineConstants>$(DefineConstants);WINDOWS_UWP</DefineConstants>
-    <LanguageTargets>$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets</LanguageTargets>
-  </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform " Version="5.2.2" />   
-  </ItemGroup>
-
-
-
-
-
-
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    <DefineConstants>NETFULL</DefineConstants>
-  </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />   
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\FeatureToggle.Common\FeatureToggle.Common.csproj" />
-  </ItemGroup>
-
-  <Import Project="..\FeatureToggle.Shared\FeatureToggle.Shared.projitems" Label="Shared" />
-
-
 
   <Target Name="CopyPackage" AfterTargets="Pack" Condition="'$(Configuration)' == 'Release'">
     <Copy SourceFiles="$(OutputPath)\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(OutputPath)\..\..\..\..\NuGet\FeatureToggleNugetTestFeed" />

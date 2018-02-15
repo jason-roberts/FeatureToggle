@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\FeatureToggle.Common\FeatureToggle.Common.csproj" />
     <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj" />
   </ItemGroup>
 

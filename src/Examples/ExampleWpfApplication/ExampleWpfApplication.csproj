@@ -118,10 +118,6 @@
     <Resource Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FeatureToggle.Common\FeatureToggle.Common.csproj">
-      <Project>{8658519f-c972-455a-8ca6-03c674ef0e15}</Project>
-      <Name>FeatureToggle.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\FeatureToggle\FeatureToggle.csproj">
       <Project>{f635e07d-76c6-49d9-b052-850450ad17a4}</Project>
       <Name>FeatureToggle</Name>
