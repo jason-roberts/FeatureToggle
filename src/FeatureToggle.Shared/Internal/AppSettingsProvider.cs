@@ -1,4 +1,4 @@
-﻿#if NETFULL || NETCORE
+﻿#if NETFULL || NETSTANDARD
 
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Configuration;
 using System.Web.Script.Serialization;
 #endif
 
-#if NETCORE
+#if NETSTANDARD
 using Microsoft.Extensions.Configuration;
 using System.IO;
 #endif
@@ -25,7 +25,7 @@ namespace FeatureToggle.Internal
         private const string KeyNotFoundInAppsettingsMessage = "The key '{0}' was not found in AppSettings";
 
 
-#if NETCORE
+#if NETSTANDARD
         
         IConfigurationRoot _configuration;
 
@@ -235,7 +235,7 @@ namespace FeatureToggle.Internal
         }
 
 
-#if NETCORE
+#if NETSTANDARD
         private static string AppDirectory  => AppContext.BaseDirectory;
 #endif
 

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <TargetFrameworks>net461;uap10.0;netcoreapp1.0;</TargetFrameworks>
+    <TargetFrameworks>net461;uap10.0;netstandard1.4;</TargetFrameworks>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <Version>4.0.2</Version>
@@ -18,13 +18,14 @@
     <PackageReleaseNotes>For release notes and history see https://github.com/jason-roberts/FeatureToggle/blob/master/Release-Notes.md</PackageReleaseNotes>
   </PropertyGroup>
   
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">
-    <DefineConstants>NETCORE;NETCOREAPP1_0</DefineConstants>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.4' ">
+    <DefineConstants>NETSTANDARD</DefineConstants>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">    
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.4' ">    
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.1" />
+    <PackageReference Include="System.Net.Requests" Version="4.3.0" />
   </ItemGroup>
 
 

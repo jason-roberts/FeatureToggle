@@ -1,4 +1,4 @@
-﻿#if NETFULL || NETCORE // no Moq support in UWP test projects
+﻿#if NETFULL || NETSTANDARD // no Moq support in UWP test projects
 
 using System;
 using FeatureToggle;
