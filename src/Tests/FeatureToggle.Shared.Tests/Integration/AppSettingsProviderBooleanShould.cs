@@ -1,4 +1,4 @@
-﻿#if NETFULL || NETCORE
+﻿#if NETFULL || NETSTANDARD
 
 using System;
 using FeatureToggle;

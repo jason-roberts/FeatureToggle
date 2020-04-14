@@ -3,7 +3,7 @@ using FeatureToggle;
 using FeatureToggle.Internal;
 using Xunit;
 
-#if NETFULL || NETCORE
+#if NETFULL || NETSTANDARD
 using Moq;
 #endif
 
@@ -15,14 +15,14 @@ namespace FeatureToggle.Tests
         public void HaveDefaultProvider()
         {
             var sut = new MySimpleFeatureToggle();
-#if NETFULL || NETCORE
+#if NETFULL || NETSTANDARD
             Assert.Equal(typeof(AppSettingsProvider), sut.ToggleValueProvider.GetType());
 #else
             Assert.Equal(typeof(ApplicationResourcesSettingsProvider), sut.ToggleValueProvider.GetType());
 #endif
         }
 
-#if NETFULL || NETCORE // can't Moq in UWP
+#if NETFULL || NETSTANDARD // can't Moq in UWP
         [Fact]
         public void SetOptionalProviderOnCreation()
         {

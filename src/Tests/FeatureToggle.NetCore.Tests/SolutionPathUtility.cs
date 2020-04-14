@@ -1,4 +1,4 @@
-﻿#if NETCORE
+﻿#if NETSTANDARD
 
 using System;
 using System.IO;
