@@ -8,19 +8,4 @@
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>FeatureToggle.Shared</Import_RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)FeatureToggleToVisibilityConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Internal\ApplicationResourcesSettingsProvider.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Internal\AppSettingsProvider.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Internal\BooleanSqlServerProvider.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Internal\JsonEnabledResponse.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)EnabledBetweenDatesFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnDaysOfWeekFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterAssemblyVersionWhereToggleIsDefinedToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrAfterDateFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)EnabledOnOrBeforeDateFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)HttpJsonFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SimpleFeatureToggle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SqlFeatureToggle.cs" />
-  </ItemGroup>
 </Project>

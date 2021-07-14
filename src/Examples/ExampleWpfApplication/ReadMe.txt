@@ -1,1 +1,0 @@
-﻿Ensure the examples web service project (WebServicesForExamples) is up and running before running this WPF app
