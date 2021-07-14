@@ -1,0 +1,72 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+trigger:
+  - master
+
+pr:
+  branches:
+    include:
+      - '*'
+
+variables:
+  major: 0
+  minor: 0
+  patch: 0
+  fix: $[counter(variables['patch'], 0)]
+  versionNo: '$(major).$(minor).$(patch).$(fix)'
+  versionNoPre: '$(major).$(minor).$(patch).$(fix)-pre'
+
+steps:
+  - task: NuGetAuthenticate@0
+    displayName: NuGet authenticate
+    inputs:
+      nuGetServiceConnections: MyGetV3
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Restore'
+    inputs:
+      command: restore
+      projects: '**/*.csproj'
+      feedsToUse: config
+      nugetConfigPath: NuGet.config
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Build'
+    inputs:
+      command: build
+      projects: '**/*.csproj'
+      arguments: '-c Release'
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Pack (Pre-release)'
+    inputs:
+      command: pack
+      projects: '**/*.csproj'
+      arguments: '--version-suffix pre'
+      versioningScheme: byEnvVar
+      versionEnvVar: versionNoPre
+      packDirectory: '$(Build.ArtifactStagingDirectory)/prerelease'
+      includesource: true
+      configuration: 'Release'
+      verbosityPack: Normal
+      externalEndpoint: MyGetV3
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Pack'
+    inputs:
+      command: pack
+      projects: '**/*.csproj'
+      versioningScheme: byEnvVar
+      versionEnvVar: versionNo
+      packDirectory: '$(Build.ArtifactStagingDirectory)/release'
+      configuration: 'Release'
+      verbosityPack: Normal
+      externalEndpoint: MyGet
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifacts'
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
