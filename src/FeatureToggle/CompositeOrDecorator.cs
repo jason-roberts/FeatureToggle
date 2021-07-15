@@ -1,8 +1,8 @@
-﻿using FeatureToggle.Interfaces;
+﻿using Commify.FeatureToggle.Interfaces;
 using System;
 using System.Linq;
 
-namespace FeatureToggle
+namespace Commify.FeatureToggle
 {
     public class CompositeOrDecorator : IFeatureToggle
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using FeatureToggle;
-using FeatureToggle.Interfaces;
-using FeatureToggle.Internal;
+using Commify.FeatureToggle.Interfaces;
+using Commify.FeatureToggle.Internal;
 
 // ReSharper disable CheckNamespace
-namespace FeatureToggle
+namespace Commify.FeatureToggle.Toggles
 // ReSharper restore CheckNamespace
 {
     public abstract class SimpleFeatureToggle : IFeatureToggle

@@ -1,7 +1,7 @@
-﻿using FeatureToggle.Interfaces;
+﻿using Commify.FeatureToggle.Interfaces;
 using System;
 
-namespace FeatureToggle
+namespace Commify.FeatureToggle
 {
     public class FallbackValueDecorator : IFeatureToggle
     {

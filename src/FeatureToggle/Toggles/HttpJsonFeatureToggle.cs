@@ -2,10 +2,10 @@
 
 using System;
 using FeatureToggle;
-using FeatureToggle.Interfaces;
-using FeatureToggle.Internal;
+using Commify.FeatureToggle.Interfaces;
+using Commify.FeatureToggle.Internal;
 
-namespace FeatureToggle
+namespace Commify.FeatureToggle.Toggles
 {
     public abstract class HttpJsonFeatureToggle : IFeatureToggle
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FeatureToggle
+namespace Commify.FeatureToggle
 {
     public class ConfigurationValidator
     {

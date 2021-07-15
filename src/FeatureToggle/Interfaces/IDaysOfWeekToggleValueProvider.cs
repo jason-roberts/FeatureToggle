@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FeatureToggle.Interfaces
+namespace Commify.FeatureToggle.Interfaces
 {
     public interface IDaysOfWeekToggleValueProvider
     {

@@ -4,9 +4,9 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using FeatureToggle;
-using FeatureToggle.Interfaces;
+using Commify.FeatureToggle.Interfaces;
 
-namespace FeatureToggle.Internal
+namespace Commify.FeatureToggle.Internal
 {
     public class BooleanSqlServerProvider : IBooleanToggleValueProvider
     {

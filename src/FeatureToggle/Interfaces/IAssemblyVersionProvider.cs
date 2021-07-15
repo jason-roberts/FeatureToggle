@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FeatureToggle.Interfaces
+namespace Commify.FeatureToggle.Interfaces
 {
     public interface IAssemblyVersionProvider
     {

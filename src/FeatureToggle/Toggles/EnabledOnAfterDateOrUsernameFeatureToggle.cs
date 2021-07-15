@@ -1,12 +1,12 @@
-﻿using FeatureToggle.Interfaces;
-using FeatureToggle.Internal;
+﻿using Commify.FeatureToggle.Interfaces;
+using Commify.FeatureToggle.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeatureToggle.Toggles
+namespace Commify.FeatureToggle.Toggles
 {
     public class EnabledOnAfterDateOrUsernameFeatureToggle : IFeatureToggle
     {

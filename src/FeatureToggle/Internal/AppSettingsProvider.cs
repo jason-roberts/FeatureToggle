@@ -6,11 +6,10 @@ using System.Net;
 using FeatureToggle;
 using System.Configuration;
 using System.Web.Script.Serialization;
-using FeatureToggle.Interfaces;
+using Commify.FeatureToggle.Interfaces;
+using Commify.FeatureToggle.Toggles;
 
-
-
-namespace FeatureToggle.Internal
+namespace Commify.FeatureToggle.Internal
 {
     public sealed class AppSettingsProvider : IBooleanToggleValueProvider, 
         IDateTimeToggleValueProvider, 

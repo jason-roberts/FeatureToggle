@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace FeatureToggle
+namespace Commify.FeatureToggle
 {
     public class ConfigurationDateParser
     {

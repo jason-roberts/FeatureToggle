@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FeatureToggle.Interfaces
+namespace Commify.FeatureToggle.Interfaces
 {
     public interface IStringToggleValueProvider
     {

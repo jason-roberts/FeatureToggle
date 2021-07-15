@@ -1,6 +1,6 @@
-﻿using FeatureToggle.Interfaces;
+﻿using Commify.FeatureToggle.Interfaces;
 
-namespace FeatureToggle
+namespace Commify.FeatureToggle
 {
     public class AlwaysOffFeatureToggle : IFeatureToggle
     {

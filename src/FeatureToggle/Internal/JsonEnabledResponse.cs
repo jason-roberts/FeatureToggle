@@ -1,4 +1,4 @@
-﻿namespace FeatureToggle.Internal
+﻿namespace Commify.FeatureToggle.Internal
 {
     public class JsonEnabledResponse
     {

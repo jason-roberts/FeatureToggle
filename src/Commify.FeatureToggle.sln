@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureToggle", "FeatureToggle\FeatureToggle.csproj", "{4D3B75F2-A25D-4AE8-903A-3FF9C4648094}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commify.FeatureToggle", "FeatureToggle\Commify.FeatureToggle.csproj", "{4D3B75F2-A25D-4AE8-903A-3FF9C4648094}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

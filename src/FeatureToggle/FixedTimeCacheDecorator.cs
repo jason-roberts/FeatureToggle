@@ -1,7 +1,7 @@
-﻿using FeatureToggle.Interfaces;
+﻿using Commify.FeatureToggle.Interfaces;
 using System;
 
-namespace FeatureToggle
+namespace Commify.FeatureToggles
 {
     public class FixedTimeCacheDecorator : IFeatureToggle
     {

@@ -1,7 +1,7 @@
-﻿using FeatureToggle.Interfaces;
+﻿using Commify.FeatureToggle.Interfaces;
 using System;
 
-namespace FeatureToggle
+namespace Commify.FeatureToggle
 {
     /// <summary>
     /// This decorator should be used with care or not at all. It will essentially hide any configuration errors

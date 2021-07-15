@@ -1,6 +1,6 @@
-﻿using FeatureToggle.Interfaces;
+﻿using Commify.FeatureToggle.Interfaces;
 
-namespace FeatureToggle
+namespace Commify.FeatureToggle
 {
     public static class Is<T> where T : IFeatureToggle, new()
     {

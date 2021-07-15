@@ -1,4 +1,4 @@
-﻿namespace FeatureToggle.Interfaces
+﻿namespace Commify.FeatureToggle.Interfaces
 {
     public interface IBooleanToggleValueProvider
     {
