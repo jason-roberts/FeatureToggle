@@ -2,16 +2,12 @@
 
   <PropertyGroup>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <TargetFramework>net461</TargetFramework>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <TargetFramework>net451</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
-  </ItemGroup>
-  
-  <ItemGroup>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Extensions" />
   </ItemGroup>
 </Project>
